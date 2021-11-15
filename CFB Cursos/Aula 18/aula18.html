@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 18 - Comando de Loop "For"</title>
+
+    <script>
+
+    var cont
+    //A variável também poderia entrar dentro dos parênteses de "for" - porém essa só valerá para o "for".
+    
+    for (cont = 0; cont < 10; cont ++) {
+        document.write('CFB Cursos <br>')
+    }    
+    //O "cont ++" representa o valor. Uma vez que esse valor chegue a dez, o "for" é parado.
+    
+    var num = []
+    var mochila = [['corda', 1], ['cura', 10], ['lanterna', 1, ''], ['pilhas', 20]]
+    
+    for (cont = 0; cont < 5; cont ++) {
+        num.push('Ademir')
+    }
+    //Esse ".push" vai adicionar "Ademir" a todos os elementos do "array". 
+    
+    for (cont = 0; cont < 5; cont ++) {
+    num.push(prompt('Digite algum valor.'))
+    }
+
+    for (var l = 0; l < 4; cont ++) {
+        for (var c = 0; c < 2; c ++) {
+            document.write(mochila[l][c] + ' ')
+        }
+        document.write('<br>')
+    }
+    
+    num.push('A')
+    num.push('B')
+    num.push('C')
+    num.push('D')
+    num.push('E')
+    
+    for (cont = 0; cont < 5; cont ++) {
+        document.write(num[cont] + "<br>")
+    }
+    //Desse jeito o "cont" vai representar qual índice de controle terá o seu conteúdo "printado" na tela.
+    //O "cont" de "document.write" faz menção ao índice de controle dos elementos do "array".
+    
+    </script>
+
+</head>
+
+<body>
+
+<!--
+    Comando For:
+
+    for (p1; p2; p3) {
+        comandos;
+    }
+
+    p1 = inicialização do contador;
+    p2 = condição de execução do loop;
+    p3 = incremento ou decremento do contador.
+-->
+    
+</body>
+
+</html>

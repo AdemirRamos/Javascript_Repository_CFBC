@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 35 - setTimeout e setInterval</title>
+    
+    <style>
+
+        #dv1 {
+            height: 100px;
+            width: 100px;
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+
+    </style>
+
+    <script>
+
+        var tempo
+
+        function mudança_de_cor() {
+            var objeto = document.getElementById('dv1')
+            var r = Math.floor(Math.random()*255)
+            var g = Math.floor(Math.random()*255)
+            var b = Math.floor(Math.random()*255)
+            objeto.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')'
+        }
+
+        //mudança_de_cor()
+
+        //var tempo = setTimeout(mudança_de_cor, 3000)
+        /*Só chama a função uma vez (dentro do intervalo especificado).*/
+
+        function iniciar() { 
+        tempo = setInterval(mudança_de_cor, 1000)
+        /*Nesse caso, a função será chamada cada vez que for cumprimo o intervalo especificado.*/
+        }
+
+        function parar() {
+            clearInterval(tempo)
+            /*Zera o intervalo.*/
+        }
+
+        function addEventos() {
+            document.getElementById('bt1').addEventListener('click', iniciar)
+            document.getElementById('bt2').addEventListener('click', parar)
+        }
+
+        window.addEventListener('load', addEventos)
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="dv1"></div>
+    <br/>
+    <button id="bt1">Iniciar</button>
+    <button id="bt2">Parar</button>
+    
+</body>
+
+</html>

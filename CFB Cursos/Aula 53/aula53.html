@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 53 - Jogo da Velha (Parte 3)</title>
+
+    <style>
+
+        #dvjogo {
+            width: 160px;
+            height: 160px;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        .posição_jogo {
+            width: 50px;
+            height: 50px;
+            margin: 0px;
+            padding: 0px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 40px;
+        }
+
+        #posição_1 {
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+
+        #posição_2 {
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+
+        #posição_3 {
+            border-left: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+
+        #posição_4 {
+            border-right: 1px solid #000;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+
+        #posição_5 {
+            border: 1px solid #000;
+        }
+
+        #posição_6 {
+            border-left: 1px solid #000;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+        }
+
+        #posição_7 {
+            border-right: 1px solid #000;
+            border-top: 1px solid #000;
+        }
+
+        #posição_8 {
+            border-left: 1px solid #000;
+            border-right: 1px solid #000;
+            border-top: 1px solid #000;
+        }
+
+        #posição_9 {
+            border-left: 1px solid #000;
+            border-top: 1px solid #000;
+        }
+
+    </style>
+
+    <script>
+
+        var jogo = []
+        var tabuleiro = []
+        var quem_joga = 0
+        /*0 == Jogador / 1 == CPU.*/
+        var verificação
+        var jogando = true
+        /*"true" == o jogo está sendo radado / "false" == o jogo está pausado.*/
+        var nível = 1
+        var jogada_da_CPU = 1
+        var quem_começa = 1
+
+        function jogar(posição) {
+            if ((jogando) && (quem_joga == 0)) {
+                switch (posição) {
+                    case 1:
+                        if (jogo[0][0] == '') {
+                            jogo[0][0] = 'X'
+                            quem_joga = 1
+                        }
+                        break
+
+                    case 2:
+                        if (jogo[0][1] == '') {
+                            jogo[0][1] = 'X'
+                            quem_joga = 1
+                        }
+                        break
+
+                    case 3:
+                        if (jogo[0][2] == '') {
+                            jogo[0][2] = 'X'
+                            quem_joga = 1
+                        }
+                        break
+
+                    case 4:
+                        if (jogo[1][0] == '') {
+                            jogo[1][0] = 'X'
+                            quem_joga = 1
+                        }
+                        break
+
+                    case 5:
+                        if (jogo[1][1] == '') {
+                            jogo[1][1] = 'X'
+                            quem_joga = 1
+                        }
+                        break
+
+                    case 6:
+                        if (jogo[1][2] == '') {
+                            jogo[1][2] = 'X'
+                            quem_joga = 1
+                        }
+                        break
+
+                    case 7:
+                        if (jogo[2][0] == '') {
+                            jogo[2][0] = 'X'
+                            quem_joga = 1
+                        }
+                        break
+
+                    case 8:
+                        if (jogo[2][1] == '') {
+                            jogo[2][1] = 'X'
+                            quem_joga = 1
+                        }
+                        break
+
+                    case 9:
+                    /*"case 9:" também poderia ser "default:"*/
+                        if (jogo[2][2] == '') {
+                            jogo[2][2] = 'X'
+                            quem_joga = 1
+                        }
+                        break
+                }
+                atualização_do_tabuleiro()
+            }
+        }
+
+        function atualização_do_tabuleiro() {
+            for (var linha = 0; linha < 3; linha++) {
+                for (var coluna = 0; coluna < 3; coluna++) {
+                    if (jogo[linha][coluna] == 'X') {
+                        tabuleiro[linha][coluna].innerHTML = 'X'
+                        tabuleiro[linha][coluna].style.cursor = 'default'
+                    }
+
+                    else if (jogo[linha][coluna] == 'O') {
+                        tabuleiro[linha][coluna].innerHTML = 'O'
+                        tabuleiro[linha][coluna].style.cursor = 'default'
+                    }
+
+                    else {
+                        tabuleiro[linha][coluna].innerHTML = ''
+                        tabuleiro[linha][coluna].style.cursor = 'pointer'
+                    }
+                }
+            }
+        }
+
+        function iniciar() {
+            jogando = true
+            jogada_da_CPU = 1
+            jogo = [
+                ['', '', ''],
+                ['', '', ''],
+                ['', '', '']
+            ]
+            tabuleiro = [
+
+                [document.getElementById('posição_1'),
+                document.getElementById('posição_2'),
+                document.getElementById('posição_3')],
+
+                [document.getElementById('posição_4'),
+                document.getElementById('posição_5'),
+                document.getElementById('posição_6')],
+
+                [document.getElementById('posição_7'),
+                document.getElementById('posição_8'),
+                document.getElementById('posição_9')]
+            ]
+
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="dvmenu">
+
+        <div id="dvquem_começa"></div>
+        <button onclick="">Iniciar o jogo</button>
+
+    </div>
+
+    <div id="dvjogo">
+
+        <div id="posição_1" class="posição_jogo" onclick="jogar(1)"></div>
+        <div id="posição_2" class="posição_jogo" onclick="jogar(2)"></div>
+        <div id="posição_3" class="posição_jogo" onclick="jogar(3)"></div>
+        <div id="posição_4" class="posição_jogo" onclick="jogar(4)"></div>
+        <div id="posição_5" class="posição_jogo" onclick="jogar(5)"></div>
+        <div id="posição_6" class="posição_jogo" onclick="jogar(6)"></div>
+        <div id="posição_7" class="posição_jogo" onclick="jogar(7)"></div>
+        <div id="posição_8" class="posição_jogo" onclick="jogar(8)"></div>
+        <div id="posição_9" class="posição_jogo" onclick="jogar(9)"></div>
+
+    </div>
+
+</body>
+
+</html>

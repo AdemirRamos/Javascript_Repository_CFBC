@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 66 - Objeto "Screen"</title>
+
+    <style>
+
+        #painel {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+    </style>
+
+    <script>
+
+        var painel
+
+        function iniciar() {
+            painel = document.getElementById('painel')
+            painel.innerHTML += `Largura: ${screen.width}px<hr>`
+            /*Retorna a largura da tela (monitor).*/
+            painel.innerHTML += `Altura: ${screen.height}px<hr>`
+            painel.innerHTML += `Resolução: ${screen.width}px X ${screen.height}px<hr>`
+            painel.innerHTML += `Largura Disponível: ${screen.availWidth}px<hr>`
+            /*Retorna a largura disponível para a tela.*/
+            painel.innerHTML += `Altura Disponível: ${screen.availHeight}px<hr>`
+            /*Retorna a altura disponível para a tela.*/
+            /*A diferença entre altura e altura disponível se dá em razão da barra de tarefas.*/
+            painel.innerHTML += `Profundidade de Cores (Imagens): ${screen.colorDepth} bits<hr>`
+            /*Retorna a profundidade, em "bits", da palheta de cores para exibir imagens.*/
+            painel.innerHTML += `Resolução da Cor da Tela: ${screen.pixelDepth} bits/pixels<hr>`
+            /*Retorna a informação de resolução das cores em "bits" por "pixels".*/
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="painel"></div>
+    
+</body>
+
+</html>

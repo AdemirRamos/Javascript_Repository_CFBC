@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 64 - Objeto Window (Parte 3) - "scrollBy", "frames", "length", "parent"</title>
+
+    <style>
+
+        #painel {
+            border: 1px solid #000;
+            border-radius: 10px;
+            padding: 15px;
+            width: 2000px;
+            height: 2000px;
+            background-color: #ddd;
+        }
+
+    </style>
+
+    <script>
+
+        var width, height, posição_x, posição_y, painel
+        //var painel = document.getElementById('painel')
+
+        //width = window.innerWidth
+        /*Esse comando mostra a largura interna da janela (não conta a barra de guias/favoritos, et cetera.*/
+        //Para se obter a larguna externa, se usa o comando "outerWidth".
+
+        //height = window.innerHeight
+        /*Este comando mostra a altura da janela.*/
+
+        //painel.innerHTML = width
+        /*A largura do painel não aparecerá pois o painel ainda não foi carregado. - O comando abaixo resolve esse problema.*/
+
+        function botão_informação() {
+            width = window.innerWidth
+            height = window.innerHeight
+            posição_x = window.screenX
+            posição_y = window.screenY
+            painel.innerHTML = 'largua: ' + width + '<br>' + 'Altura: ' + height + '<br>' + 'X: ' + posição_x + '<br>' + 'Y: ' + posição_y 
+        }
+
+        function rolar() {
+            window.scrollBy(1000, 1000)
+            /*Esse método precisa de dois parâmetros que serão as cordenadas, respectivamente, de X e de Y.*/
+        }
+
+        function iniciar() {
+            document.getElementById('botão_tamanho').addEventListener('click', botão_informação)
+            /*Agora o botão, ao ser pressionado, mostra o tamanho da janela.*/
+            document.getElementById('botão_posição').addEventListener('click', rolar)
+            /*Agora o botão, ao ser pressionado, rolará a "div painel".*/
+            painel = document.getElementById('painel')
+            //painel.innerHTML = width
+            /*Dentro de "painel", aparecerá a largura da janela.*/
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <button id="botão_tamanho">Tamanho</button>
+    <button id="botão_posição">Rolar</button>
+    
+    <div id="painel"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 47 - Métodos Para a Manipulação de "Strings" (Parte 2)</title>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+    <p id="texto">CFB Cursos - Curso de Javascript - Aula 46 do Curso de javascript.</p>
+
+    <script>
+
+        var texto_1 = document.getElementById('texto').innerHTML
+        var texto_2 = ' Aulas de Javolas Scriptolas.'
+
+        var resultado_1 = texto_1.concat(texto_2)
+
+        document.write(resultado_1 + '<br>' + '<br>')
+
+        var resultado_2 = texto_1.concat(' Scriptolas Com Javolas.')
+
+        document.write(resultado_2 + '<br>' + '<br>')
+
+        var resultado_3 = texto_1.concat(' Scriptolas Com Javolas.' + texto_2)
+
+        document.write(resultado_3)
+
+    </script>
+
+</body>
+
+</html>

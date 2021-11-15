@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 23 - Manipular Elementos do HTML com o JavaScript (getElementById)</title>
+
+    <script>
+
+        /*document.getElementById('texto').style.color = '#f00'*/
+        /*Esse comando não vai funcionar pois o texto ao qual ele se refere ainda não foi adicionado.*/
+        /*Uma das maneiras de se resolver esse problema é adicionar o mesmo comando porém após o texto ao qual ele faz menção.*/
+
+    </script>
+
+</head>
+
+<body>
+
+    <p id='texto'>CFB Cursos</p>
+    <div id='caixa'></div>    
+    
+    <script>
+    
+    /*document.getElementById('texto').style.color = '#f00'
+    document.getElementById('texto').style.fontSize = '50px'
+    Se for feita dessa maneira, a manipulação de elementos deverá ser feita para cada elemento (individualmente).*/
+
+    var txt = document.getElementById('texto')
+    txt.style.color = '#f00'
+    txt.style.fontSize = '55px'
+    txt.style.display = 'block'
+
+    /*Dessa forma acima, transformamos o "GEBI" em uma variável - o que facilita um pouco o nosso trabalho.*/
+
+    var cx = document.getElementById('caixa')
+    cx.style.border = '1px solid #000'
+    /*Borda preta de 1px e sólida.*/
+    cx.style.width = '300px'
+    /*Largura de 300px.*/
+    cx.style.height = '300px'
+    /*Altura de 300px.*/
+    cx.style.backgroundColor = '#aaa'
+    /*Cor de fundo cinza.*/
+    cx.style.display = 'block'
+    /*Faz sumir a nossa "caixa" com "'none'""; com "'block'" anulamos o "'none'".*/
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 48 - Métodos Para a Manipulação de "Strings" (Parte 3)</title>
+
+</head>
+
+<body>
+
+    <p id="texto">CFB Cursos - Curso de Javascript.</p>
+
+    <script>
+
+        var texto_1 = document.getElementById('texto').innerHTML
+        var texto_2 = texto_1
+        var texto_3 = 'Javante.'
+
+        var resultado_1 = texto_1.indexOf('J')
+        /*Esse método retorna a posição de um caractere especificado para busca. - Esse método é "case-sensitive".*/
+        /*Caso o caractere pesquisado não seja encontrado, o valor de retorno será "-1".*/
+        /*Esse método retorna o primeiro caractere encontrado.*/
+
+        if (resultado_1 < 0) {
+            document.write('O caractere buscado não foi encontrado.' + '<br>' + '<br>')
+        }
+        else {
+            document.write(`O resultado obtido foi: "${resultado_1}".` + '<br>' + '<br>')
+        }
+
+        var resultado_2 = texto_1.lastIndexOf('C')
+        /*Retorna a posição do último caractere que fora pesquisado.*/
+
+        document.write(`O resultado obtido foi: "${resultado_2}".` + '<br>' + '<br>')
+
+        var resultado_3 = texto_1.localeCompare(texto_2)
+        /*Esse método faz uma comparação; se o resultado for 0 (zero), as "strings" comparadas são iguais; se o resultado for != 0, significa que as "strings" são diferentes.*/
+
+        document.write(`O resultado obtido foi: "${resultado_3}".` + '<br>' + '<br>')
+
+
+        if (resultado_3 == 0) {
+            document.write('As "strings" comparadas, são iguais.' + '<br' + '<br>')
+        }
+        else {
+            document.write('As "strings" comparadas, são diferentes.' + '<br>' + '<br>')
+        }
+
+        /*Continua no próximo arquivo.*/
+
+    </script>
+
+</body>
+
+</html>

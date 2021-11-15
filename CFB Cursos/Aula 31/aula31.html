@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 31 - Escopo de Variáveis</title>
+
+    <script>
+
+        var nome_cor_1 = 'Vermelho'
+
+        function cor(){
+            var nome_cor_1 = 'Azul'
+            document.write(nome_cor_1 + '<br>')
+            /*A variável, dentro dessa função, não está disponível fora dela.*/
+        }
+
+        cor ()
+
+        document.write(nome_cor_1 + '<br>')
+        /*As duas variáveis (nome_cor) são diferentes pois estão em escopos diferentes.*/
+
+        document.write('<br>')
+
+        var nome_cor_2 = 'Vermelho'
+
+        function cor(){
+            var nome_cor_2 = 'Azul'
+            document.write(nome_cor_2 + '<br>')
+        }
+
+        cor ()
+
+        document.write(nome_cor_2 + '<br>')
+        /*Nesse caso, a mensagem 'Azul' foi escrita duas vezes pois, originalmente, ela era 'Vermelho', porém, depois de passar por dentro da função, ela foi alterada para 'Azul' nas duas ocorrências do método "write".*/
+
+        /*Mesmo que as variáveis estejam em escopos diferentes, não é recomendável usar variáveis com o mesmo nome. Uma razão para isso, se encontra no fato de ser mais difícil selecionar uma destas variáveis com o mesmo nome. (...) Ainda sim, é possível selecionar uma variável que compartilha o seu nome com outra variável.*/
+
+        var nome_cor_3 = 'Vermelho'
+
+        function cor(){
+            var nome_cor_3 = 'Azul'
+            var nome_cor_3
+            /*É possível redeclarar a variável. Do modo como está, na linha acima, não será causada nenhuma alteração ou erro.*/
+            document.write(this.nome_cor_3 + nome_cor_3 + '<br>')
+            /*O método ".this" fará referencia a variável global.*/
+        }
+
+        cor ()
+
+        //document.write(nome_cor_3 + '<br>')
+
+        var nome_cor_4 = 'Vermelho'
+        var i = 0
+        /*Essa variável "i" é exatamente a mesma variável "i" que aparece posteriormente no programa (dentro de "for").*/
+
+        function cor(){
+            var nome_cor_4 = 'Azul'
+            document.write(this.nome_cor_4 + '<br>' + nome_cor_4 + '<br>')
+            /*O método ".this" fará referencia a variável global.*/
+        }
+
+        cor ()
+
+        for (var i = 0; i < 10; i++) {
+
+        }
+
+        document.write(i + '<br>')
+
+    </script>
+
+</head>
+
+<body>
+
+<!--Escopo de variáveis: basicamente, até onde uma variável é acessível.-->
+    
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 49 - Métodos Para a Manipulação de "Strings" (Parte 4)</title>
+
+</head>
+
+<body>
+
+    <p id="texto">CFB Cursos - Curso de Javascript.</p>
+
+    <script>
+
+        var texto_1 = document.getElementById('texto').innerHTML
+
+        var texto_2 = 'CFB Cursos - Cursolas de Javolas.'
+
+        var texto_3 = "CFB Cursos - \"Javolas\" de Scriptolas."
+        /*As barras laterais acima indicam que o elemento entre aspas deve ser escrito (com as aspas).*/
+        /*Também funciona com aspas simples ('') e caracteres especiais (\\; \n [\nCurso\n]; ).*/
+        /*\nString\n: quebra de linha (assim como em Python).*/
+        /*\n não vai funcionar dentro do HTML pois a quebra de linha (no HTML) se dá com a "tag <br>".*/
+        /*Porém, se a "string" for impressa em um "alert", por exemplo, o \n então funcionará. Nesse caso, o "<br>" não funciona.*/
+
+        var número = 15
+
+        var resultado_1 = número.toString()
+        /*Converte o seu conteúdo em texto.*/
+        /*Também faz conversão de bases:*/
+        var binário = número.toString(2)
+        var oct = número.toString(8)
+        var hexadecimal = número.toString(16)
+
+        document.write(`O resultado obtido foi: "${resultado_1}".` + '<br>' + '<br>')
+
+        document.write(`O resultado obtido foi: "${binário}".` + '<br>' + '<br>')
+
+        document.write(`O resultado obtido foi: "${oct}".` + '<br>' + '<br>')
+
+        document.write(`O resultado obtido foi: "${hexadecimal}".` + '<br>' + '<br>')
+
+        var resultado_2 = texto_2.trim()
+        /*Apaga os espaços no começo e no fim da "string". - Espaços no meio não serão apagados.*/
+        /*O HTML não renderiza mais de dois espaços seguidos.*/
+
+        document.write(`O resultado obtido foi: "${resultado_2}".` + '<br>' + '<br>')
+
+        document.write(texto_3 + '<br>' + '<br>')
+
+    </script>
+
+</body>
+
+</html>

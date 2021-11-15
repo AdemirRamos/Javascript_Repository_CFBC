@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 44 - Modernizando o "Slider"</title>
+    
+    <style>
+
+        #dvslider {
+            width: 1000px;
+            height: 300px;
+            border: 1px solid #000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .botão_slider {
+            background-color: rgba(0, 0, 0, 0.4);
+            height: 30%;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+            margin: 10px;
+            border: none;
+        }
+
+        #dvload {
+            width: 100%;
+            height: 5px;
+            margin-top: 25%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        #dvbarra {
+            width: 0%;
+            height: 100%;
+            background-color: #fff;
+        }
+
+    </style>
+
+    <script>
+
+        var imagens = []
+        var slider
+        var imagem_atual
+        var máximo_de_imagens
+        var tempo
+        var intervalo_de_troca
+        var vtempo
+        var vbarra
+
+        function pré_carregamento() {
+            var n = 1
+            for(var i = 0 ; i < 5 ; i++) {
+            imagens[i] = new Image()
+            imagens[i].src="imagens/paisagem" + n + ".jpg"
+            n++
+            }
+        }
+
+        function carregar_imagem(imagem) {
+            slider.style.backgroundImage = "url('" + imagens[imagem].src + "')"
+        }
+
+        function iniciar() {
+            pré_carregamento()
+            imagem_atual = 0
+            máximo_de_imagens = imagens.length - 1
+            slider = document.getElementById('dvslider')
+            vbarra = document.getElementById('dvbarra')
+            carregar_imagem(imagem_atual)
+            intervalo_de_troca = 0
+            animação()            
+        }
+
+        function troca_de_imagem(direção) {
+            intervalo_de_troca = 0
+            imagem_atual += direção
+            if(imagem_atual > máximo_de_imagens){
+                imagem_atual = 0
+            }
+            else if (imagem_atual < 0) {
+                imagem_atual = máximo_de_imagens
+            }
+            carregar_imagem(imagem_atual)
+        }
+
+        function animação() {
+            intervalo_de_troca++
+            if (intervalo_de_troca >= 500) {
+                intervalo_de_troca = 0
+                troca_de_imagem(1)
+            }
+            vtempo = intervalo_de_troca / 5
+            vbarra.style.width = vtempo + "%"
+            window.requestAnimationFrame(animação)
+        }
+
+        window.addEventListener("load", iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="dvslider">
+        <button class="botão_slider" onclick="troca_de_imagem(-1)"><</buton>
+        <div id="dvload">
+            <div id="dvbarra"></div>
+        </div>
+        <button class="botão_slider" onclick="troca_de_imagem(1)">></button>
+    </div>
+
+</body>
+
+</html>

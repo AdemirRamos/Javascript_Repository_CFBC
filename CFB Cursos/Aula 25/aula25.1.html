@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 25 - getElementsByTagName</title>
+
+    <script>
+
+        
+
+    </script>
+
+</head>
+
+<body>
+
+    <p>CFB Cursos</p>
+    <p>Curso de Javascript</p>
+    <p>Aula 25</p>
+    <p>https://www.youtube.com/watch?v=gP0_rmzpKEc&list=TLPQMDMxMDIwMjFO0mYx2suEYQ&index=2</p>
+    <p>https://www.youtube.com/watch?v=gP0_rmzpKEc&list=TLPQMDMxMDIwMjFO0mYx2suEYQ&index=2</p>
+
+    <hr/>
+
+</body>
+
+<script>
+
+    var Tags_P = document.getElementsByTagName('p')
+
+    Tags_P[3].style.color='#f00'
+
+    var Tags = document.getElementsByTagName('*')
+
+    Tags[10].style.color = 'green'
+    Tags[10].innerHTML = 'Novo Texto.'
+
+</script>
+
+</html>

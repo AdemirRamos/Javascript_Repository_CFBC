@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 45 - Manipulando Atributos HTML por Javascript</title>
+
+    <style>
+
+        #carro {
+            width: 200px;
+            height: 379px;
+        }
+
+        .carro_1 {
+            background-image: url('imagens/carro1.jpg');
+        }
+
+        .carro_2 {
+            background-image: url('imagens/carro2.jpeg');
+        }
+
+        .carro_3 {
+            background-image: url('imagens/carro3.jpg');
+        }
+
+    </style>
+    
+    <script>
+
+        function troca_de_carro(carro) {
+            var objeto = document.getElementById('carro')
+
+            if (carro == 1) {
+                objeto.setAttribute('class', 'carro_1')
+            }
+            else if (carro == 2) {
+                objeto.setAttribute('class', 'carro_2')
+            }
+            else if (carro == 3) {
+                objeto.setAttribute('class', 'carro_3')
+            }
+        }
+
+        //document.getElementById('carro').setAttribute('class', 'carro1')
+        /*"setAttribute": demanda uma classe e um valor correspondente a um atributo (entre parentêses).*/
+
+        function remover_carro() {
+            var objeto = document.getElementById('carro')
+            objeto.removeAttribute('class')  
+        }
+
+        function verificação_de_carros() {
+            var objeto = document.getElementById('carro')
+            if (objeto.hasAttribute('class')) {
+                alert('Atributo "class" presente na "tag" selecionada.')
+            }
+            else {
+                alert('Nenhuma atributo "class" encontrado na "tag" selecionada.')
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <button onclick="troca_de_carro(1)">Carro 1</button>
+    <button onclick="troca_de_carro(2)">Carro 2</button>
+    <button onclick="troca_de_carro(3)">Carro 3</button>
+    <button onclick="remover_carro()">Remover Carros</button>
+    <button onclick="verificação_de_carros()">Checar</button>
+    <div id="carro"></div>
+    
+    <script>
+
+        //document.getElementById('carro').setAttribute('class', 'carro1')
+        //Com esse "script" aqui, a imagem do carro será carregada.
+        //Foi atribuido à "div carro" uma "class" ("carro1"). O resultado é esse abaixo:
+        //<div id="carro" class="carro1"></div>
+
+    </script>
+
+    <!--Com "setAttribute", se pode adicionar qualquer atributo a qualquer elemento de qualquer "tag".-->
+
+</body>
+
+</html>

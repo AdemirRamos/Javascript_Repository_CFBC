@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 47 - Métodos Para a Manipulação de "Strings" (Parte 2)</title>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+    <p id="texto">CFB Cursos - Curso de Javascript - Aula 46 do Curso de javascript.</p>
+
+    <script>
+
+        var texto_1 = document.getElementById('texto').innerHTML
+        var texto_2 = ' Aulas de Javolas Scriptolas'
+
+        var resultado_1 = texto.search(/curso/i)
+        /*"search" pesquisa dentro da "string" e mostra a posição da primeira ocorrência encontrada.*/
+        /*O modificador "g" não funciona nesse caso.*/
+        /*Confira "g".*/
+
+        document.write(`O resultado obtido foi: "${resultado_1}"".` + '<br>' + '<br>')
+
+        var resultado_2 = texto.replace(/curso/i, 'Javola')
+        /*Após a vírgula, entre aspas, vai o termo substituto.*/
+        /*Se, logo após o modificador "i", for posto um modificador "g", toda ocorrência do elemento entre barras será substituída.*/
+
+        document.write(`O resultado obtido foi: "${resultado_2}".` + '<br>' + '<br>')
+
+        var resultado_3 = texto.charAt(2)
+        /*Retorna a posição do caractere especificado pelo número entre parentêses.*/
+
+        document.write(`O resultado obtido foi: "${resultado_3}".` + '<br>' + '<br>')
+
+        var resultado_4 = texto.charCodeAt(11)
+        /*Retorna o código do caractere selecionado.*/
+
+        document.write(`O resultado obtido foi: "${resultado_4}".` + '<br>' + '<br>')
+
+        document.write(`O resultado obtido foi: "${String.fromCharCode(67, resultado_4)}".` + '<br>' + '<br>')
+
+        var resultado_5 = texto_1.concat(texto_2)
+
+        document.write(`O resultado obtido foi: "${resultado_5}".` + '<br>' + '<br>')
+
+    </script>
+
+</body>
+
+</html>

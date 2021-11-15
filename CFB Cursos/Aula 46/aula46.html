@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 46 - Strings (Parte 1) - Match</title>
+
+    <style>
+
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <p id="texto">CFB Cursos - Curso de Javascript - Aula 46 do Curso de javascript.</p>
+
+    <!--O método "match" nos possibilita pesquisar por algo (outra "string"; seja letra ou palavra) dentro de uma "string".-->
+
+    <script>
+
+        var texto = document.getElementById('texto').innerHTML
+        /*O conteúdo do "id texto" passa para dentro da variável (global) "texto".*/
+
+        var resultado_1 = texto.match('Aula')
+        document.write(`O resultado obtido foi: "${resultado_1}".` + '<br>')
+
+        document.write('<br>')
+
+        var resultado_2 = texto.match('HTML')
+        document.write(`O resultado obtido foi: "${resultado_2}".` + '<br>')
+        /*Resultado: "null".*/
+        
+        document.write('<br>')
+
+        var resultado_3 = texto.match('Aula')
+        document.write(`O resultado obtido foi: "${resultado_3.length}".` + '<br>')
+        /*Tamanho da variável selecionada.*/
+
+        /*O resultado da pesquisa feita com "match" retornará o valor exato procurado (considerando maiúsculas e/ou minúsculas).*/
+        
+        document.write('<br>')
+
+        var resultado_4 = texto.match(/de/g)
+        document.write(`O resultado obtido foi: "${resultado_4.length}".` + '<br>')
+        /*"g" irá mostrar o número de vezes em que a ocorrências, entre barras (//), apareceu dentro da "string" selecionada.*/
+        /*"g" é "case-sensitive", ou seja, faz diferenciação entre letras maiúsculas e minúsculas.*/
+
+        document.write('<br>')
+
+        var resultado_5 = texto.match(/[a-g]/ig)
+        document.write(`O resultado obtido foi: "${resultado_5.length}".` + '<br>')
+        /*"ig" retornará o número de vezes em que a occorência buscada aparece (sem fazer diferenciação entre maiúsculas e minúsculas).*/
+        /*Caso se deseje procurar por letras (ao invés de palavras), basta trocar o texto (entre barras) pela letra procurada.*/
+        /*Caso se queira pesquisar por duas (ou mais letras ou palavras), basta abrir chaves (entre barras) e digitar (sem espaços) o caracteres procurados. Exemplo:*/
+        //var resultado_5 = texto.match(/[oa]/ig)
+        /*Caso se queira marcar quais elementos não devem ser buscados, basta seguir o modelo a seguir:*/
+        /*var resultado_5 = texto.match(/^[oa]/)*/
+        /*Nota: essa matéria é semelhante ao "fatiamento" do Python.*/
+        /*Caso se deseje fazer um busca a partir de um ponto de partide e outro de chegada, basta seguir o modelo a seguir:*/
+        /*var resultado_5 = texto.match(/[a-g]/)*/
+        /*Outra grafia: (/[a|o|e]/) == (/[aoe]/).*/
+
+        document.write('<br>')
+
+        document.write('O resultado obtido foi: ' + `"${resultado_5[0]}".`)
+        /*O resulado obtido por "ig" é armazenado em um "array". Entre chaves vai o índice do elemento buscado no referido "array".*/
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 002</title>
+
+    <style>
+
+        #dv {
+            height: 100px;
+            width: 100px;
+            border: 1px solid #000;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+    </style>
+
+    <script>
+
+        function mudança_de_cor1(objeto, dv) {
+            var objeto = document.getElementById('dv')
+            objeto.style.backgroundColor = '#f00'
+        }
+
+        function mudança_de_cor2(objeto, dv) {
+            var objeto = document.getElementById('dv')
+            objeto.style.backgroundColor = '#fff'
+        }
+
+        function mensagem(objeto, dv) {
+            alert('Olá!')
+        }
+
+        function ações() {
+            var objeto = document.getElementById('dv')
+            objeto.addEventListener('mouseover', mudança_de_cor1)
+            objeto.addEventListener('mouseout', mudança_de_cor2)
+            objeto.addEventListener('click', mensagem)
+        }
+
+        window.addEventListener('load', ações)
+
+        var px = 0
+        var py = 0
+
+        document.addEventListener('keydown', function (event) {
+            var objeto = document.getElementById('dv')
+            var tecla = event.keyCode
+
+            if (tecla == 37) {
+                py-=10
+                objeto.style.left=py+'px'
+            }
+            else if (tecla == 38) {
+                px-=10
+                objeto.style.top=px+'px'
+            }
+            else if (tecla == 39) {
+                py+=10
+                objeto.style.left=py+'px'
+            }
+            else if (tecla == 40) {
+                px+=10
+                objeto.style.top=px+'px'
+            }
+        })
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id='dv'></div>
+
+<!--Refazendo este exercício para fixar o conteúdo.-->
+    
+</body>
+
+</html>

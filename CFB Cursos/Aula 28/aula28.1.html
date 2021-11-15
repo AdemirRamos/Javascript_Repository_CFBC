@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 28 - Data() - Manipular Data e Hora</title>
+
+    <script>
+
+        var dt = new Date ()
+
+        var nova_data = new Date (1978, 02, 07, 10, 10, 10, 10)
+        /*Ou você adiciona "-1" ou troca o "3" por "2" (para adicionar o mês de março).*/
+
+        //nova_data.setFullYear(dt.getFullYear()+1)
+        //nova_data.setDate(dt.getDate()+2)
+
+        var dia_da_semana = nova_data.getDay()
+        var dia = nova_data.getDate()
+        var mês = nova_data.getMonth()
+        var ano = nova_data.getFullYear()
+
+        var horas = nova_data.getHours()
+        var minutos = nova_data.getMinutes()
+        var segundos = nova_data.getSeconds()
+
+        var meses = new Array ('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro')
+
+        var semanas = new Array ('Domingo', 'Segunda-feria', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado')
+
+        document.write(semanas[dia_da_semana] + ', ' + dia + ' de ' + meses[mês] + ' de ' + ano + ' ')
+
+        document.write(horas + ':' + minutos + ':' + segundos)
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

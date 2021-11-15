@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 69 - Objeto "Location" (Parte 2)</title>
+
+    <style>
+
+        a {
+            color: white;
+        }
+
+    </style>
+
+    <script>
+
+        //location.assign('aula69.1.html')
+        /*"assign()" tem a função de carregar um novo documento.*/
+        /*"assign()" também pode receber um endereço da "web".*/
+
+        function página_2() {
+            location.replace('aula69.1.html')
+            /*"replace()" faz a mesma coisa que o método "assign()", porém remove o URL do histórico.*/
+            /*É possível, também, usar "assign".*/
+        }
+
+        function página2_1() {
+            location.assign('aula69.1.html')
+            /*Mantem a URL salva no histórico.*/
+        }
+
+        function recarregar() {
+            location.reload('aula69.1.html')
+            /*Esse método carrega a "página-destino" (a página especificada dentro das aspas dentro dos parentêses) automaticamente.*/
+        }
+
+    </script>
+
+</head>
+
+<body>
+    
+    <h1>Objeto "Location"</h1>
+    <a href="aula69.1.html">Página 2</a>
+    <button id="forward_button" onclick="página_2()">Página 2</button>
+    <button id="reload_button" onclick="recarregar()">Recarregar</button>
+    <button id="forward_button_2" onclick="página2_1()">Página 2 (Com "Assign")</button>
+
+</body>
+
+</html>

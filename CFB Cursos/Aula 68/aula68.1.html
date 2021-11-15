@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 68 - Objeto "Location" (Parte 1)</title>
+
+    <style>
+
+        body {
+            background-color: #f00;
+            color: #fff;
+        }
+
+        a {
+            color: #fff;
+        }
+
+    </style>
+
+    <script>
+
+        var auxiliar = location.hash
+        //document.write(auxiliar + '<hr>')
+        /*Os parâmetros, da primeira página, foram passados para esta página (e agora podem ser manipulados aqui).*/
+
+        var dados = auxiliar.split('#')
+        /*Os valores da variável "dados" são armazenados em um vetor ("array").*/
+        document.write(dados)
+        document.write('<hr>')
+        document.write(dados[1])
+        document.write('<hr>')
+        document.write(dados[2])
+
+        var valor_1 = dados[1]
+        var valor_2 = dados[2]
+        document.write(`<br> <hr> ${valor_1}, ${valor_2}.`)
+
+        var h_1 = location.host
+        var h_2 = location.hostname
+        /*Essas propriedades só funcionam com o "site" on-line.*/
+        document.write(`<br> <hr> ${h_1} e ${h_2}.`)
+        /*Com o "site" 'online', "h_1" e "h_2" vão mostrar o "host" da página.*/
+
+        var h_3 = location.href
+        /*Essa propriedade serve para se obter a URL.*/
+        document.write(`<br> <hr> ${h_3}`)
+
+        //var h_4 = location.href = 'http://www.youtube.com/cfbcursos'
+        /*Isso é "settar" a URL.*/
+        /*P. S.: Caso o endereço digitado seja válido, você será redirecionado para o endereço digitado.*/
+        //document.write(`<br> <hr> ${h_4}.`)
+
+        var origem = location.origin
+        /*Essa propriedade nos mostrará o protocolo, o "hostname" e o número da "porta".*/
+        document.write(`<br> <hr> ${origem}.`)
+
+        var propriedade = location.pathname
+        /*Essa propriedade nos retornará o "caminho" após o protocolo e "hostname".*/
+        document.write(`<br> <hr> ${propriedade}.`)
+
+        var porta = location.port
+        /*Essa propriedade nos retorna o número da porta - só funciona no caso do "site" estar on-line.*/
+        document.write(`<br> <hr> ${porta}.`)
+
+        var protocolo = location.protocol
+        /*Essa propriedade nos retorna o número do protocolo - só funciona no caso do "site" estar on-line.*/
+        document.write(`<br> <hr> ${protocolo}.`)
+
+        var auxiliar_2 = location.search
+        var dados_2 = auxiliar_2.split('?')
+        split = dados_2[1].split('=')
+        document.write(`<br> <hr> ${dados_2}.`)
+        document.write(`<br> <hr> ${split}.`)
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Página 2 - aula68.1.html</h1>
+    <a href="aula68.html">Voltar</a>
+
+</body>
+
+</html>

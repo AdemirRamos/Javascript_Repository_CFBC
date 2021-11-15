@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 40 - Resolução do Exercício da Aula 39.</title>
+
+    <style>
+
+        #jogador {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: #00f;
+            width: 50px;
+            height: 50px;
+        }
+
+    </style>
+
+    <script>
+
+        var jogador
+        var velocidade
+        var direção_x
+        var direção_y
+        var posição_x
+        var posição_y
+        var animação
+        var estado
+
+        function iniciar() {
+            velocidade = 1
+            direção_x = 1
+            /*Recebendo 1, essa variável vai gerar uma movimentação para a direita.*/
+            /*Caso a movimentação deva ser para a esquerda, basta adicionar um sinal de menos antes do número.*/
+            direção_y = 0
+            posição_x = 0
+            posição_y = 0
+            estado = 1 // 0 = jogador parado; 1 = jogador se movendo.
+            jogador = document.getElementById('jogador')
+            jogador.addEventListener('click', movimentar_parar)
+            document.getElementById('iniciar').addEventListener('click', movimentar_botão)
+            document.getElementById('parar').addEventListener('click', parar_botão)
+            game()
+        }
+
+        function movimentar_parar() {
+            if (estado) { //colocando somente a variável dentro dos parentêses, já se considera, automaticamente, que há um "True" lá.
+                estado = 0
+                jogador.style.backgroundColor = 'red'
+                cancelAnimationFrame(animação)
+            }
+            else {
+                estado = 1
+                jogador.style.backgroundColor = 'blue'
+                animação = requestAnimationFrame(game)
+            }
+        }
+
+        function movimentar_botão() {
+            if (!estado) { //colocando somente a !variável dentro dos parentêses, já se considera, automaticamente, que há um "False" lá.
+                estado = 1
+                jogador.style.backgroundColor = '#00f'
+                animação = requestAnimationFrame(game)
+            }
+        }
+
+        function parar_botão() {
+            if (estado) { //colocando somente a variável dentro dos parentêses, já se considera, automaticamente, que há um "True". lá.
+                estado = 0
+                jogador.style.backgroundColor = '#f00'
+                cancelAnimationFrame(animação)
+            }
+        }
+
+        function game() {
+            posição_x += direção_x * velocidade
+            //posição_y += direção_y * velocidade
+            jogador.style.left=posição_x+'px'
+            //jogador.style.top=posição_y+'px'
+            if (posição_x > 800) {
+                direção_x = -1
+            }
+            else if (posição_x < 0) {
+                direção_x = 1
+            }
+            animação = requestAnimationFrame(game)
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="jogador"></div>
+    <button id="iniciar">Iniciar</button>
+    <button id="parar">Parar</button>
+    
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 16 - Trabalhando Com Matriz</title>
+
+    <script>
+
+        var mochila = new Array ()
+        var item1 = ['corda', 2], item2 = ['faca', 1], item3 = ['cura', 5], item4 = ['prego', 35]
+        //O primeiro elemento ("string") representa o item; o segundo elemento (número) representa a quantidade daquele item.
+
+        mochila.push(item1)
+        mochila.push(item2)
+        mochila.push(item3)
+        mochila.push(item4)
+
+        document.write(mochila[0][0] + ' - ' + mochila[0][1] + '<br>')
+        document.write(mochila[1][0] + ' - ' + mochila[1][1] + '<br>')
+        document.write(mochila[2][0] + ' - ' + mochila[2][1] + '<br>')
+        document.write(mochila[3][0] + ' - ' + mochila[3][1] + '<br>')
+        //O nome dos valores entre chaves é "índice de controle".
+
+        /*Explicação das linhas de "índices de controle":
+
+        Dentro dos primeiros "índices de controle" estão os elementos que foram adicionados à (var) mochila através do método ".push()". Já a segunda sequência de "índices de controle" faz referência ao primeiro item das matrizes (var item1, var item2, var item3, var item4) que, nesse caso, se trata de "strings".
+
+        Já nos segundos pares de "índices de controle", os valores entre as primeiras chaves também representam os itens adicionados à (var) mochila através do método ".push()"; já os segundos "índices de controle" representam o segundo elemento das matrizes (var item1, var item2, var item3, var item4) que, nesse caso, está representado por um valor.*/
+
+    </script>
+
+</head>
+
+<body>
+    
+<!--Em JS (basicamente), uma matriz é um "array" dentro de uma posição de outro "array".-->
+<!--"Array Multidimensional" é um "array" com 2 ou mais índices.-->
+
+</body>
+
+</html>

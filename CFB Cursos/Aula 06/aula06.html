@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 - Confirm</title>
+
+    <script>
+
+        var nome = prompt('Digite o seu nome na caixa abaixo:', 'Digite o seu nome bem aqui.')
+        confirm(`O seu nome é "${nome}".`)
+        var res = window.confirm(`Deseja continuar, ${nome}?`)
+        document.write(res)
+        alert(res)
+
+    </script>
+
+</head>
+
+<body>
+
+<!--"Confirm" apresenta dois botões: "ok"; "cancel". "Ok" retorna um valor "true" (1); "cancel" retorna um valor "false" (0).-->
+<!--"true" e "false" são constantes pré-definidas.-->
+<!--"Confirm" usa o objeto "window.", portanto, esse útlimo tem o seu uso como opcional.-->
+
+</body>
+
+</html>

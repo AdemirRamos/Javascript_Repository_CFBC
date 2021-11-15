@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 64 - Objeto Window (Parte 3) - "scrollBy", "frames", "length", "parent"</title>
+
+    <style>
+
+        body {
+            background-color: #fff;
+        }
+
+        #painel {
+            border: 1px solid #000;
+            border-radius: 10px;
+            padding: 15px;
+            width: 300px;
+            height: 300px;
+            background-color: #ddd;
+        }
+
+    </style>
+
+    <script>
+
+        function mudar_de_cor(cor) {
+            parent.document.body.style.backgroundColor = cor
+            /*"Parent" cria uma conexão com a página-origem ("página pai").*/
+            /*Esse comando atribui aos botões da página principal uma função que possibilita a mudança de cor do corpo da página.*/
+            /*Tanto o Chrome quanto o Opera bloqueiam esse tipo de comando; já o Firefox não.*/
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <button onclick="mudar_de_cor('#f00')">Vermelho</button>
+    <button onclick="mudar_de_cor('#0f0')">Verde</button>
+    <button onclick="mudar_de_cor('#00f')">Azul</button>
+
+</body>
+
+</html>

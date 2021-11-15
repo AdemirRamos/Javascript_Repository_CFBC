@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 34 - addEventListener Parte 2 (Keydown)</title>
+
+    <style>
+
+        #dv1 {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: #f00;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+    </style>
+
+    <script>
+
+        var px = 0
+        /*Variável responsável pelo deslocamento horizontal.*/
+        var py = 0
+        /*Variável responsável pelo deslocamento vertical.*/
+
+        document.addEventListener('keydown', function (event){
+            var objeto = document.getElementById('dv1')
+            var tecla = event.keyCode
+            /*Captura o código da tecla pressionada.*/
+
+            /*As teclas direcionais têm códigos:
+            
+            - Esquerda: 37;
+            - Cima: 38;
+            - Direita: 39;
+            - Baxio: 40.*/
+
+            if (tecla == 37){
+                px-=10
+                objeto.style.left=px+'px'
+            }
+            else if (tecla == 38) {
+                py-=10
+                objeto.style.top=py+'px'
+            }
+            else if (tecla == 39) {
+                px+=10
+                objeto.style.left=px+'px'
+            }
+            else if (tecla == 40) {
+                py+=10
+                objeto.style.top=py+'px' 
+            }
+        })
+
+    </script>
+
+</head>
+
+<body>
+    
+    <div id="dv1"></div>
+
+<!--Em JS, x para a esquerda é negativo; x para a direita é positivo (conversão normal).-->
+<!--Em JS, y para cima é negativo; y para baixo é negativo (conversão normal).-->
+    
+</body>
+
+</html>

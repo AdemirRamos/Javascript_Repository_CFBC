@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 70 - LocalStorage (Web Storage) [Parte 1]</title>
+
+    <script>
+
+        var variável_cor_de_fundo, variável_cor_do_texto, variável_nome
+
+        /*"LocalStorage": define uma área para armazenamento de elementos "chaves" e "valor". Esses armazenamentos não serão excluidos ao se desligar o computador ou fechar o "browser", por exemplo. Esses armazenamentos também não expiram (como os "cookies"). Há métodos para apagar esses armazenamentos.*/
+
+        localStorage.setItem('canal', 'cfbcursos')
+        /*Definindo a chave. | Primeiro temos o nome ("canal") depois o valor ("cfbcursos").*/
+
+        //localStorage.removeItem('canal')
+        /*Removendo a chave. | Basta adicionar o nome da chave para removê-la (não é preciso se adicionar o valor).*/
+
+        //var variável_canal = localStorage.getItem('canal')
+        /*Obtendo o valor da chave. | Basta procurar pela chave para achar o seu valor.*/
+        /*Esta é outra maneira de se chegar ao mesmo resultado:*/
+        var variável_canal = localStorage.canal
+
+        document.write(variável_canal + '<br>' + '<hr>')
+
+        /*É possível verificar se o "browser" suporta "Web Storage":*/
+
+        if (typeof(Storage) != "undefined") {
+            localStorage.setItem('canal', 'cfbcursos')
+
+            var variável_canal = localStorage.canal
+
+            document.write(variável_canal + '<br>' + '<hr>')
+        }
+        else {
+            document.write('O seu navegador não possui suporte ao "Web Storage".')
+        }
+
+        /*Criando um contador de acessos:*/
+
+        if (typeof(Storage) != "undefined") {
+            if (localStorage.visitas) {
+                localStorage.visitas = Number(localStorage.visitas) + 1 /*Contador incrementador de número de visitas.*/
+            }
+            else {
+                localStorage.visitas=1 /*Essa é outra maneira de se atribuir um nome e um valor a uma chave.*/
+            }
+            document.write(`Total de visitas: ${localStorage.visitas}. <br>`)
+        }
+        else {
+            document.write('O seu navegador não possui suporte ao "Web Storage".')
+        }
+
+        /*Criando um painel (coletando preferências de usuário e as aplicando):*/
+
+        function gravar() {
+            variável_nome = document.getElementById('nome_do_formulário').value
+            localStorage.cor_do_formulário = variável_cor_de_fundo
+            localStorage.variável_cor_do_texto = cor_do_texto
+            localStorage.nome = variável_nome 
+        } 
+
+        function definir_cor(operação, cor) {
+            if (operação == 1) {
+                document.body.style.backgroundColor = cor
+                variável_cor_de_fundo = cor
+            }
+            else {
+                document.body.style.color = cor
+                variável_cor_do_texto = cor
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <p>localStorage - Curso de Javascript.</p>
+
+    <form name="dados">
+
+        <label>Nome:</label><br>
+        <input type="text" name="nome_no_formulário" id="nome_no_formulário" size="20"><br><br>
+        <label>Cor de Fundo:</label><br><br>
+        <input type="radio" name="cor_do_formulário" onclick="definir_cor(1, '#000')">Preto<br>
+        <input type="radio" name="cor_do_formulário" onclick="definir_cor(1, '#fff')">Branco<br>
+        <input type="radio" name="cor_do_formulário" onclick="definir_cor(1, '#f00')">Vermelho<br>
+        <input type="radio" name="cor_do_formulário" onclick="definir_cor(1, '#0f0')">Verde<br>
+        <input type="radio" name="cor_do_formulário" onclick="definir_cor(1, '#00f')">Azul<br><br>
+        <label>Cor do Texto:</label><br><br>
+        <input type="radio" name="cor_do_texto" onclick="definir_cor(2, '#000')">Preto<br>
+        <input type="radio" name="cor_do_texto" onclick="definir_cor(2, '#fff')">Branco<br><br>
+        <input type="button" value="Gravar" onclick="gravar()">
+
+    </form>
+
+</body>
+
+</html>

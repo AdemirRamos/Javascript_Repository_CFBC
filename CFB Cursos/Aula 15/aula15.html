@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 15 - Array / Vetor (Parte 3) - Mais Métodos da Classe Array</title>
+
+    <script>
+
+        var mochila = [], pos
+        var núm = [5, 8, 4, 9, 7, 6, 3, 0, 2, 1]
+        var números
+
+        núm.sort()
+        //".sort()" ordena os elementos numéricos na ordem crescente.
+
+        núm.reverse()
+        //Já o ".reverse" ordena os elementos numéricos na ordem decrescente [a partir do ".sort()"].
+        //Caso o ".sort()" seja removido, os números serão invertidos a partir da sua precedência original.
+
+        números = núm.join()
+        //O método ".join()" serve para concatenar todos os elementos de um "array" (os separando com vírgulas).
+        document.write(números + '<br>')
+
+        document.write(núm[0] + '<br>')
+        document.write(núm[1] + '<br>')
+        document.write(núm[2] + '<br>')
+        document.write(núm[3] + '<br>')
+        document.write(núm[4] + '<br>')
+        document.write(núm[5] + '<br>')
+        document.write(núm[6] + '<br>')
+        document.write(núm[7] + '<br>')
+        document.write(núm[8] + '<br>')
+        document.write(núm[9] + '<br>')
+
+        mochila.push('faca')
+        mochila.push('corda')
+        mochila.push('pederneira')
+        mochila.push('chaves')
+        mochila.push('lanterna')
+        mochila.push('pedra')
+
+        pos = (mochila.indexOf("lanterna"))
+
+        if (pos == -1) {
+            document.write('O item referenciado não está na mochila.')
+        }
+        //Ao invés de -1, o "if" também poderia ter, como argumento, "pos < 0".
+
+        else {
+            document.write(`O item referenciado (${mochila[4]}) está na mochila.<br>Posição: ` + pos + '.')
+        }
+
+        var mochila = [], mochila1 = [], mochila2 = [], pos
+
+        mochila1.push('faca')
+        mochila1.push('corda')
+        mochila1.push('pederneira')
+        mochila1.push('chaves')
+        mochila1.push('lanterna')
+        mochila1.push('pedra')
+
+        mochila2.push('arame')
+        mochila2.push('luvas')
+        mochila2.push('joeleiras')
+        mochila2.push('meias')
+        mochila2.push('moeda')
+        mochila2.push('canivete')
+        mochila2.unshift('peça')
+
+        mochila = mochila1.concat(mochila2)
+        //O método ".concat()" serve para concatenar dois "arrays".
+
+        document.write(mochila[0] + '<br>')
+        document.write(mochila[1] + '<br>')
+        document.write(mochila[2] + '<br>')
+        document.write(mochila[3] + '<br>')
+        document.write(mochila[4] + '<br>')
+        document.write(mochila[5] + '<br>')
+        document.write(mochila[6] + '<br>')
+        document.write(mochila[7] + '<br>')
+        document.write(mochila[8] + '<br>')
+        document.write(mochila[9] + '<br>')
+        document.write(mochila[10] + '<br>')
+        document.write(mochila[11] + '<br>')
+
+        document.write(`O total de elementos na "mochila1" é de: ${mochila1.length}.` + '<br>')
+        document.write(`O total de elementos na "mochila2" é de: ${mochila2.length}.` + '<br>')
+        document.write(`Já o total de elementos nas duas mochilhas (valor correspondente à "mochila") é de: ${mochila.length}.`)
+
+        //O método ".length" nos diz o total de elementos dentro de um "array".
+
+    </script>
+
+</head>
+
+<body>
+    
+<!--Caso o item pesquisado através do ".indexOf" não esteja no "array", será retornado o valor "-1".-->
+
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 73 - "CreateElement" / "appendChild", Criando Elementos HTML com Javascript</title>
+
+    <style>
+
+    </style>
+
+    <script>
+
+        var p = document.createElement('p')
+        p.textContent = 'CFB Cursos.'
+        /*O comando acima cria um elemento chamado "p" e, então, adiciona, a esse elemento, um conteúdo de texto.*/
+        
+        //document.body.appendChild('p')
+        /*O comando acima adiciona o elemento, nesse caso, ao "body".*/
+        
+        /*Os comando acima, como estão, vão gerar um erro (eles não serão renderizados assim que a página carregar). Eis a solução:*/
+        //window.addEventListener('load', iniciar)
+
+        /*Outra maneira de se realizar o mesmo procedimento de adicionar um texto:*/
+
+        var t = document.createTextNode(' Curso de Javascript.')
+
+        function iniciar() {
+            document.body.appendChild(p)
+            p.appendChild(t)
+            document.getElementById('botão_adição').addEventListener('click', function() {
+                var lista = document.getElementById('elementos')
+                var texto = document.getElementById('formulário_novo') //O elemento "value" foi removido daqui.
+                var li = document.createElement('li')
+                li.textContent = texto.value
+                lista.appendChild(li)
+                texto.value = ''
+                /*Esvazia o "prompt" na tela.*/
+                texto.focus()
+                /*Retorna ao "prompt", após adicionar um texto, para que se possa, se assim for desejado, se adicionar um novo texto.*/
+            })
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <!--Funcionalidades parecidas com as "tuplas" e "listas" do Python.-->
+
+    <input type="text" id="formulário_novo"><button id="botão_adição">Adicionar</button><br><br>
+
+    <ul id="elementos"></ul>
+
+</body>
+
+</html>

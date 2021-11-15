@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 50 - Jogo Da Forca (Resolução do Desafio da Aula 49)</title>
+
+    <style>
+
+        .letra {
+            width: 30px;
+            font-size: 30px;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 5px;
+            display: none;
+        }
+
+        .letra_jogador {
+            width: 30px;
+            font-size: 30px;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 5px;
+        }
+
+        .dvdisplay {
+            display: block;
+        }
+
+        #dvforca {
+            position: absolute;
+            left: 150px;
+        }
+
+        #cabeça {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        #corpo {
+            position: absolute;
+            top: 200px;
+            left: 105px;
+        }
+
+        #braço_esquerdo {
+            position: absolute;
+            top: 220px;
+            left: -17px;
+        }
+
+        #braço_direito {
+            position: absolute;
+            top: 220px;
+            left: 105px;
+        }
+
+        #perna_esquerda {
+            position: absolute;
+            top: 450px;
+            left: -66px;
+        }
+
+        #perna_direita {
+            position: absolute;
+            top: 450px;
+            left: 105px;
+        }
+
+    </style>
+
+    <script>
+
+        var biblioteca = ['javascript', 'curso', 'computador', 'transporte', 'livraria', 'tecnologia', 'controle', 'churrasco', 'brasil', 'monitor', 'brinquedo', 'youtube', 'portaria', 'escola', 'carnaval', 'teclado', 'guitarra', 'bateria', 'chinelo', 'helicoptero', 'impressora', 'xícara', 'telefone', 'internet', 'câmera', 'arduino']
+
+        var quantidade = biblioteca.length - 1
+        var posição = Math.round(Math.random() * quantidade)
+        var palavra = biblioteca[posição]
+        var tamanho = palavra.length
+        var caixax_de_letras = []
+        var acertos
+        var erros_máximo = 7
+        var erros = 0
+        var desenhos = []
+        var acertou = false
+        var jogando = false
+
+        function definidor_de_letras(l) {
+            var objeto
+            for (var i = 0; i < 20; i++) {
+                objeto = document.getElementById('letra' + 1).value = ''
+                objeto = document.getElementById('letra' + 1).style.display = 'none'
+            }
+
+            for (var i = 0; i < l; i++) {
+                objeto = document.getElementById('letra' + 1).style.display = 'inline-block'
+            }
+        }
+
+        function jogar() {
+            jogador = document.getElementById('letra_jogador')
+            jogador.focus()
+            
+            if (jogador.value == '') {
+                alert('Digite uma letra.')
+            }
+
+            else {
+                if (jogando) {
+                    var jogador
+                    var letra_tempo
+                    var letra
+                }
+            }
+        }
+
+        function iniciar() {
+            jogando = true
+            jogador = document.getElementById('letraJ')
+            jogador.value=''
+            jogador.focus()
+            acertos = 0
+            erros = 0
+            acertou = false
+            document.getElementById('dvletra_digitadas').innerHTML = 'Letras Digitadas:'
+            posição = Math.round(Math.random() * quantidade)
+            palavra = biblioteca[posição]
+            tamanho = palavra.length
+            definidor_de_letras(tamanho)
+            document.getElementById('dvmensagem').innerHTML = ''
+            desenhos[1] = document.getElementById('cabeça')
+            desenhos[2] = document.getElementById('corpo')
+            desenhos[3] = document.getElementById('braço_esquerdo')
+            desenhos[4] = document.getElementById('braço_direito')
+            desenhos[5] = document.getElementById('perna_esquerda')
+            desenhos[6] = document.getElementById('perna_direita')
+            document.getElementById('cabeça').src = ''
+            for (var i = 1; i < 7; i++) {
+                desenhos[i].style.display = 'none'
+            }
+        }
+
+        function dica() {
+            alert(palavra)
+            jogador.focus()
+        }
+
+        window.addEventListener('onload', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="menu" class="dvdisplay">
+
+        <button onclick="iniciar()">Nova Palavra</button>
+
+    </div>
+
+    <div id="dvpalavra" class="dvdisplay">
+
+        <input type="text" id="letra_0" class="letra" maxlength='1'>
+        <input type="text" id="letra_1" class="letra" maxlength='1'>
+        <input type="text" id="letra_2" class="letra" maxlength='1'>
+        <input type="text" id="letra_3" class="letra" maxlength='1'>
+        <input type="text" id="letra_4" class="letra" maxlength='1'>
+        <input type="text" id="letra_5" class="letra" maxlength='1'>
+        <input type="text" id="letra_6" class="letra" maxlength='1'>
+        <input type="text" id="letra_7" class="letra" maxlength='1'>
+        <input type="text" id="letra_8" class="letra" maxlength='1'>
+        <input type="text" id="letra_9" class="letra" maxlength='1'>
+        <input type="text" id="letra_10" class="letra" maxlength='1'>
+        <input type="text" id="letra_11" class="letra" maxlength='1'>
+        <input type="text" id="letra_12" class="letra" maxlength='1'>
+        <input type="text" id="letra_13" class="letra" maxlength='1'>
+        <input type="text" id="letra_14" class="letra" maxlength='1'>
+        <input type="text" id="letra_15" class="letra" maxlength='1'>
+        <input type="text" id="letra_16" class="letra" maxlength='1'>
+        <input type="text" id="letra_17" class="letra" maxlength='1'>
+        <input type="text" id="letra_18" class="letra" maxlength='1'>
+        <input type="text" id="letra_19" class="letra" maxlength='1'>
+
+    </div>
+
+    <div id="dvjogador" class="dvdisplay">
+
+        <div id="controles_jogador">
+
+            <input type="text" id="letra_jogador" class="letra_jogador" maxlength="1">
+            <button onclick="jogar()">Jogar</button>
+            <button onclick="dica()">Dica</button>
+            <div id="dvmensagem"></div><br>
+            <div id="dvletras_digitadas">Letras Digitadas</div>
+
+        </div>
+
+        <div id="dvforca">
+
+            <img id="cabeça" src=""> 
+            <img id="corpo" src="">
+            <img id="braço_esquerdo" src="">
+            <img id="braço_direito" src="">
+            <img id="perna_esquerda" src="">
+            <img id="perna_direita" src="">
+
+        </div>
+
+    </div>
+    
+</body>
+
+</html>

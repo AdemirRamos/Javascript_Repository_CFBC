@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 37 - Base Para Movimentação de Personagens em Games</title>
+
+    <style>
+
+        #dv1 {
+            height: 100px;
+            width: 100px;
+            border: 1px solid #000;
+            background-color: #f00;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+    </style>
+
+    <script>
+
+        var dx
+        var dy
+        var px
+        var py
+        var vel
+        var objeto
+        var tempo
+        
+        function iniciar() {
+            dx = 0
+            dy = 0
+            px = 0
+            py = 0
+            vel = 10
+            objeto = document.getElementById('dv1')
+            document.addEventListener('keydown', tecla_down)
+            document.addEventListener('keyup', tecla_up)
+            tempo = setInterval(enterFrame, 20)
+            /*"Keydown": quando a tecla é pressionada; "keyup": quando a tecla é despressionada.*/
+        }
+
+        function tecla_down() {
+            var tecla = event.keyCode
+
+            if (tecla == 37) {
+                dx = -1 
+            }
+            else if (tecla == 38) {
+                dy = -1
+            }
+            else if (tecla == 39) {
+                dx = 1
+            }
+            else if (tecla == 40) {
+                dy = 1
+            }
+        }
+
+        function tecla_up() {
+            var tecla = event.keyCode
+            
+            if (tecla == 37) {
+                dx = 0
+            }
+            else if (tecla == 38) {
+                dy = 0
+            }
+            else if (tecla == 39) {
+                dx = 0
+            }
+            else if (tecla == 40) {
+                dy = 0
+            }
+        }
+
+        function enterFrame() {
+            px+= dx * vel
+            py+= dy * vel
+            objeto.style.left=px+'px'
+            objeto.style.top=py+'px'
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="dv1"></div>
+    
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 65 - Objeto Navigator</title>
+
+    <style>
+
+        #painel {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+    </style>
+
+    <script>
+
+        var painel
+
+        function localizar(pos) {
+            var c = pos.coords
+            painel.innerHTML += `Latitude: ${c.latitude}; Longitude: ${c.longitude}.`
+            /*O navegador pode pedir permissão para exibir a sua geolocalização.*/
+            /*O código inteiro ficará na mesma linha com o seguinte comando:*/
+            painel.innerHTML += `Localização: Latitude: ${c.latitude}; Longitude: ${c.longitude}.` + '<hr>'
+        }
+
+        function verificador() {
+            painel = document.getElementById('painel')
+            painel.innerHTML = `Nome do "browser": ${navigator.appName}.` + '<hr>'
+            /*Os "browsers" modernos retornam "Netscape".*/
+            painel.innerHTML += `Versão do "browser": ${navigator.appVersion}.` + '<hr>'
+            /*O "+=" após "innerHTML" faz com que ambas as mensagens sejam escritas na tela.*/
+            /*"+=": faz com que a variável receba o seu próprio valor mais um acréscimo.*/
+            painel.innerHTML += `"Cookies" do "browser": ${navigator.cookieEnabled}.` + '<hr>'
+            /*"true": 'cookies' habilitados; "false": 'cookies' não habilitados.*/
+            painel.innerHTML += `Geolocalização do "browser": ${navigator.geolocation}.` + '<hr>'
+            /*Retorna "[object Geolacation]" caso a geolocalização esteja ativada.*/
+            /*Para se obter a geolocalização, é necessário fazer o seguinte:*/
+            painel.innerHTML += `Geolocalização do "browser": ${navigator.geolocation.getCurrentPosition(localizar)}.` + '<hr>'
+            /*Mostra a geolocalização atual.*/
+            painel.innerHTML += `Idioma do "browser": ${navigator.language}.` + '<hr>'
+            /*Mostra o idioma no qual o "browser" está configurado.*/
+            painel.innerHTML += `"Browser" 'online': ${navigator.onLine}.` + '<hr>'
+            /*Indica se o "browser" está "online" ou não. "true": está "online"; "false": está "offline".*/
+            painel.innerHTML += `Sistema Operacional do "browser": ${navigator.platform}.` + '<hr>'
+            /*Indica o sistema operacional no qual o "browser" está rodando.*/
+            painel.innerHTML += `"Engine" do "browser": ${navigator.product}.` + '<hr>'
+            /*Indica a "engine" do "browser".*/
+            painel.innerHTML += `Agente do "browser": ${navigator.userAgent}.` + '<hr>'
+            /*Indica o agente foi enviado, pelo "browser", para o servidor.*/
+        }
+
+        window.addEventListener('load', verificador)
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="painel"></div>
+    
+</body>
+
+</html>

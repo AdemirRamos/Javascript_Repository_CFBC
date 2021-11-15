@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 19 - Comando de Loop While</title>
+
+    <script>
+
+        var num
+
+        num = 0
+        while (num < 10) {
+            document.write(num + '<br>')
+            num++
+        }
+
+        num = 10
+        while (num--) {
+            document.write(num + '<br>')
+            document.write('Ademir')
+        }
+        /*Contagem regressiva. / Forma simplificada do "loop while".*/
+
+        var num, cont
+
+        num = 10
+        cont = 0
+
+        while (num--) {
+            document.write(cont + '<br>')
+            cont++
+        }
+        /*Essa forma é usada caso seja necessário se fazer uma contagem das repetições/interações.*/
+
+        num = true
+        cont = 0
+
+        while (num) {
+            document.write('Ademir')
+            cont++
+            if (cont > 9){
+                num = false
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+<!--<hr>: linha separadora.-->
+<!--Normalmente, com vetores, o "for" é mais utilizado.-->
+<!--"While" é mais comum caso não se saiba o número de execuções/interações da rotina.-->
+
+</body>
+
+</html>

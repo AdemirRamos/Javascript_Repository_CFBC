@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 001</title>
+
+    <style>
+
+        #dv1 {
+            height: 100px;
+            width: 100px;
+            border: 1px solid #000;
+            background-color: #fff;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+    </style>
+
+    <script>
+
+        function mudança_de_cor1(objeto, dv1) {
+            var objeto = document.getElementById('dv1')
+            objeto.style.backgroundColor = 'red'
+        }
+
+        function mudança_de_cor2(objeto, dv1) {
+            var objeto = document.getElementById('dv1')
+            objeto.style.backgroundColor = '#fff'
+        }
+
+        function addEventos() {
+            var objeto = document.getElementById('dv1')
+            objeto.style.backgroundColor = 'red'
+            objeto.addEventListener('mouseover', mudança_de_cor1)
+            objeto.addEventListener('mouseout', mudança_de_cor2)
+        }
+
+        function mensagem() {
+            alert('Olá!')
+        }
+
+        function addEventos1() {
+            document.getElementById('dv1').addEventListener('click', mensagem)
+        }
+
+        window.addEventListener('load', addEventos)
+        window.addEventListener('load', addEventos1)
+
+        var px = 0
+        var py = 0
+
+        document.addEventListener('keydown', function (event) {
+            var objeto1 = document.getElementById('dv1')
+            var tecla = event.keyCode
+
+            if (tecla == 37) {
+                px-=10
+                objeto1.style.left=px+'px'
+            }
+            else if (tecla == 38) {
+                py-=10
+                objeto1.style.top=py+'px'
+            }
+            else if (tecla == 39) {
+                px+=10
+                objeto1.style.left=px+'px'
+            }
+            else if (tecla == 40) {
+                py+=10
+                objeto1.style.top=py+'px'
+            }
+        })
+
+    </script>
+
+</head>
+
+<body>
+    
+    <div id='dv1'></div>
+    
+</body>
+
+</html>

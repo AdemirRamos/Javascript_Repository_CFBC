@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10 - If Aninhado</title>
+
+</head>
+
+<body>
+
+    <script>
+
+        var nome = prompt('Digite o seu nome: ')
+        var nota = prompt('Digite a sua nota: ')
+
+        if (nota > 5) {
+            document.write(`${nome}, a sua nota foi ${nota} e, portanto, você foi aprovado!`)
+        } else if (nota == 5) {
+            document.write(`${nome}, a sua nota foi ${nota} e, portanto, você está de recuperação.`)
+        } else if (nota < 5) {
+            document.write(`${nome}, a sua nota foi ${nota} e, portanto, você foi reprovado.`)
+        } else {
+            document.write('Erro! Você digitou alguma coisa errada.')
+        }
+
+        <p>Modo como o professor Bruno fez:</p>
+
+        var nota = 100
+        var res
+
+        if (nota >= 60) {
+            res = 'Aprovado'
+            if (nota > 94) {
+                res += ' com louvor.'
+                if (nota == 100) {
+                    res += ' com excelência.'
+                }
+                
+            } else {
+                res += ' com nota normal.'
+            }
+
+        } else if (nota >= 40 && nota <= 60) {
+            res = 'Em recuperação.'
+
+        } else {
+            res = 'Reprovado'
+            if (nota >= 20) {
+                res += ' por nota baixa.'
+            } else {
+                res += ' com louvor.'
+            }
+            }
+
+        document.write(res)
+
+    </script>
+    
+    <!--O teste lógico do "else if" de recuperação também pode ser escrito assim: else if (nota >= 40) {}-->
+    <!--O teste lógico do primeiro "if" também pode ser escrito assim: if (nota > 94) {}.-->
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 14 - Array / Vetor (Parte 2) - Métodos da Classe Array</title>
+
+    <script>
+
+        var mochila = []
+
+        mochila.push('faca')
+        mochila.push('corda')
+        mochila.push('pederneira')
+        mochila.push('chaves')
+        mochila.push('lanterna')
+        mochila.unshift('pedra')
+        mochila.pop()
+        mochila.shift()
+        mochila.splice(2, 2)
+
+        document.write(mochila[0] + '<br>')
+        document.write(mochila[1] + '<br>')
+        document.write(mochila[2] + '<br>')
+        document.write(mochila[3] + '<br>')
+        document.write(mochila[4] + '<br>')
+        document.write(mochila[5] + '<br>')
+
+    </script>
+
+</head>
+
+<body>
+
+<!--".unshift()" posiciona o elemento relacionada a esse metódo no começo do "array".-->
+<!--".pop()" remove o último elemento do "array".-->
+<!--".shift()" remove o primeiro elemento do "array".-->
+<!--".splice()" remove elementos do "array".-->
+<!--".splice()":-->
+<!--O primeiro número representa o índice do elemento, a partir do qual, será feita a remoção de elementos..-->
+<!--Já o segundo número representa o número de elementos a serem removidos a partir do índice definido..-->
+<!--Caso eu precise remover elementos não adjacentes, basta usar outro ".splice()".-->
+<!--Quando um elemento é removido, os índices se reorganizam a partir da remoção do referido elemento.-->
+
+</body>
+
+</html>

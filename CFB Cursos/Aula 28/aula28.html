@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 28 - Data() - Manipular Data e Hora</title>
+
+    <script>
+
+        var dt = new Date ()
+        document.write(dt)
+        /*Escreve a data (padrão em inglês).*/
+
+        var dia = dt.getDate()
+        document.write(dia)
+        /*Escreve o dia.*/
+
+        var mês = dt.getMonth()
+        document.write(mês)
+        /*Escreve o mês. P. S.: A contagem começa do zero.*/
+
+        var ano = dt.getFullYear()
+        document.write(ano)
+        /*Escreve o ano.*/
+
+        var dia_da_semana = dt.getDay()
+        /*Este ponto, logo após a variável ("dt", neste caso), serve para aplicar métodos a essa variável.*/
+        /*Escreve o dia da semana*/
+        document.write(dia_da_semana)
+        /*A contagem também começa do zero e domingo é o primeiro dia da semana.*/
+
+        document.write(dia_da_semana + ',' + dia + 'de' + mês + 'de' + ano)
+        /*Escreve a data por extenso. - Maneira difícil.*/
+
+        var meses = new Array ('Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro')
+
+        var semanas = new Array ('Domingo', 'Segunda-feria', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado')
+
+        document.write(semanas[dia_da_semana] + ',' + dia + 'de' + meses[mês] + 'de' + ano)
+        /*Escreve a data por extenso. - Maneira mais fácil.*/
+
+        var horas = dt.getHours()
+        var minutos = dt.getMinutes()
+        var segundos = dt.getSeconds()
+
+        /*Em sequência: serão escritos as horas, os minutos e os segundos.*/
+
+        document.write(horas + ':' + minutos + ':' + segundos)
+
+        /*Para se somar dias, você pode alterar o dia da semana e número correspondente ao mesmo fazendo incrementos ou decrementos.*/
+        /*Mas há um modo mais fácil:*/
+
+        var tempo = 2
+
+        /*Basta acrescentar essa variável aos dias que eu quero alterar (seja incrementando ou decrementando).*/
+        /*P. S.: Para decrementar, eu vou precisar de uma nova variável contendo o decremento.*/
+
+        /*Ainda mais uma solução (melhor do que as duas anteriores):*/
+
+        var nova_data = new Date ()
+        /*Existem 7 parâmetros para este método:
+        
+        1 - Anos;
+        2 - Meses;
+        3 - Dias;
+        4 - Horas;
+        5 - Minutos;
+        6 - Segundos;
+        7 - Milesegundos.
+        
+        Ordem: Ano, Mês, Dia, Hora, Minuto, Segundo, Milesegundo.
+        
+        P. S.: Lembrando que a contagem sempre vai começar do zero.*/
+
+        nova_data.setDate(dt.getDate()+2)
+        /*Após estas modificações, basta substituir o "dt" por "nova_data" e as alterações de data estarão feitas.*/
+
+        nova_data.setFullYear(dt.getFullYear()-1)
+        /*Mesma modificação, porém envolvendo os anos.*/
+        /*O método "set" também pode ser aplicado, com a mesma lógica, para se alterar o mês, dia, et cetera.*/
+
+        /*document.write(Date())*/
+        /*Escreve a data na página.*/
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>

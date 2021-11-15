@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 22 - Tratamento de Erros / Try, Catch, Finally</title>
+
+    <script>
+
+        try {
+            document.writ('CFB Cursos')
+        } catch (e) {
+            document.write('Erro!')
+            /*Posso colocar a mensagem de erro aqui, também, porém, ela ficará visível ao usuário.*/
+            /*Para tanto, eu devo escrever o seguinte código: "document.write('Erro!' + e.message)"*/
+            /*A "string" é opcional. Pode-se usar comunicar direto o erro.*/
+            console.log('Mensagem de erro: ' + e.message)
+            /*Aqui a mensagem não ficará exposta ao usuário. Ela permanecerá no "console".*/
+        }
+
+        var num
+
+        try {
+            num = 10 / 0
+            document.write('Erro: ' + num)
+        } catch (e) {
+            
+        }
+
+        try {
+            num = prompt('Digite algum valor.')
+            if (num > 10){
+            throw new Error ("Valor inválido. O valor deve ser menor ou igual a 10.<br>")
+            /*"Throw" gera o erro manualmente.*/
+            }
+            document.write('Valor: ' + num + '.')
+        } catch (e) {
+            document.write('Erro: ' + e.message)
+            /*"Catch" intercepta o erro.*/
+        } finally {
+            document.write('<br>Fim do tratamento.')
+        }
+
+        try {
+            num = prompt('Digite algum valor.')
+            if (num > 10){
+            throw new Error ("Valor inválido. O valor máximo é 10.<br>")
+            /*"Throw" gera o erro manualmente.*/
+            }
+        } catch (e) {
+            console.log('Erro: ' + e.message)
+            num = 10
+            /*"Catch" intercepta o erro.*/
+        } finally {
+            document.write('Valor: ' + num + '.')
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 41 - Recursividade</title>
+
+    <style>
+
+        #quadrado {
+            height: 100px;
+            width: 100px;
+            background-color: #f00;
+            border: 1px solid #000
+        }
+
+    </style>
+
+    <script>
+
+        function contador(mínimo, máximo) {
+            /*Dentro dos parentêses de uma função, vão as variáveis.*/
+            document.write(mínimo + '<br>')
+            if (mínimo < máximo) {
+                contador(++mínimo, máximo)
+                /*O incremento vai antes pois, se não, o valor de mínimo só seria alterado ao término da rotina (pós-incremento).*/
+                /*++ = 1*/
+            }
+        }
+
+        contador(0, 10)
+        /*Os valores dentro do contador serão transferidos para a função; após isso, a função será iniciada.*/
+
+        function fatorial(número) {
+            if (número == 1) {
+                return 1
+            }
+            return número * fatorial(número - 1)
+            
+        }
+
+        document.write(fatorial(5))
+
+    </script>
+
+</head>
+
+<body>
+
+    <!--Recursividade é a ocorrência de uma função que chama a si própria.-->
+    <!--A recursividade pode ser usada quando a ideia é substituir rotina de "loop": "do while", "while", "for", et cetera.-->
+    <div id="quadrado"></div>
+
+    <script>
+
+        var objeto = document.getElementById('quadrado')
+        var ângulo = 0
+        var animação
+
+        function girar() {
+            objeto.style.transform = 'rotate('+ângulo+'deg)'
+            /*O método "rotate"()* faz com que algo gire./
+            /*deg = degree = grau.*/
+            ângulo++
+            /*Incremento que faz com que o ângulo gire.*/
+            if (ângulo > 360) {
+                ângulo = 0
+            }
+            
+            animação = requestAnimationFrame(girar)
+        }
+
+        girar()
+        /*É preciso chamar a função [girar()] para que a rotina comece.*/
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 33 - addEventListener (Eventos)</title>
+
+    <style>
+
+    #dv1 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid #000;
+        background-color: #f00;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+    }
+
+    </style>
+
+    <script>
+        
+        function mensagem() {
+            alert('CFB Cursos')
+        }
+
+        function addEventos() {
+            document.getElementById('dv1').addEventListener('click', mensagem)
+            /*Os elementos a serem interceptados, não vão receber o "on".*/
+        }
+
+        window.addEventListener('load', addEventos)
+        /*Essa é uma maneira (visualmente) mais organizada de se fazer o mesmo processo.*/
+
+        function mudança_de_cor_1(objeto, dv1) {
+            var objeto = document.getElementById('dv1')
+            objeto.style.backgroundColor = '#fff'
+        }
+
+        function mudança_de_cor_2(objeto, dv1) {
+            var objeto = document.getElementById('dv1')
+            objeto.style.backgroundColor = '#f00'
+        }
+
+        window.addEventListener('load', addEventos)
+
+    </script>
+
+</head>
+
+<body onload="addEventos()">
+
+    <div id="dv1" onclick="mensagem()"></div>
+    
+</body>
+
+</html>
