@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 76 -  replaceChild, Substituindo Elementos HTML Pelo Javascript</title>
+
+    <style>
+
+    </style>
+
+    <script>
+
+        function iniciar() {
+            var novo_h1 = document.createElement('h1')
+            /*Também é possível fazer essa substituição por um elemento que já exista na página.*/
+            
+            //var texto_h1 = document.createTextNode('Olá, mundo!')
+            /*O texto pode ser criado aqui mesmo, porém, se posto abaixo, ele receberá o texto do próprio elemento que está mudando.*/
+
+            var lista_cursos = document.getElementById('cfbcursos')
+            
+            var novo = document.getElementById('novo')
+            
+            var antigo = lista_cursos.childNodes[5]
+            /*O número entre chaves é estimado levando em consideração a abertura e o fechamento das "tags p".*/
+            var texto_h1 = document.createTextNode(antigo.innerHTML)
+            novo_h1.appendChild(texto_h1)
+
+            lista_cursos.replaceChild(novo_h1, antigo)
+            /*Basta trocar "novo_h1" por "novo" para colocar um "h1" no lugar de "p[4]".*/
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+    
+    <h1 id="novo">Novo Elemento</h1>
+
+    <div id="cfbcursos">
+
+        <p>Curso de Javascript;</p>
+        <p>Curso de HTML5;</p>
+        <p>Curso de CSS3;</p>
+        <p>Curso de PHP / My SQL;</p>
+        <p>Curso de C++;</p>
+        <p>Curso de Photoshop;</p>
+        <p>Curso de Flash;</p>
+        <p>Curso de Unity / C#.</p>
+
+    </div>
+
+    <!--"replaceChild" tem a capacidade de substituir um determinado elemento HTML da nossa página, através do JS, por outro elemento.-->
+
+</body>
+
+</html>
