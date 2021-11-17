@@ -6,10 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 77 - "parentNode", "remove", "removeChild"</title>
 
+    <style>
+
+    </style>
+
+    <script>
+
+        function iniciar() {
+            var elemento = document.getElementById('p5')
+            alert(elemento.parentNode)
+            /*O comando acima nos diz o "pai" do elemento selecionado.*/
+            alert(elemento.parentNode.nodeName)
+            /*Além do "pai" do elemento selecionado, o comando acima também nos diz o nome do "pai".*/
+
+            /*Para remover um elemtno, basta usar este comando:*/
+            elemento.remove()
+            /*O "Curso de C++;" será removido.*/
+
+            /*Tudo pode ser resumido em uma linha:*/
+            document.getElementById('p8').remove()
+            /*O "Curso de Unity / C#" será removido.*/
+
+            /*Remoção feita com "childNodes":*/
+            var elemento = document.getElementById('cfbcursos').childNodes
+            document.getElementById('cfbcursos').removeChild(elemento[1])
+            /*Aqui, mais uma vez, o número entre chaves é estimado com base nas aberturas e fechamentos das "tags p".*/
+            //document.getElementById('cfbcursos').remove() -> esse comando exclui a "div" (e todo o seu conteúdo).
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
 </head>
 
 <body>
-    
+
+    <div id="cfbcursos">
+
+        <p id="p1">Curso de Javascript;</p>
+        <p id="p2">Curso de HTML5;</p>
+        <p id="p3">Curso de CSS3;</p>
+        <p id="p4">Curso de PHP / My SQL;</p>
+        <p id="p5">Curso de C++;</p>
+        <p id="p6">Curso de Photoshop;</p>
+        <p id="p7">Curso de Flash;</p>
+        <p id="p8">Curso de Unity / C#.</p>
+
+    </div>
+
 </body>
 
 </html>
