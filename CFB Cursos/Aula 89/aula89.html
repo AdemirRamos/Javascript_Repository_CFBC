@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 89 - Verificando Se a Página Está Em Foco ("hasFocus")</title>
+
+    <style>
+
+        #painel {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+        }
+
+    </style>
+
+    <script>
+
+        setInterval(foco, 0)
+
+        function foco() {
+            var resultado = document.getElementById('não')
+            var painel = document.getElementById('painel')
+            if (document.hasFocus()) {
+                resultado.innerHTML = ''
+                painel.style.display = 'none'
+            }
+            else {
+                resultado.innerHTML = '<strong>Não</strong>'
+                painel.style.display = 'block'
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    
+    <div id="painel"></div>
+    <div id="mensagem">A Página <span id="não"></span> Está Em Foco!</div>
+    <img src="Imagens/vscode_logo.png" alt="Logo do Visual Studio Code.">
+
+    <!--Quando a página ou algum elemento da mesma estiver em foco, teremos como retorno "true"; quando não for o caso, "false".-->
+
+</body>
+
+</html>
