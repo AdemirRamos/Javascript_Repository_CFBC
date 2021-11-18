@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 88 - Capturando o Elemento Ativo Na Página ("activeElement")</title>
+
+    <script>
+
+        var div_caixa, frames
+
+        function loop() {
+            div_caixa.innerHTML = document.activeElement.tagName
+            /*No comando acima, poderíamos solicitar o "id" do elemento, o "value", e assim por diante.*/
+            /*Se o "tagName" for removido, como retorno teremos o elemento ativo.*/
+            frames = requestAnimationFrame(loop)
+        }
+
+        function iniciar() {
+            div_caixa = document.getElementById('div_caixa')
+            loop()
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="div_caixa"></div>
+    <input type="text" name="texto">
+    <button>Teste</button>
+    <p>CFB Cursos - Curso de Javascript.</p>
+    <img src="Imagens/vscode_logo.png" alt="Logo do Visual Studio Code.">
+
+    <!--"activeElement": retorna o elemento ativo (e selecionado / em foco). Esse é um atributo somente de "leitura".-->
+
+</body>
+
+</html>
