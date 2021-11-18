@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 88 - Capturando o Elemento Ativo Na Página ("activeElement")</title>
+
+    <script>
+
+        function ativo() {
+            var elemento = document.activeElement
+            var elemento_2 = document.activeElement.tagName //Esse comando nos diz o nome da "tag" do elemento selecionado.
+            console.log(elemento) 
+            //Ao se clicar em algum elemento da tela, esse elemento será registrado no console.
+        }
+
+    </script>
+
+</head>
+
+<body onclick="ativo()">
+
+    <input type="text" name="texto">
+    <button>Teste</button>
+    <p>CFB Cursos - Curso de Javascript.</p>
+    <img src="Imagens/vscode_logo.png" alt="Logo do Visual Studio Code.">
+
+    <!--"activeElement": retorna o elemento ativo (e selecionado / em foco). Esse é um atributo somente de "leitura".-->
+
+</body>
+
+</html>
