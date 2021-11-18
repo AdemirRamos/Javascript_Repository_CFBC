@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 88 - Capturando o Elemento Ativo Na Página ("activeElement")</title>
+
+    <script>
+
+        function ativo() {
+            var caixa = document.getElementById('texto_selecionado')
+            //caixa.innerHTML = document.activeElement.value
+            //O comando acima, independentemente da fatia do texto selecionada, vai transferir para a "tag span" todo o conteúdo.
+            //Eis a solução para que seja copiada somente a fatia selecionada:
+            var elemento = document.activeElement
+            var seleção = elemento.value.substring(elemento.selectionStart, elemento.selectionEnd)
+            //"selectionStart" e "selectionEnd" definem, respectivamente, o ínicio e o final da seleção.
+            //Já o método "substring()" nos possibilita delimitar a marcação a ser selecionada.
+            caixa.innerHTML = seleção
+
+            //Agora, o mesmo comando (porém todo em uma só linha):
+            
+            //document.getElementById('texto_selecionado').innerHTML = document.activeElement.value.substring(document.activeElement.selectionStart, document.selectionEnd)
+        }
+
+        function iniciar() {
+            var texto_original = document.getElementById('área_do_texto')
+            texto_original.addEventListener('mouseup', ativo)
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <textarea rows="5" cols="20" id="área_do_texto">CFB Cursos - Curso de Javascript - Aula 88 (Atributo activeElement).</textarea><br>
+    <!--Eu já havia visto "textarea, rows e cols" na aula de CSS Grid. - Pesquisar mais sobre o tema.-->
+    <br>
+    Texto Selecionado: <span id="texto_selecionado"></span>
+
+    <!--"activeElement": retorna o elemento ativo (e selecionado / em foco). Esse é um atributo somente de "leitura".-->
+
+</body>
+
+</html>
