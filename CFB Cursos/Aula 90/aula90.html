@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 90 - Propriedades Personalizadas ("dataset")</title>
+
+    <style>
+
+        .car {
+            width: 371px;
+            height: 750px;
+            display: inline;
+            cursor: pointer;
+        }
+
+        #painel {
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+            padding-bottom: 33px;
+            width: 500px;
+            height: 100px;
+            margin-bottom: 15px;
+        }
+
+    </style>
+
+    <script>
+
+        function especificações() {
+            var objeto = event.target //O "dataset" poderia ser definido aqui. Por exemplo: var objeto = event.target.dataset.cor = 'red'
+            var painel = document.getElementById('painel')
+            painel.innerHTML = `Modelo: ${objeto.dataset.modelo} <br> <br>`
+            painel.innerHTML += `Cor: ${objeto.dataset.cor} <br> <br>`
+            painel.innerHTML += `Potência: ${objeto.dataset.potência} cv <br> <br>`
+            painel.innerHTML += `Velocidade: ${objeto.dataset.velocidade} km/h <br> <br>`
+        }
+
+        function iniciar() {
+            document.getElementById('c1').addEventListener('click', especificações)
+            document.getElementById('c2').addEventListener('click', especificações)
+            document.getElementById('c3').addEventListener('click', especificações)
+            document.getElementById('c4').addEventListener('click', especificações)
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+
+    <!--"dataset" nos permite adicionar propriedades personalizadas a elementos.-->
+    <!--Com a ajuda do JS, podemos ler essas propriedades e/ou alterar o valor de um "dataset".-->
+    <!--Para definir um "dataset" e uma propriedade personalizada em um elemento HTML, nós usamos o seguinte comando:-->
+    <!--"data-nome_do_dataset = 'valor'". Exemplos: "data-nome = 'Bureno' / data-valor = '100'".-->
+    <!--Com o uso do JS, é mais fácil ler o "dataset" de um elemento.-->
+
+    <div id="painel"></div>
+
+    <div id="c1" class="car">
+    <img src="Imagens/car1.jpg" width="300px" data-modelo='Popular' data-cor='Branca' data-potência='80' data-velocidade='120'></div>
+
+    <div id="c2" class="car">
+    <img src="Imagens/car2.jpg" width="300px" data-modelo='Corrida' data-cor='Vermelha' data-potência='350' data-velocidade='420'></div>
+
+    <div id="c3" class="car">
+    <img src="Imagens/car3.jpg" width="300px" data-modelo='Família' data-cor='Amarela' data-potência='110' data-velocidade='180'></div>
+
+    <div id="c4" class="car">
+    <img src="Imagens/car4.jpg" width="300px" data-modelo='Esportivo' data-cor='Preta' data-potência='220' data-velocidade='260'></div>
+
+</body>
+
+</html>
