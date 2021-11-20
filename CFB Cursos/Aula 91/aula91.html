@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 91 - Como Rolar a Janela ("scrollIntoView")</title>
+
+    <style>
+
+        .carro {
+            width: 371px;
+            height: 350px;
+            display: block;
+            margin-bottom: 50px;
+        }
+
+        .menu_item {
+            height: 100%;
+            cursor: pointer;
+            /*Comando acima: quando o mouse estiver na área aqui delimitada, ele se transformará em um mão.*/
+        }
+
+        #menu {
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+            width: 500px;
+            height: 100px;
+            position: fixed;
+            /*Comando acima: fixa a posição do item selecionado.*/
+            top: 10px;
+            left: 400px;
+            background-color: #fff;
+        }
+
+        body {
+            padding: 0px;
+        }
+
+    </style>
+
+    <script>
+
+        function rolar() {
+            var objeto = document.getElementById('car_4').scrollIntoView()
+            /*A tel será rolada (muito rapidamente), para o elemento selecionado pela "id".*/
+        }
+
+        function rolagem() {
+            var objeto = event.target.dataset.nome
+            document.getElementById(objeto).scrollIntoView()
+        }
+
+        function iniciar() {
+            document.getElementById('botão_1').addEventListener('click', rolagem)
+            document.getElementById('botão_2').addEventListener('click', rolagem)
+            document.getElementById('botão_3').addEventListener('click', rolagem)
+            document.getElementById('botão_4').addEventListener('click', rolagem)
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+    
+    <!--Basicamente, esse método ("scrollIntoView") serve para rolar a página, assim podendo posicionar a página em locais diferentes.-->
+    <!--Para poder posicionar o conteúdo em determinado local da tela, basta especificar o local onde se deseja posicionar um elemento.-->
+
+    <div id="menu">
+
+        <button onclick="rolar()">Rolar</button>
+
+        <img id="botão_1" data-nome="car_1" src="Imagens/car1.jpg" alt="Carro 1." class="menu_item">
+        <img id="botão_2" data-nome="car_2" src="Imagens/car2.jpg" alt="Carro 2." class="menu_item">
+        <img id="botão_3" data-nome="car_3" src="Imagens/car3.jpg" alt="Carro 3." class="menu_item">
+        <img id="botão_4" data-nome="car_4" src="Imagens/car4.jpg" alt="Carro 4." class="menu_item">
+
+    </div>
+
+    <img id="car_1"src="Imagens/car1.jpg" alt="Carro 1." class="carro">
+    <img id="car_2"src="Imagens/car2.jpg" alt="Carro 2." class="carro">
+    <img id="car_3"src="Imagens/car3.jpg" alt="Carro 3." class="carro">
+    <img id="car_4"src="Imagens/car4.jpg" alt="Carro 4." class="carro">
+
+</body>
+
+</html>
