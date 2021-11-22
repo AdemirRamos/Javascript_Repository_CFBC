@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 92 - Ocultando Elementos ("hidden")</title>
+
+    <style>
+
+        .carro {
+            width: 250px;
+            margin-bottom: 50px;
+        }
+
+        .menu_item {
+            height: 100%;
+            cursor: pointer;
+            /*Comando acima: quando o mouse estiver na área aqui delimitada, ele se transformará em um mão.*/
+        }
+
+        #menu {
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 10px;
+            width: 500px;
+            height: 100px;
+            background-color: #fff;
+            margin-bottom: 5px;
+        }
+
+        body {
+            padding: 0px;
+        }
+
+    </style>
+
+    <script>
+
+        function mostrar() {
+            for (var i = 1; 1 < 5; i++) {
+                document.getElementById("c"+i).hidden=true
+            }
+            var obj = event.target.dataset.nome
+            document.getElementById(obj).hidden=false
+        }
+
+        function iniciar() {
+            for (var i = 1; 1 < 5; i++) {
+                document.getElementById("c"+i).hidden=true
+            }
+            document.getElementById('botão_1').addEventListener('click', mostrar)
+            document.getElementById('botão_2').addEventListener('click', mostrar)
+            document.getElementById('botão_3').addEventListener('click', mostrar)
+            document.getElementById('botão_4').addEventListener('click', mostrar)
+
+            //document.getElementById('car_4').hidden = true
+            /*true = oculto; false = vísivel.*/
+        }
+
+        window.addEventListener('load', iniciar)
+
+    </script>
+
+</head>
+
+<body>
+    
+    <!--Basicamente, esse método ("scrollIntoView") serve para rolar a página, assim podendo posicionar a página em locais diferentes.-->
+    <!--Para poder posicionar o conteúdo em determinado local da tela, basta especificar o local onde se deseja posicionar um elemento.-->
+    <!--"Hidden" é um atributo nativo de JS e sua função é ocultar elementos.-->
+
+    <div id="menu">
+
+        <img id="botão_1" data-nome="c1" src="Imagens/car1.jpg" alt="Carro 1." class="menu_item">
+        <img id="botão_2" data-nome="c2" src="Imagens/car2.jpg" alt="Carro 2." class="menu_item">
+        <img id="botão_3" data-nome="c3" src="Imagens/car3.jpg" alt="Carro 3." class="menu_item">
+        <img id="botão_4" data-nome="c4" src="Imagens/car4.jpg" alt="Carro 4." class="menu_item">
+
+    </div>
+
+    <img id="c1" src="Imagens/car1.jpg" alt="Carro 1." class="carro">
+    <img id="c2" src="Imagens/car2.jpg" alt="Carro 2." class="carro">
+    <img id="c3" src="Imagens/car3.jpg" alt="Carro 3." class="carro">
+    <img id="c4" src="Imagens/car4.jpg" alt="Carro 4." class="carro">
+
+</body>
+
+</html>
+
