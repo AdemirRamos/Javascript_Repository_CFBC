@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 94 - Como Criar "Cookies"</title>
+
+    <script>
+
+        function criar_cookies(nome, valor, expiro) {
+            var dtExpira = "expires=" + expiro;
+            document.cookie = `${nome} = ${valor}; ${expiro}.`
+        }
+
+        function ler_cookies(nome) {
+            var vnome = nome + "="
+            var ca = document.cookie.split(';')
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[1]
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1)
+                }
+                if (c.indexOf(vnome) == 0) return c.substring(vnome.length, c.length)
+            }
+            return ''
+        }
+
+        function inicialização_cookies() {
+            var username = ler_cookies('username')
+            if (username != '') {
+                alert(`Bem-vindo (a) novamente, ${username}`)
+            }
+            else {
+                username + prompt('Digite o seu nome:', "")
+                if (username != '' && username != null) {
+                    criar_cookies('Username:', username, "= Tue, 01 Jan 2115 12:00:00 UTC")
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+<body onclick="inicialização_cookies()">
+
+    
+
+</body>
+
+</html>
