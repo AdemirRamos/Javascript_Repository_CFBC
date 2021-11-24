@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 95 - Declarando Variáveis Com "LET" e "CONST" Em Javascript</title>
+    
+    <script>
+
+        var num = 10
+        var num = 100
+        let a = 1
+        let a = 2
+        {let a = 3}
+
+        console.log(num) //O último valor atribuído a uma "var" ou "let" sempre será o seu valor real - caso ela receba mais de um valor.
+        console.log(a)
+
+        //Caso as variáveis sejam declaradas com "let", dentro do mesmo escopo, não é possível se ter duas variáveis com o mesmo nome.
+        //É possível contornar essa questão colocando uma das variáveis dentro de outro escopo utilizando chaves {}.
+        //Uma variável do tipo "let" só pertence ao escopo onde ela foi declarada ou aos "filhos" do mesmo.
+        //Já o "var" é uma variável global, ou seja, uma vez declarada, ela poderá ser integrada a qualquer escopo dentro do programa.
+
+        let b = 4
+        {
+            b = 5 //Nesse caso, não temos a declaração da variável b, mas sim uma atribuição à variável b.
+        }
+
+        console.log(b)
+    
+        /*No caso acima, não haverá erro pois "b" pertence ao escopo de "let b".*/
+
+        {
+            let c = 6
+        }
+
+        console.log(c)
+
+        /*No caso acima haverá erro pois a "let c" está em um escopo diferente de "console.log(c)" e não há parentesco entre os escopos.*/
+
+        /*A grosso modo, uma "const" (constante) é uma variável que não pode ser mudada.*/
+        /*No momento de sua declaração, a const receberá um valor e, a partir daí, esse valor não será mais mutável.*/
+        /*Abaixo temos a declaração de uma const:*/
+
+        const d = 7
+        d = 8 //Essa linha gerará um erro pois, como já foi comentado, uma "const" não pode ter a sua atribuição alterada.
+        
+        console.log(d)
+
+        /*Arrow Function:*/
+
+        const dobro = (n) =>{
+            return n * 2
+        }
+
+        console.log(dobro(2))
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
