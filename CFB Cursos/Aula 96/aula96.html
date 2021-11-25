@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 96 - Operação Ternária Em Javascript (Curso de React Native)</title>
+
+    <script>
+
+        //Operação ternária: 1º: teste lógico; 2º: If true; 3º: If false.
+
+        let n1 = 10
+        let n2 = 5
+        let operação = true
+
+        //Com if:
+
+        if (n1 == n2) {
+            console.log('Igual.')
+        }
+        else {
+            console.log('Diferente.')
+        }
+
+        /*Operação ternária:*/
+
+        n1 == n2 ? console.log('Igual.') : console.log('Diferente.') //Funciona com a mesma estrutura da fórmula SE do Excel.
+        //Ao invés de escrever "n1 == n2", também se pode usar a variável "operação" e, a isso, ainda pode se somar uma variável:
+        
+        operação ? console.log('Igual.') : console.log('Diferente.')
+
+        const r = operação ? 'Igual.' : 'Diferente.'
+
+        console.log(r)
+
+        const t = !operação ? 'Igual.' : 'Diferente.'
+
+        console.log(t)
+
+        const s = operação && "Igual"
+        
+        console.log(s)
+
+        console.log(operação && "Igual")
+
+        //Caso o teste lógico seja falso (e como não há segunda condição), é retornado o valor do próprio teste lógico.
+        //Caso o teste lógico seja verdadeiro, será retornado o valor da primeira condição.
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
