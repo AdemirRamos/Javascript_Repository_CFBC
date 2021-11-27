@@ -6,12 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 97 - Operador Spread em Javascript</title>
 
+    <script>
+
+        const notas = [100, 60, 45, 78, 80, 32, 86]
+        console.log(notas)
+        console.log(notas[2])
+
+        //Para usar o "spread", basta alocar, antes da variável ou elemento que se deseja expandir, reticências (...).
+
+        console.log(...notas)
+
+        //Agora, os valores de "notas" serão retornados individualmente.
+
+        const notas_2 = [100, 200, 300]
+
+        function soma(n1, n2, n3) {
+            return n1 + n2 + n3
+        }
+
+        console.log(soma(notas[0], notas[1], notas[2]))
+        //Tradicionalmente, com vetores, faríamos dessa forma.
+
+        //Com o "spread", vai funcionar assim:
+
+        console.log(soma(...notas_2))
+
+        const jogador = [nome='Bruno', pontos=1000, vidas=7]
+
+        console.log(jogador)
+
+        console.log(...jogador)
+
+    </script>
+
 </head>
 
 <body>
 
-    
-    
+    <!--Basicamente, o "spread" vai espalhar um conjunto de elementos ou variáveis, dentro de um objeto, em elementos individuais.-->
+
 </body>
 
 </html>
