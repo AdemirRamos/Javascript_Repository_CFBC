@@ -30,22 +30,32 @@
         
         operação ? console.log('Igual.') : console.log('Diferente.')
 
+        //Resumo: o teste lógico é verdadeiro? O valor da variável "operação" é true. Então, a primeira opção ("Igual") será selecionada.
+
         const r = operação ? 'Igual.' : 'Diferente.'
 
         console.log(r)
 
+        //Aqui temos o mesmo caso da condição ternária anterior. A diferença é que tudo é jogado para dentro da variável "r".
+
         const t = !operação ? 'Igual.' : 'Diferente.'
+
+        //A exclamação funciona como uma negação / significa "diferente". Nesse caso, ela vai inverter o valor da "operação".
 
         console.log(t)
 
-        const s = operação && "Igual"
+        const s = operação && "Igual."
+
+        //Caso o valor do teste lógico seja verdadeiro (true), será retornado o segundo elemento da expressão ("Igual.");
+        //A partir do segundo elemento da expressão, será obtido o valor resultante da expressão.
+        //Caso o primeiro teste (nesse caso, "operação") seja falso (false), o resultado da expressão será o primeiro elemento da mesma.
         
         console.log(s)
 
-        console.log(operação && "Igual")
+        console.log(operação && "Igual.")
 
         //Caso o teste lógico seja falso (e como não há segunda condição), é retornado o valor do próprio teste lógico.
-        //Caso o teste lógico seja verdadeiro, será retornado o valor da primeira condição.
+        //Caso o teste lógico seja verdadeiro, será retornado o valor do segundo elemento ('"Igual."').
 
     </script>
 
