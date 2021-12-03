@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 103 - Arrow Function Em Javascript</title>
+
+    <script>
+
+        //"Arrow Functions" são um tipo de função anônima.
+        //"Arrow Function": função de seta (grande).
+        //Símbolo das "Arrow Functions": "=>".
+        //A "expressão" indica o que a função deverá fazer ao ser acionada.
+        //O código abaixo, basicamente, está dizendo que os parêmetros serão passados para a expressão.
+        //Caso não exista parêmetros de entrada, os parênteses podem ficar vazios.
+        //Caso exista somente um parâmetro, o uso de parênteses é facultativo.
+        //Caso exista mais do que um parêmetro, o uso de parênteses passa a ser obrigatório.
+        //Caso a expressão seja pequena, ela pode ser escrita como abaixo, caso ela seja longa, abre-se chaves {}.
+
+        (parâmetros) => expressão
+
+        const soma = (p1, p2) => {
+            return p1 + p2
+        }
+
+        console.log(soma(2, 3))
+
+        const soma_2 = (...num) => {
+            let r = 0
+            for (n of num)
+                r += n
+            return r
+        }
+
+        console.log(soma_2(2, 3, 4, 5, 6, 7))
+
+        const par = num => {
+            if (num % 2 ==0)
+                return true //Outro resultado para esse campo: "O valor digitado é par."
+            else
+                return false //Outro resultado para esse campo: "O valor digitado não é par."
+        }
+
+        console.log(par(2) ? "O valor digitado é par." : "O valor digitado não é par.")
+        console.log(par(3) ? "O valor digitado é par." : "O valor digitado não é par.")
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
