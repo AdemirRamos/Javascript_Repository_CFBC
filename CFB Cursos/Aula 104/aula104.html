@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 104 - Funções Geradoras</title>
+
+    <script>
+
+        //Funções Geradores, basicamente, são funções que permitem a devolução do controle a quem fez a chamada.
+        //Toda função geradora leva um asterisco após a palavra "function".
+
+        function* cores() {
+            yield 'Vermelho'
+            yield 'Verde'
+            yield 'Azul'
+            yield 'Amarelo'
+            yield 'Roxo'
+            yield 'Preto'
+            yield 'Branco'
+        }
+
+        for (let c of cores()) {
+            console.log(c)
+        }
+
+        function* cores_2() {
+            yield 'Vermelho'
+            yield 'Verde'
+            yield 'Azul'
+            yield 'Amarelo'
+            yield 'Roxo'
+            yield 'Preto'
+            yield 'Branco'
+        }
+
+        const c_2 = cores_2()
+
+        console.log(c_2) //Sem o ".next()", a função vai estar suspensa.
+        console.log(c_2.next()) //A cada "next()", será retornado um "yield" diferente.
+
+        function* contador(n) {
+            let c_3 = 0
+            while (c_3 < n) {
+                console.log(c_3)
+                c_3++
+            }
+        }
+
+        const ct = contador(10)
+        console.log(ct.next())
+
+        function* contador_2(n_2) {
+            let c_4 = 0
+            while (c_4 < n_2) {
+                yield console.log(c_4)
+                c_4++
+            }
+        }
+
+        const ct_2 = contador_2(10)
+        console.log(ct_2.next())
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
