@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 105 - Objetos Literais Em Javascript</title>
+
+    <script>
+
+        const Carro = {
+            marca: "VW",
+            modelo: "Golf",
+            info: function() {
+                console.log(`Marca: ${this.marca}.`)
+                console.log(`Modelo: ${this.modelo}.`)
+            }
+        }
+
+        console.log(Carro.marca)
+        console.log(Carro.modelo)
+        Carro.info()
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        const Carro_2 = {
+            marca: "VW",
+            modelo: "Golf",
+            info: function() {
+                console.log(`Marca: ${this.marca}.`)
+                console.log(`Modelo: ${this.modelo}.`)
+            }
+        }
+
+        Carro_2.marca = "Honda"
+        Carro_2.modelo = "HRV"
+
+        console.log(Carro_2.marca)
+        console.log(Carro_2.modelo)
+        Carro_2.info()
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        const Carro_3 = {
+            marca: "VW",
+            modelo: "Golf",
+            info: function() {
+                console.log(`Marca: ${this.marca}.`)
+                console.log(`Modelo: ${this.modelo}.`)
+            }
+        }
+
+        Carro_3["marca"] = "GM"
+        Carro_3["modelo"] = "Camaro"
+
+        console.log(Carro_3.marca)
+        console.log(Carro_3.modelo)
+        Carro_3.info()
+
+        console.log(Carro_3["marca"])
+        console.log(Carro_3["modelo"])
+        
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        const Carro_4 = {
+            marca: "VW",
+            modelo: "Golf",
+            info: function() {
+                console.log(`Marca: ${this.marca}.`)
+                console.log(`Modelo: ${this.modelo}.`)
+            }
+        }
+
+        //Aqui poderíamos ter, também, uma "const".
+        let car = Object.create(Carro)
+
+        Carro_4.marca = "Honda"
+        Carro_4.modelo = "HRV"
+        Carro_4["marca"] = "GM"
+        Carro_4["modelo"] = "Camaro"
+
+        Carro_4.info()
+        car.info()
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+        
+        const Carro_5 = {
+            marca: "VW",
+            modelo: "Golf",
+            info: function() {
+                console.log(`Marca: ${this.marca}.`)
+                console.log(`Modelo: ${this.modelo}.`)
+            }
+        }
+
+        let car_2 = Object.create(Carro)
+
+        car_2.marca = "Honda"
+        car_2.modelo = "HRV"
+
+        Carro_5["marca"] = "GM"
+        Carro_5["modelo"] = "Camaro"
+
+        Carro_5.info()
+        car_2.info()
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        const Carro_6 = {
+            marca: "VW",
+            modelo: "Golf",
+            info: function() {
+                console.log(`Marca: ${this.marca}.`)
+                console.log(`Modelo: ${this.modelo}.`)
+            }
+        }
+
+        let car_3 = Object.create(Carro)
+        const car_4 = Object.create(Carro)
+
+        car_3.marca = "Honda"
+        car_3.modelo = "HRV"
+
+        car_4.marca = "Fiat"
+        car_4.modelo = "Toro"
+
+        Carro_6["marca"] = "Ford"
+        Carro_6["modelo"] = "Ranger"
+
+        Carro_6.info()
+        car_3.info()
+        car_4.info()
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        const Veículo = {
+            marca: "VW",
+            modelo: "Golf",
+            info: function() {
+                console.log(`Marca: ${this.marca}.`)
+                console.log(`Modelo: ${this.modelo}.`)
+            }
+        }
+
+        const Características = {cor: "Cinza", câmbio: "Automático"}
+
+        //O método "assign" faz a mesclagem de dois Objetos.
+
+        const Carro_7 = Object.assign(Veículo, Características)
+
+        console.log(Carro_7)
+        Carro_7.info()
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        //Deletando propriedades:
+
+        const Veículo_2 = {
+            marca: "VW",
+            modelo: "Golf",
+            info: function() {
+                console.log(`Marca: ${this.marca}.`)
+                console.log(`Modelo: ${this.modelo}.`)
+            }
+        }
+
+        const Características_2 = {cor: "Cinza", câmbio: "Automático"}
+
+        delete Características_2.cor
+
+        const Carro_8 = Object.assign(Veículo_2, Características_2)
+
+        console.log(Carro_8)
+        Carro_8.info()
+        
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        const Carro_9 = {
+            marca: "VW",
+            modelo: "Golf",
+            cor: "Cinza",
+            câmbio: "Automático",
+            info: function() {
+                console.log(`Marca: ${this.marca}.`)
+                console.log(`Modelo: ${this.modelo}.`)
+            }
+        }
+
+        let {marca, modelo} = Carro_9
+
+        console.log(Carro_9)
+        console.log(marca)
+        console.log(modelo)
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        const Carro_10 = {
+            marca: "VW",
+            modelo: "Golf",
+            cor: "Cinza",
+            câmbio: "Automático",
+            info: function() {
+                console.log(`Marca: ${this.marca}.`)
+                console.log(`Modelo: ${this.modelo}.`)
+            }
+        }
+
+        let {marca_2, modelo_2} = Carro_10
+
+        marca = "Honda"
+        modelo = "HRV"
+
+        console.log(Carro_10)
+        console.log(marca)
+        console.log(modelo)
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
