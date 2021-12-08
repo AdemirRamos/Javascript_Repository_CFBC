@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 107 - Iterator Em Javascript</title>
+
+    <script>
+
+        let num = [10, 1, 9, 2, 8, 3, 7, 6, 4, 5]
+        for (n of num)
+            console.log(n)
+
+        let num_2 = [10, 1, 9, 2, 8, 3, 7, 6, 4, 5]
+        let it = num_2[Symbol.iterator]()
+        console.log(it.next())
+        console.log(it.next().value)
+
+        let num_3 = [10, 1, 9]
+        let it_2 = num_3[Symbol.iterator]()
+        console.log(it_2.next().value)
+        console.log(it_2.next().value)
+        console.log(it_2.next().value)
+        console.log(it_2.next().value) //Resultado: "undefined".
+
+        let num_4 = [10, 1, 9]
+        let it_3 = num_4[Symbol.iterator]()
+        let v = it_3.next().value
+        let tamanho = num_3.length
+        console.log(v)
+        console.log(tamanho)
+
+
+        let num_5 = [10, 1, 9]
+        let it_4 = num_5[Symbol.iterator]()
+
+        for (let i = 0; i < num_5.length; i++) {
+            let v = it_4.next().value
+            if (v % 2 > 0) {
+                //Esse teste lógico também poderia ser uma função ternária: 'v % 2 > 0 ? console.log("Ímpar.") : console.log("Par.")'.
+                console.log('Ímpar.')
+            }
+
+            else {
+                console.log('Par.')
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
