@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 109 - Objeto Map Em Javascript (Parte 2)</title>
+
+    <script>
+
+        let produtos = new Map([
+            ['01', 'Mouse'],
+            ['02', 'Teclado'],
+            ['03', 'Monitor'],
+            ['04', 'Gabinete']
+        ])
+
+        produtos.set('05', 'Memória') //Cria um novo item para a 5ª posição.
+
+        console.log(produtos.get('01'))
+        console.log(produtos.get('02'))
+        console.log(produtos.get('03'))
+        console.log(produtos.get('04'))
+        console.log(produtos.get('05'))
+
+        //produtos.clear() -> Apaga todos os itens do "map".
+
+        produtos.delete("05") //Deleta somente um elemento especificado.
+
+        console.log(`Tamanho: ${produtos.size}.`)
+
+        for (p of produtos)
+            console.log(p)
+            console.log(p[0])
+            console.log(p[1])
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        let produtos_2 = new Map([
+            ['01', ['Mouse', 'R$10,75']],
+            ['02', ['Teclado', 'R$35,90']],
+            ['03', ['Monitor', 'R$420,50']],
+            ['04', ['Gabinete', 'R$150,00']]
+        ])
+
+        produtos_2.set('05', ['Memória', 'R$199,90'])
+
+        produtos_2.delete("05")
+
+        console.log(`Tamanho: ${produtos_2.size}.`)
+
+        for (p of produtos_2)
+            console.log(p)
+            console.log(p[1])
+            console.log(p[1][0])
+            console.log(p[1][1])
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        let produtos_3 = new Map([
+            ['01', 'Mouse'],
+            ['02', 'Teclado'],
+            ['03', 'Monitor'],
+            ['04', 'Gabinete']
+        ])
+
+        produtos_3.set('05', 'Memória')
+
+        function info(chave, valor) {
+            console.log(`Chave: ${chave}; Valor: ${valor}.`)
+        }
+
+        produtos_3.forEach(info) //Executa uma mesma função para diferentes elementos.
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        let produtos_4 = new Map([
+            ['01', 'Mouse'],
+            ['02', 'Teclado'],
+            ['03', 'Monitor'],
+            ['04', 'Gabinete']
+        ])
+
+        produtos_4.set('05', 'Memória')
+
+        function info(chave, valor) {
+            console.log(`Chave: ${chave}; Valor: ${valor}.`)
+        }
+
+        let it_1 = produtos_4.keys() //Retorna um objeto (do tipo iterator) que vai redefinir todas as chaves do mapa.
+        let it_2 = produtos_4.keys()
+
+        console.log(it_1.next())
+        console.log(it_1.next().value)
+
+        console.log(it_2.next())
+        console.log(it_2.next().value)
+
+        //-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+        //O método "res" verifica se um determinado elemento está na lista. Se o elemento estiver, o retorno será "true", se não, "false".
+
+        let produtos_5 = new Map([
+            ['01', 'Mouse'],
+            ['02', 'Teclado'],
+            ['03', 'Monitor'],
+            ['04', 'Gabinete']
+        ])
+
+        produtos_5.set('05', 'Memória')
+
+        function info(chave, valor) {
+            console.log(`Chave: ${chave}; Valor: ${valor}.`)
+        }
+
+        let it_3 = produtos_5.keys() //Retorna um objeto (do tipo iterator) que vai redefinir todas as chaves do mapa.
+        let it_4 = produtos_5.keys()
+
+        console.log(it_3.next())
+        console.log(it_3.next().value)
+
+        console.log(it_4.next())
+        console.log(it_4.next().value)
+
+        console.log(produtos_5.has("02")? "Produto encontrado." : "Produto não encontrado.")
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
