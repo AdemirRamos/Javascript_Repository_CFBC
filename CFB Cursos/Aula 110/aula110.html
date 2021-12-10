@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 110 - POO Classes (Parte 1)</title>
+
+    <script>
+
+        //POO: "POO" significa "programming oriented object" que, traduzido, significa "programação orientada a objeto".
+        //POO é um paradigma de desenvolvimento de "software" que busca "seguir/imitar o mundo real".
+        //POO, basicamente, vai considerar um programa uma coleção de objetos que podem se comunicar entre si ou não.
+        //Em POO, classes são os "esqueletos" / projetos dos objetos.
+        //Em POO, o objeto é a instância real da classe; pode-se criar quantas instâncias se desejar para uma classe.
+        
+        //A seguir, vemos a maneira clássica / tradicional de criar classes
+
+        class Carro { //Atributos: são as propriedade / variáveis aplicáveis a uma classe.
+                     //Os atributos podem ser construidos tantos por variáveis quanto pelo "constructor".
+                     //Para criar atributos, não é preciso declarar o tipo de váriavel do atributo:
+
+            cor = "Vermelha"
+
+            //Em POO, temos uma método especial chamado "método construtor":
+            //Em Java ou C# tem o mesmo nome da classe; em JS, o método construtor receberá o nome "constructor".
+            //"constructor" será chamado ao ser instanciado um objeto da classe a qual "constructor" pertence.
+            //"constructor" irá executar um bloco de cógidos (escritos para si) toda vez que o objeto for instanciado.  
+
+            constructor(cor) {
+                this.cor_2 = "Azul"
+                this.cor_3 = cor
+                console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_2}.`)
+                console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_3}.`)
+            }
+
+        }
+
+        /*Instanciando o objeto:*/
+
+        let car_1 = new Carro() //Atribuindo cores diferentes para cada carro através dos parâmetros.
+        let car_2 = new Carro("Verde")
+        let car_3 = new Carro("Amarela")
+        let car_4 = new Carro("Roxa")
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
