@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 112 - POO Classes (Parte 3)</title>
+
+    <script>
+ 
+        class Carro {
+
+            cor = "Vermelha" 
+
+            constructor(cor, modelo, marca) {
+                this.cor_2 = "Azul"
+                this.cor_3 = cor
+                this.modelo = modelo
+                this.marca = marca
+                this.ligado = false
+                this.km = 0
+                this.combustível = 10
+            }
+
+            /*Criando métodos:*/
+
+            info() {
+                console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_2}.`)
+                console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_3}.`)
+                console.log(`Olá! Eu sou um novo carro do modelo: ${this.modelo}.`)
+                console.log(`Olá! Eu sou um novo carro da marca: ${this.marca}.`)
+                console.log(`Olá! Eu sou um novo carro e meu estado é:` + this.ligado ? "Estou Ligado." : "Estou Desligado.")
+                console.log(`Olá! Eu sou um novo carro e a minha quilometragem é: ${this.km}.`)
+                console.log(`Olá! Eu sou um novo carro e meu tanque tem ${this.combustível} de combustível.`)
+                console.log('----------------------------------------------------------------------------------------------')
+            }
+
+            ligar() {
+                this.ligado = true
+            }
+
+            desligar() {
+                this.ligado = false
+            }
+
+            //"Setter": é um método especial que altera valor (es) do (s) atributo (s).
+            //Para definir um método "setter", basta alocar, antes do método, a palavra "set".
+            //O "set" antes do nome do método serve apenas para evidenciar que este é um método "setter".
+            //Para definir o método como um método "setter", é preciso alocar "set", antes do nome do método.
+
+            set_combustível(valor) {
+                this.combustível = valor
+            }
+
+            set set_combustível(valor) {
+                if (valor < 0 || valor > 100) {
+                    alert('Valor (do  combustível) inválido!')
+                }
+                else {
+                    this.combustível = valor
+                    console.log(`Combustível alterado. Valor atual: ${this.combustível}.`)
+                }
+            }
+
+            //Já o "getter" é um método utilizado para se conseguir o valor de um atributo.
+
+            get_combustível() {
+                return this.combustível
+            }
+
+            get get_combustível() {
+                return this.combustível
+            }
+
+        }
+
+        let car_1 = new Carro()
+        let car_2 = new Carro("Verde", "HB20", "Lexus")
+        let car_3 = new Carro("Amarela", "HB20", "Lexus")
+        let car_4 = new Carro("Roxa", "HB20", "Lexus")
+
+        /*car_1.set_combustível(100)*/
+
+        car_1.set_combustível = '100%' /*400 -> Resultado: "alert('Valor (do combustível) inválido!').*/
+        car_2.set_combustível = '100%'
+
+        /*console.log(car_1.get_combustível())*/
+
+        console.log(car_1.get_combustível)
+        
+        car_1.desligar()
+
+        /*Mudando a cor dos carros:*/
+
+        car_1.cor = 'Preta'
+        car_2.cor = 'Branca'
+        car_3.cor = 'Marrom'
+        car_4.cor = 'Laranaja'
+
+        car_1.info()
+        car_2.info()
+        //car_3.info()
+        //car_4.info()
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
