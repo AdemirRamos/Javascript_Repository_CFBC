@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 116 - "Promise" em Javascript</title>
+
+    <script>
+
+        //"Promise" é usado para tornar algoa assíncrono em síncrono.
+        //JS, assim como outras linguagens de programação, é síncrona, isso é, os comandos são executados na ordem em que são digitados.
+        //Além disso, como uma linguagem síncrona, O JS só executa um comando após o outro.
+        //Em alguns casos, ao se chamar as funções "set time out" e "time out", essas serão funções assíncronas.
+        //Acontece que pode ser necessário que essas funções se comportem como funções síncronas.
+        //Por conta disso, é possível que o programa execute outros comandos antes do término  das funções "time out".
+        //Ou talvez nem execute algum comando.
+        //Então, "Promise" vem para resolver esse problema.
+        //Basicamente, "Promise" é um Objeto. Esse Objeto ("Promise") será usado para processamento assíncrono.
+        //Para representar um valor disponível neste momento, no futuro ou nunca disponível.
+        //"Promise" será usado para tornar algo assíncrono em síncrono.
+        
+        //O "Promise" tem três estados:
+        //"Pending": atinge-se esse estado ao se criar a "Promise" porém sem executá-la com ou sem sucesso ou rejeição;
+        //"Fulfilled": atinge-se esse estado ao se executar a "Promise" com sucesso;
+        //O "Promise" executa com sucesso a operação e passa para esse estado ("fulfilled");
+        //"Rejected": atinge-se esse estado ao se constatar alguma falha na operação (erro).
+        //"Pending" é o estado inicial do "Promise"; "fulfilled" e "rejected" são os estados finais do "Promise".
+
+        function contar(n) {
+            let cont = 0
+            for (let i = 0; i < n; i++) {
+                cont++
+            }
+            return cont
+        }
+
+        //Exemplo de assincronia:
+
+        function contar_2(n) {
+            let cont = 0
+            let t = setTimeout(() => {
+                for (let i = 0; i < n; i++) {
+                    cont++
+                }
+            }, 2000)
+
+            return cont
+        }
+
+        //Exemplo de aplicação do "Promise":
+
+        function contar_3(n) {
+            let cont = 0
+
+            let p = new Promise((resolve, rejected) => {
+                for (let i = 0; i < n; i++) {
+                    cont++
+                }
+                if (cont == n) {
+                    resolve(cont)
+                }
+                else {
+                    rejected('Erro.')
+                }
+            })
+            //"Promise" necessita dois parâmetros; um para o "resolve" e outro para o "rejected".
+
+            return p
+        }
+
+        //Assincronia:
+
+        function contar_4(n) {
+            let cont = 0
+
+            let p = new Promise((resolve, rejected) => {
+                
+                let t = setTimeout(() => {
+                    for (let i = 0; i < n; i++) {
+                        cont++
+                    }
+                    if (cont == n) {
+                        resolve(cont)
+                    }
+                    else {
+                        rejected('Erro.')
+                    }
+                }, 2000)
+            })
+            return p
+        }
+
+        function soma_de_positivos(n1, n2) {
+            let p = new Promise((res, rej) => {
+                if (n1 >= 0 && n2 >= 0) {
+                    res(n1 + n2)
+                }
+                else {
+                    rej('Erro')
+                }
+            })
+            return p
+        }
+
+        console.log(contar(10000))
+        console.log(contar_2(10))
+        console.log(contar_3(10)) 
+
+        //A função "contar_2()" não será executa pois ela precisará de, pelo menos, dois segundos para começar;
+        //A função "contar()" já terá terminado antes mesmo de "contar_2()" começar.
+        //As duas linhas acima só estão corretas em caso de não aplicação do Objeto "Promise".
+
+        contar_3(10)
+            .then(sucesso => console.log(`Sucesso: ${sucesso}.`)) //Associação a "resolve".
+            .catch(insucesso => console.log(`${insucesso}.`)) //Associação a "rejected".
+
+        soma_de_positivos(10, 2)
+            .then(sucesso => console.log(`Sucesso: ${sucesso}.`))
+            .catch(insucesso => console.log(`${insucesso}.`))
+
+        contar_4(10)
+            .then(sucesso => console.log(`Sucesso: ${sucesso}.`))
+            .catch(insucesso => console.log(`${insucesso}.`))
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
