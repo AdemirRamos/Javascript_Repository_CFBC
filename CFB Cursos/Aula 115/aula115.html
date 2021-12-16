@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 115 - POO Classes (Parte 6 - Prototype)</title>
+
+    <script>
+ 
+        class Carro {
+
+            //"Prototype" representa um protótipo da Classe.
+
+            //Object.prototype
+            
+            //Representa um protótipo do Objeto.
+            //Todos Objeto instanciado (assim como seus métodos e propriedades) com "new", em JS, vai descender de "Object".
+            //Usando "prototype", nós podemos criar ou subscrever métodos de uma Classe.
+            //"Prototype" pode ser usado para qualquer Objeto em JS.
+
+            //Herança: consiste em uma Classe herdando outra Classe.
+            //A Classe que é herdada é chamada de "Pai"; a Classe que herda é chamada de "Filho". 
+
+            //Basicamente, o modificador "static" (que pode ser método ou propriedade) torna o seu valor fixo.
+            //Onde quer que o "static" seja usado, o seu valor sempre será o mesmo - a menos que seja alterado.
+
+            cor = "Vermelha" 
+
+            constructor(fuel_type, car_type) {
+                this.tipo_de_carro = car_type
+                this.quantidade_de_combustível = 100
+                this.ligado = false
+                this.tipo_de_combustível = fuel_type  
+            }
+
+            /*Criando métodos:*/
+
+            /*static*/ info() {
+                console.log(`Quantidade de combustível: ${this.quantidade_de_combustível}.`)
+                console.log(`Ligado: ${this.ligado? "Sim" : "Não"}.`)
+                console.log(`Tipo de combustível: ${this.tipo_de_combustível}.`)
+                if (this.tipo_de_carro == 1) {
+                    console.log(`Tipo de carro: "Paseio".`)
+                }
+                else if (this.tipo_de_carro == 2) {
+                    console.log(`Tipo de carro: "Transporte".`)
+                }
+                else {
+                    console.log(`Tipo de carro: "Combate".`)
+                }
+            }
+
+            set set_ligado(t) {
+                this.ligado = t
+            }
+
+            get get_ligado() {
+                return this.ligado
+            }
+
+            //"Setter": é um método especial que altera valor (es) do (s) atributo (s).
+            //Para definir um método "setter", basta alocar, antes do método, a palavra "set".
+            //O "set" antes do nome do método serve apenas para evidenciar que este é um método "setter".
+            //Para definir o método como um método "setter", é preciso alocar "set", antes do nome do método.
+
+            /*set_alerta(t) {
+                Carro.alerta = t
+            }*/
+
+            set set_combustível(valor) {
+                if (valor < 0 || valor > 100) {
+                    alert('Valor (do  combustível) inválido!')
+                }
+                else {
+                    this.quantidade_de_combustível = valor
+                }
+            }
+
+            //Já o "getter" é um método utilizado para se conseguir o valor de um atributo.
+
+            get get_combustível() {
+                return this.quantidade_de_combustível
+            }
+        }
+
+        //Criando uma Classe que herda outra Classe:
+
+        class Carro_de_Combate extends Carro {
+
+            //Porém, para "super()" funcionar, antes é preciso um construtor.
+
+            constructor (fire_power) {
+                super(2, 3)
+                this.munição = 1000
+                this.potência_do_tiro = fire_power
+                this.blindagem = 100  
+
+                //"super()" define que eu estou acessando algo Classe Pai.
+
+                //Tipos de combustível: 1 = Gasolina; 2 = Diesel; 3 = Etanol.
+
+                //Tipos de carro: 1 = Carro de passeio; 2 = Carro de Transporte; 3 = Carro de Combate.
+            }
+
+            //Imprimindo, também, as características presentes na Classe Filho
+
+            info() {
+                super.info()
+                console.log(`Quantidade de munição: ${this.munição}.`)
+                console.log(`Potência de tiro: ${this.fire_power}%.`)
+                console.log(`Blindagem do veículo: ${this.blindagem}%.`)
+                console.log('----------------------------------------------------------------------------------------------')
+
+                //"info()" do Filho chamando "info()" do pai.
+            }
+        }
+
+        class Carro_de_Transporte extends Carro {
+            constructor () {
+                super(2, 2)
+            }
+        }
+
+        //Caso isso (abaixo) seja feito com um Objeto que já exista, o seu valor anterior será substituído.
+
+        Carro.prototype.potência = 800 + 'cv'
+        Carro.prototype.velocidade = 450 + 'km/h'
+        Carro.prototype.velocidade_máxima = 500 + 'km/h'
+
+        //Se, ao invés de ".info_2", tivermos "info", vamos subscrever todas as informações anteriores de "info"
+
+        Carro.prototype.info_2 = function() {
+            this.info() //Incorpora as informações acima ao "info()".
+            console.log(`Potência: ${this.potência}.`)
+            console.log(`Velocidade: ${this.velocidade}.`)
+            console.log(`Velocidade Máxima: ${this.velocidade_máxima}.`)
+        }
+
+        Carro.prototype.info = function() {
+            //this.info() //Incorpora as informações acima ao "info()".
+            console.log(`Potência: ${this.potência}.`)
+            console.log(`Velocidade: ${this.velocidade}.`)
+            console.log(`Velocidade Máxima: ${this.velocidade_máxima}.`)
+        }
+
+        //let car_1 = new Carro(1)
+        let car_1 = new Carro_de_Combate(100)
+        let car_2 = new Carro_de_Transporte(50)
+
+        /*car_1.set_combustível(100)*/
+
+        //car_1.set_combustível = '100%' /*400 -> Resultado: "alert('Valor (do combustível) inválido!').*/
+        //car_2.set_combustível = '100%'
+
+        /*console.log(car_1.get_combustível())*/
+
+        //console.log(car_1.get_combustível)
+        
+        //car_1.desligar()
+
+        /*Mudando a cor dos carros:*/
+
+        //car_1.cor = 'Preta'
+        //car_2.cor = 'Branca'
+        //car_3.cor = 'Marrom'
+        //car_4.cor = 'Laranaja'
+
+        //car_1.set_alerta(false) //Essa configuração vale para qualquer objeto desta classe.
+
+        //car_1.set_alert = false
+
+        Carro.alerta = false
+
+        car_1.set_ligado = true
+        
+        //car_1.info()
+        //console.log(`Potência: ${car_1.potência}.`)
+
+        car_1.info_2()
+
+        car_1.info()
+
+        //car_2.info()
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
