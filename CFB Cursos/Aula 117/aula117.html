@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 117 - Coleção "Set" Em Javascript</title>
+
+    <script>
+
+        //A Coleção "set" é muito parecido com a Coleção "map".
+        //A diferença entre "set" e "map" é que "map" é uma coleção "chave-valor" e "set" é uma coleção que trabalha somente com "valor".
+        //Em "map", ao se adicionar um novo valor a uma chave que já exista, o valor pré-existente será substituído pelo novo valor.
+        //O mesmo ocorre com "set" (não se pode ter valores duplicados).
+    
+        let my_set = new Set([1, 2, 3]) //Apenas relembrando: "set" não aceita valores duplicados.
+        let my_map = new Map()
+
+        my_map.set('1', 'Vermelho')
+        my_map.set('2', 'Azul')
+        my_map.set('3', 'Verde')
+
+        //Percorrendo o "set":
+
+        //Outra diferença entre "map" e "set": em "map", para se adicionar, usamos "set"; e, em "set", para adicionar, usamos "add".
+
+        my_set.add(4)
+        my_set.add(5)
+        my_set.add(6)
+
+        console.log(`Tamanho do "my_set": ${my_set.size}.`)
+
+        //Caso se tente usar "add" para adicionar valores, já existentes, à Coleção "set", eles não serão contabilizados pelo "size".
+        //Também não serão exibidos (mais de uma vez).
+        //Os métodos vistos e usados com "map" podem ser usados com "set".
+
+        for (n of my_set) {
+            console.log(n)
+        }
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
