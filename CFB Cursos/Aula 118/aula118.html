@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 118 - Método "map"</title>
+
+    <script>
+
+        //O método "map" é usado para a manipulação de "arrays";
+        //Basicamente, o que ele faz é gerar um novo "array";
+        //Com os elementos de um "array" já existente, o método "map" vai aplicar uma funcionalidade, função, operação, etc.;
+        //Essas funções/funcionalidades/operações serão aplicadas a cada elemento de um "array";
+        //E gerará um novo "array" para cada elemento operado.
+
+        let num = [1, 4, 9, 16, 25]
+        let raiz = num.map(Math.sqrt)
+        
+        //Para cada elemento de "num", será operada a sua respectiva raiz quadrada.
+        //Cada um dos resultados das operações gerará uma nova posição para o vetor "raiz".
+
+        for (r of raiz)
+            console.log(r)
+
+        for (let i = 0; i < 5; i++) {
+            console.log(`Número: ${num[i]} / Raiz: ${raiz[i]}.`)
+        }
+
+        //A função pode ser feita tanto fora quanto dentro de "map".
+
+        /*function dobrar(n) {
+            return n * 2
+        }
+
+        const d = (n) => {
+            return n * 2
+        }*/
+
+        let dobros = num.map((n) => {
+            return n * 2
+        })
+
+        console.log('-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=')
+
+        for (let i = 0; i < 5; i++) {
+            console.log(`Número: ${num[i]} / Dobro: ${dobros[i]}.`)
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
