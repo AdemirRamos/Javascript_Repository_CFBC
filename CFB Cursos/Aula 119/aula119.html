@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 39 - Async Await</title>
+
+    <script>
+
+        function contar(n) {
+            let cont = 0
+            for (let i = 0; i < n; i++) {
+                cont++
+            }
+            //return cont
+            console.log(cont)
+        }
+
+        //Exemplo de assincronia:
+
+        function contar_2(n) {
+            let cont = 0
+            let t = setTimeout(() => {
+                for (let i = 0; i < n; i++) {
+                    cont++
+                }
+            }, 2000)
+            //return cont
+            console.log(cont)
+        }
+
+        //Exemplo de aplicação do "Promise":
+
+        function contar_3(n) {
+            let cont = 0
+
+            let p = new Promise((resolve, rejected) => {
+                for (let i = 0; i < n; i++) {
+                    cont++
+                }
+                if (cont == n) {
+                    resolve(n)
+                }
+                else {
+                    rejected('Erro.')
+                }
+            })
+            //"Promise" necessita dois parâmetros; um para o "resolve" e outro para o "rejected".
+
+            return p
+        }
+
+        async function contarPAW_2(n) {
+            const r = await contar_3(n)
+            console.log(r)
+        }
+
+        //Assincronia:
+
+        function contar_4(n) {
+            let cont = 0
+
+            let p = new Promise((resolve, rejected) => {
+                
+                let t = setTimeout(() => {
+                    for (let i = 0; i < n; i++) {
+                        cont++
+                    }
+                    if (cont == n) {
+                        resolve(cont)
+                    }
+                    else {
+                        rejected('Erro.')
+                    }
+                }, 2000)
+            })
+            return p
+        }
+
+        function soma_de_positivos(n1, n2) {
+            let p = new Promise((res, rej) => {
+                if (n1 >= 0 && n2 >= 0) {
+                    res(n1 + n2)
+                }
+                else {
+                    rej('Erro')
+                }
+            })
+            return p
+        }
+
+        async function contarPAW(n) {
+            const r = await contar_4(n)
+            console.log(r)
+        }
+
+        contar(10000)
+        contar_2(10)
+        console.log(contar_3(10)) 
+
+        //A função "contar_2()" não será executa pois ela precisará de, pelo menos, dois segundos para começar;
+        //A função "contar()" já terá terminado antes mesmo de "contar_2()" começar.
+        //As duas linhas acima só estão corretas em caso de não aplicação do Objeto "Promise".
+
+        /*contar_3(10)
+            .then(sucesso => console.log(`Sucesso: ${sucesso}.`)) //Associação a "resolve".
+            .catch(insucesso => console.log(`${insucesso}.`)) //Associação a "rejected".
+
+        soma_de_positivos(10, 2)
+            .then(sucesso => console.log(`Sucesso: ${sucesso}.`))
+            .catch(insucesso => console.log(`${insucesso}.`))
+
+        contar_4(10)
+            .then(sucesso => console.log(`Sucesso: ${sucesso}.`))
+            .catch(insucesso => console.log(`${insucesso}.`))*/
+
+        contarPAW(10)
+
+        contarPAW_2(10)
+
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
