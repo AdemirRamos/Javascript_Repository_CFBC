@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 120 - Método "filter" da Classe "array"</title>
+
+    <script>
+
+        //A diferença de "filter" para "map" é:
+        //"filter" realiza uma filtragem e cria o novo vetor somente com os elementos que passaram por esse filtro.
+        //O filtro em questão é uma função (que criaremos posteriormente).
+        //"map" aplica uma determinada função e retorna o vetor com o resultado da função aplicada a cada elemento do vetor.
+
+        function greater_ten(elemento) {
+            return elemento >= 10
+        }
+
+        const maior_10 = (elemento) => {
+            return elemento >= 10
+        }
+
+        let num = [5, 2, 8, 15, 30, 4, 25, 18, 9]
+        let filtro = num.filter((elemento) => {
+            return elemento >= 10
+        })
+        let filtro_2 = num.filter(greater_ten)
+
+        console.log(num)
+        console.log(filtro)
+        console.log(filtro_2)
+        console.log(maior_10)
+
+        let dados = [
+            {id: 15},
+            {id: 0},
+            {id: -10},
+            {id: null},
+            {id: NaN},
+            {id: 'undefined'},
+            {id: 5.8},
+            {},
+            {id: 2}
+        ]
+
+        let válidos = dados.filter((elementos) => {
+            if (typeof(elementos.id) == 'number' && !isNaN(elementos.id) && (elementos.id >= 0)) {
+                return true
+            }
+            else {
+                return false
+            }
+        })
+
+        console.log(dados)
+        console.log(válidos)
+
+        console.log(dados[0].id) //Retorna o valor do "id" da posição 0.
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
