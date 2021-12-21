@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 121 - Método "Reduce" (Da Classe "Array")</title>
+
+    <script>
+
+        //A ideia de "reduce" é retorna um resultado que seja o resumo do "array".
+        //Esse resumo seria o resultado de determinada função aplicada aos elementos do "array".
+
+        let num = [0, 1, 2, 3, 4, 5]
+        let soma = num.reduce((n1, n2) => {
+            
+            console.log(`${n1} + ${n2}`)
+
+            return n1 + n2
+            //A cada ciclo, o valor do "return" vai para o parâmetro "n1" e o próximo número do "array" vai para "n2".
+
+            console.log('-------------------------------------------------------------------------------------------')
+        })
+
+        console.log(soma)
+
+        let people = [
+            {nome: 'Bruno', idade: 40},
+            {nome: 'Ademir', idade: 25},
+            {nome: 'Fernanda', idade: 30},
+            {nome: 'Camila', idade: 19}
+        ]
+
+        let nomes = people.reduce((p1, p2) => {
+            p1.push(p2.nome)
+            return p1
+        }, [])
+
+        let idades = people.reduce((p1, p2) => {
+            p1.push(p2.idade)
+            return p1
+        }, [])
+
+        console.log(nomes)
+        console.log(idades)
+
+    </script>
+
+</head>
+
+<body>
+    
+</body>
+
+</html>
