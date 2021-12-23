@@ -8,20 +8,35 @@
 
     <script>
 
-        var canal;
-        var peso,idade,sexo;
-        var dia=null
-        var nome = "Ademir";
-        var número = 2021;
-        ano = 2022;
-        var texto = ano + nome;
+        var canal
+        var peso, idade, sexo
+        var dia = null
+        var nome = " Ademir"
+        var número = 2021
+        ano = 2022
+        var texto = ano + nome
+        sobrenome = 'Ferreira'
+        var cidade = 'São Paulo'
+        cidade = 'Rio de Janeiro'
 
-        document.write(canal);
-        document.write('<br>');
-        document.write(peso,idade,sexo);
-        document.write(nome + dia + número + ano + (ano + número));
-        document.write(texto);
-        document.write(texto, nome, ano)
+        document.write(`Valor da variável "canal": "${canal}".`)
+        document.write('<br><br>')
+        document.write(`Valores das variáveis "peso", "idade" e "sexo": ${peso}, ${idade}, ${sexo}.`)
+        document.write('<br><br>')
+        document.write(nome + dia + número + ano + (ano + número))
+        document.write('<br><br>')
+        document.write(`${nome} ${dia} ${número} ${ano} ${ano + número}.`)
+        document.write('<br><br>')
+        document.write(`Valor da variável "texto": "${texto}".`)
+        document.write('<br><br>')
+        document.write(`Valores das variáveis "texto", "nome" e "ano": ${texto}, ${nome}, ${ano}. <br><br>`)
+        document.write(`Valor da variável "sobrenome": "${sobrenome}". <br><br>`)
+        document.write(`Valor da variável "cidade": "${cidade}". <br><br>`)
+
+        //Se deve usar os parênteses aqui justamente por estarmos misturando "strings" e variáveis de outros tipos.
+        //Já que a ideia é somar o valor da variável "ano" mais o valor da variável "número".
+
+        document.write(nome + '<br><br>' + ano + '<br><br>' + (ano + número))
 
     </script>
 
@@ -29,14 +44,18 @@
 
 <body>
     
-<!--Variáveis são espaços salvos na memória RAM do computador.-->
-<!--Em, JS, é possível usar variáveis múltiplas (variáveis com mais de um valor atribuido a elas).-->
-<!--Todas as variáveis acima estão sem valor definido.-->
-<!--"=null" mantem a variável sem valor definido.-->
-<!--Em JS, as variáveis podem ser escritas com letras maiúsculas.-->
-<!--As variáveis não podem começar com números.-->
-<!--Também não podemos usar "&" em variáveis.-->
-<!--No JS existe "variável implícita." - Esse tipo de variável tem a mesma sintaxe que as variáveis do Python.-->
+    <!--Variáveis são espaços salvos na memória RAM do computador.-->
+    <!--Em, JS, é possível usar variáveis múltiplas (diferentes variáveis declaradas após uma "var").-->
+    <!--"null" torna o valor da variável nulo.-->
+    <!--Em JS, as variáveis podem ser escritas com letras maiúsculas.-->
+    <!--As variáveis não podem começar com números.-->
+    <!--Também não podemos usar "&" em variáveis.-->
+    <!--No JS existe "variável implícita". A variável implícita pode ser declarada assim: "nome = 'Ademir'".-->
+    <!--Esse tipo de variável tem a mesma sintaxe que as variáveis do Python.-->
+    <!--Também é possível declarar uma variável usando "var" e, após isso, atribuir um novo valor a ela sem precisar usar "var".-->
+    <!--Diferente de Python, JS não é tipada-->
+    <!--Em outras palavras, se pode concatenar duas variáveis de tipos diferentes sem se fazer "casting".-->
+    <!--Podemos imprimir (com "document.write()") "tags" do HTML.-->
 
 </body>
 
