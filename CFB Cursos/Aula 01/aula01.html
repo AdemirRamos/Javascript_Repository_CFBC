@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 01</title>
+    <title>Aula 01 - document.write('Introdução')</title>
 
 </head>
 
@@ -12,19 +12,26 @@
 
     <script>
 
-        document.write('Olá, Mundo!')
-        document.write(100)
-        document.write('50' + 100)
+        document.write('Olá, Mundo! | ')
+        document.write(100 + ' | ')
+        document.write(' 50 e ' + 100 + ' | ')
         document.write(50 + 100)
-        document.write('<pstyle="color:#f100">Olá, Mundo!<br>Tudo bem com você?</p>')
+        document.write(' | <p style = "color: #f00">Olá, Mundo!<br>Tudo bem com você?</p>')
 
     </script>
     
-</body>
+    <!--Somente o conteúdo dentro da "tag script" é considerado Javascript. O que estiver fora será entendido como um texto.-->
+    <!--"document.write('')" == "print('')".-->
 
-<!--Somente o conteúdo dentro da "tag script" é considerado como JavaScript. O que estiver fora será entendido como comentário.-->
-<!--"document.write" == print('')-->
-<!--A terceira linha de "scripts" representa uma concatenação e não uma soma. Sem as aspas, teremos uma soma.-->
-<!--As "strings", dentros das aspas, no navegador, serão entendidas como um código HTML. Isso nos possibilita usar outras "tags".-->
+    <!--A terceira linha de "scripts" representa uma concatenação e não uma soma. Sem as aspas, teremos uma soma.-->
+
+    <!--As "strings" de "d.w", no navegador, serão entendidas como um código HTML. Isso nos dá a possibilidade de usar "tags".-->
+    <!--Ver o último "document.write()".-->
+    <!--Esse último "document.write()" será entendido, pelo navegador, como um código HTML (e aparecerá assim também).-->
+    <!--"d.w": "document.write()".-->
+
+    <!--O posicionamento da "tag script" é livre. Ela pode ser usada onde se achar melhor.-->
+
+</body>
 
 </html>
