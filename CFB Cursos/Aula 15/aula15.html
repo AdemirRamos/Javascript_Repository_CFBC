@@ -20,8 +20,10 @@
         //Caso o ".sort()" seja removido, os números serão invertidos a partir da sua precedência original.
 
         números = núm.join()
-        //O método ".join()" serve para concatenar todos os elementos de um "array" (os separando com vírgulas).
-        document.write(números + '<br>')
+        //O método ".join()" serve para concatenar todos os elementos de um "array" (em formato de "sring" e os separando com vírgulas).
+        //A junção desses elementos será armazenada em uma variável.
+        
+        document.write(`Valores do vetor "núm" (em "números"): ${números} <br><br>`)
 
         document.write(núm[0] + '<br>')
         document.write(núm[1] + '<br>')
@@ -32,7 +34,7 @@
         document.write(núm[6] + '<br>')
         document.write(núm[7] + '<br>')
         document.write(núm[8] + '<br>')
-        document.write(núm[9] + '<br>')
+        document.write(núm[9] + '<br><br>')
 
         mochila.push('faca')
         mochila.push('corda')
@@ -43,16 +45,19 @@
 
         pos = (mochila.indexOf("lanterna"))
 
+        //O método busca a posição de um elemento do "array" e retorna a posição desse elemento.
+
         if (pos == -1) {
             document.write('O item referenciado não está na mochila.')
         }
+        
         //Ao invés de -1, o "if" também poderia ter, como argumento, "pos < 0".
 
         else {
-            document.write(`O item referenciado (${mochila[4]}) está na mochila.<br>Posição: ` + pos + '.')
+            document.write(`O item referenciado (${mochila[4]}) está na mochila. <br> Posição: ${pos}. <br><br>`)
         }
 
-        var mochila = [], mochila1 = [], mochila2 = [], pos
+        var mochila = [], mochila1 = [], mochila2 = []
 
         mochila1.push('faca')
         mochila1.push('corda')
@@ -70,7 +75,7 @@
         mochila2.unshift('peça')
 
         mochila = mochila1.concat(mochila2)
-        //O método ".concat()" serve para concatenar dois "arrays".
+        //O método ".concat()" serve para concatenar dois (ou mais) "arrays".
 
         document.write(mochila[0] + '<br>')
         document.write(mochila[1] + '<br>')
@@ -83,11 +88,11 @@
         document.write(mochila[8] + '<br>')
         document.write(mochila[9] + '<br>')
         document.write(mochila[10] + '<br>')
-        document.write(mochila[11] + '<br>')
+        document.write(mochila[11] + '<br><br>')
 
-        document.write(`O total de elementos na "mochila1" é de: ${mochila1.length}.` + '<br>')
-        document.write(`O total de elementos na "mochila2" é de: ${mochila2.length}.` + '<br>')
-        document.write(`Já o total de elementos nas duas mochilhas (valor correspondente à "mochila") é de: ${mochila.length}.`)
+        document.write(`O total de elementos na "mochila1" é de: ${mochila1.length}.` + '<br><br>')
+        document.write(`O total de elementos na "mochila2" é de: ${mochila2.length}.` + '<br><br>')
+        document.write(`Já o total de elementos nas duas mochilhas (valor correspondente ao "mochila") é de: ${mochila.length}.`)
 
         //O método ".length" nos diz o total de elementos dentro de um "array".
 
@@ -97,7 +102,7 @@
 
 <body>
     
-<!--Caso o item pesquisado através do ".indexOf" não esteja no "array", será retornado o valor "-1".-->
+    <!--Caso o item pesquisado através do ".indexOf" não esteja no "array", será retornado o valor "-1".-->
 
 </body>
 
