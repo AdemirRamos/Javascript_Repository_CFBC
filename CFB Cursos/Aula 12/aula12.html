@@ -13,27 +13,32 @@
 
         if (pontos >= 1000) {
             pos = 1
-        } else if (pontos >= 800) {
+        }
+        else if (pontos >= 800) {
             pos = 2
-        } else if (pontos >= 600) {
+        }
+        else if (pontos >= 600) {
             pos = 3
-        } else {
+        }
+        else {
             pos = 4
         }
 
         switch(pos) {
             case 1:
-                msg = 'Primeiro Lugar!<br>Medalha de Ouro!'
+                msg = 'Primeiro Lugar!<br><br>Medalha de Ouro!'
                 break
             case 2:
-                msg = 'Segundo Lugar!<br>Medalha de Prata!'
+                msg = 'Segundo Lugar!<br><br>Medalha de Prata!'
                 break
             case 3:
-                msg = 'Terceiro Lugar!<br>Medalha de Bronze!'
+                msg = 'Terceiro Lugar!<br><br>Medalha de Bronze!'
                 break
             default:
-                msg = 'Não foi ao pódio. Você não ganhou uma medalha.<br>'
+                msg = 'Não foi ao pódio.<br><br>Você não ganhou uma medalha.'
         }
+
+        //Foi ao pódio?:
 
         switch(pos) {
             case 1:
@@ -53,7 +58,10 @@
 
 <body>
 
-<!--"<br>" quebra linhas nas "strings" em HTML.-->
+    <!--Usamos o "switch" quando sabemos os valores que irão ser usados para definir os casos.-->
+    <!--Com o "switch case", é importante usar "break" para sair do "switch", caso contrário, todos os "cases" serão testados.-->
+    <!--"default" o "else" do "switch case".-->
+    <!--"<br>" quebra linhas nas "strings" em HTML e / ou JS.-->
 
 </body>
 
