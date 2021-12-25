@@ -6,10 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 09 - If Com Múltiplos Retornos</title>
 
-</head>
-
-<body>
-
     <script>
 
         var nome = prompt('Digite o seu nome: ')
@@ -17,37 +13,50 @@
 
         if (nota > 5) {
             document.write(`${nome}, a sua nota foi ${nota} e, portanto, você foi aprovado!`)
-        } else if (nota == 5) {
+        }
+        else if (nota == 5) {
             document.write(`${nome}, a sua nota foi ${nota} e, portanto, você está de recuperação.`)
-        } else if (nota < 5) {
+        }
+        else if (nota < 5) {
             document.write(`${nome}, a sua nota foi ${nota} e, portanto, você foi reprovado.`)
-        } else {
+        }
+        else {
             document.write('Erro! Você digitou alguma coisa errada.')
         }
 
-        <p>Modo como o professor Bruno fez:</p>
-
+        document.write('<br><br>')
+        document.write('Modo como o professor Bruno fez:')
+        document.write('<br><br>')
+    
         var nota = 90
         var res
 
         if (nota >= 95) {
             var res = 'Aprovado com louvor.'
-        } else if (nota >= 60) {
+        }
+        else if (nota >= 60) {
             var res = 'Aprovado.'
-        } else if (nota >= 40 && nota <= 60) {
+        }
+        else if (nota >= 40 && nota <= 60) {
             var res = 'Em recuperação.'
-        } else if (nota >= 20) {
+        }
+        else if (nota >= 20) {
             var res = 'Reprovado.'
-        } else {
+        }
+        else {
             var res = 'Reprovado com louvor.'
         }
 
         document.write(res)
 
     </script>
+
+</head>
+
+<body>
     
-    <!--O teste lógico do "else if" de recuperação também pode ser escrito assim: else if (nota >= 40) {}-->
-    <!--O teste lógico do primeiro "if" também pode ser escrito assim: if (nota > 94) {}.-->
+    <!--O teste lógico do "else if" de recuperação também pode ser escrito assim: "else if (nota >= 40) {}".-->
+    <!--O teste lógico do primeiro "if" também pode ser escrito assim: "if (nota > 94) {}".-->
 
 </body>
 
