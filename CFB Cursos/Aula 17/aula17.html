@@ -38,16 +38,17 @@
         //O nome dessa operação acima é: "pré-incremento" (o incremento é adicionado no começo da variável).
         //Resultado: 11.
         
-        document.write(num)
+        document.write(num + '<br><br>')
 
-        document.write(num ++ + '<br>')
-        document.write(num)
-        //É preciso se "printar" a num pela segunda vez pois ela recebeu um "pós-incremento" (por isso ele não está vísivel logo de cara).
-        //Resultado: 11.
+        document.write(num ++ + '<br><br>')
+        document.write(num + '<br><br>')
+        //É preciso se "printar" a num pela segunda vez pois ele recebeu um "pós-incremento" (por isso ele não está vísivel logo de cara).
+        //Resultado: 13.
+        //O que acontece é: ao se carregar a página, primeiro é renderizado o elemento "num", depois seu incremento.
         
-        document.write(++ num)
+        document.write(++ num + '<br><br>')
         //Aqui temos o caso de um "pré-incremento", portanto, assim que a variável for escrita, ela já aparecerá com o incremento.
-        //Resultado: 11.
+        //Resultado: 14.
         
         //Transformando números negativos em números positivos e vice-versa:
 
@@ -62,13 +63,13 @@
         //Acima temos a forma abreviada da mesma operação.
         //Resultado: -10.
     
-        document.write(num)
+        document.write(num + '<br><br>')
         
-        document.write(- num)
+        document.write(- num + '<br><br>')
         //Acima temos outra possibilidade de se transformar um número positivo em negativo.
 
-        document.write(num)
-        //Acima teremos o resultado "10". A primeira operação [(- num)] não afetará a segunda.
+        document.write(num + '<br><br>')
+        //Acima teremos o resultado "-10". A primeira operação [(- num)] não afetará a segunda.
         //Caso se deseje fazer uma mudança que sempre afete a variável, a mudança deve ser feita na própria variável.
         
     </script>
