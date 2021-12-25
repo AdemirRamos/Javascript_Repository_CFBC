@@ -8,20 +8,22 @@
 
     <script>
 
-        //var cor1, cor2, cor3, cor4
+        var cor1, cor2, cor3, cor4
     
-        /*cor1 = 'Preto'
+        cor1 = 'Preto'
         cor2 = 'Branco'
         cor3 = 'Vermelho'
-        cor4 = 'Azul'*/
+        cor4 = 'Azul'
 
-        /*A seguir, temos duas maneiras para se trabalhar com "arrays":*/
+        //A seguir, temos duas maneiras para se definir um "array":
 
-        var cor = new Array ()
-        var cor = []
+        /*1ª maneira:*/ var cor = new Array ()
+        /*2ª maneira:*/var cor_2 = []
 
-        /*Essa segunda maneira de trabalhar com "arrays" não estabelece um tamanho para o "array", sendo assim, nosso "array" passa a ter uma estrutura dinâmica, aumentando e diminuindo conforme a necessidade.*/
+        //Essa maneira de trabalhar com "arrays" não estabelece um tamanho para o "array".
+        //Sendo assim, o nosso "array" passa a ter uma estrutura dinâmica, aumentando e diminuindo conforme a necessidade.
         //Abaixo vemos o método "push" adicionando elementos ao "array":
+        //Se pode adicionar a um vetor ("array") "strings", números, variáveis, vetores, e assim por diante.
 
         cor.push('Preto')
         cor.push('Branco')
@@ -29,34 +31,25 @@
         cor.push('Verde')
         cor.push('Azul')
 
-        //Se pode adicionar, dentro do "array", "strings", variáveis, et cetera.
-        //A seguir vamos usar o "array":
+        //A seguir vamos imprimir o "array":
 
-        document.write(cor[0, 1, 2, 3, 4, 5])
+        document.write(cor[0] + '<br><br>')
+        document.write(cor[1] + '<br><br>')
+        document.write(cor[2] + '<br><br>')
+        document.write(cor[3] + '<br><br>')
+        document.write(cor[4] + '<br><br>')
+
         //Ao se definir um índice inexistente, o seu retorno será: "undefined".
 
         //A seguir, veremos a maneira antiga de se realizar o mesmo processo acima:
 
-        /*cor[0] = 'Preto'
-        cor[1] = 'Branco'
-        cor[2] = 'Vermelho'
-        cor[3] = 'Verde'
-        cor[4] = 'Azul'*/
+        colour[0] = 'Preto'
+        colour[1] = 'Branco'
+        colour[2] = 'Vermelho'
+        colour[3] = 'Verde'
+        colour[4] = 'Azul'
 
         //Os elementos podem ser adicionados direto no "array" - sem o ".push()":
-
-        var itens = [' faca', ' pederneira', ' corda', ' lanterna', ' luvas', ' chave', ' arame']
-        var mochila = []
-
-        mochila.push(itens[2])
-        document.write(mochila[0])
-
-        mochila.push(3)
-        mochila.push(0)
-        mochila.push(2)
-        document.write(itens[mochila[0]]+'<br>')
-        document.write(itens[mochila[1]]+'<br>')
-        document.write(itens[mochila[2]]+'<br>')
 
      </script>
 
@@ -64,11 +57,13 @@
 
 <body>
     
-<!--De forma simples: "array" é um conglomerado de variáveis - é como se todas as variáveis fossem agrupadas em um tipo de variável chamada "array".-->
-<!--"Array" possui métodos ou elementos. Nesta aula, veremos o "push".-->
-<!--"Push" insere elementos dentro do "array"; o elemento é adicionado no final do "array".-->
-<!--Posições do "array": primeira: índice 0; segunda: índice 1; terceira: índice 2; "and so on".-->
-<!--O tipo de "array" referenciado acima pode ser chamado de "array unidimensional" ou "vetor".-->
+    <!--De forma simples:-->
+    <!--"array" é um conglomerado de variáveis - é como se todas as variáveis fossem agrupadas em um tipo de variável chamada "array".-->
+    <!--"Array" possui métodos ou elementos. Nesta aula, veremos o "push".-->
+    <!--"Push" insere elementos dentro do "array"; o elemento é adicionado no final do "array".-->
+    <!--Posições do "array": primeira: índice 0; segunda: índice 1; terceira: índice 2; "and so on".-->
+    <!--O tipo de "array" referenciado acima pode ser chamado de "array unidimensional" ou "vetor".-->
+    <!--Um "array unidemensional" é um "array" controlado por apenas um índice.-->
 
 </body>
 
