@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 25 - getElementsByTagName</title>
 
-    <script>
-
-        
-
-    </script>
-
 </head>
 
 <body>
@@ -19,46 +13,51 @@
     <p>CFB Cursos</p>
     <p>Curso de Javascript</p>
     <p>Aula 25</p>
-    <p>https://www.youtube.com/watch?v=gP0_rmzpKEc&list=TLPQMDMxMDIwMjFO0mYx2suEYQ&index=2</p>
-    <p>https://www.youtube.com/watch?v=gP0_rmzpKEc&list=TLPQMDMxMDIwMjFO0mYx2suEYQ&index=2</p>
+    <p>www.youtube.com/cfbcursos</p>
+    <p>www.cfbcursos.com.br</p>
 
-    <hr/>
-    <!--<hr/>: cria uma linha.-->
+    <hr>
+
+    <script>
+
+        var Tags_P = document.getElementsByTagName('p')
+        //Entre parênteses e aspas, vai o nome da "tag" selecionado por "GEBTN".
+        
+        //var Tags_P = document.getElementsByTagName('p')[2]
+        //No caso acima, somente o conteúdo da minha terceira "tag p" (índice de controle 2) se tornará a variável "Tags_P".
+        //Caso eu queira reescrever o conteúdo da minha "Tags_P" (considerando a linha de código acima), o resultado será este:
+        //document.write(Tags_P[2].innerHTML = '')
+    
+        document.write(Tags_P[0].innerHTML + '<br><br>')
+        document.write(Tags_P[2].innerHTML)
+    
+        //document.getElementsByTagName('*'): captura todas as "tags" do documento.
+    
+        //Fechamentos de "tags" e "<!DOCTYPE html>" não contam.
+        //document.getElementsByTagName('*'): vai contar todas as "tags" da página (html, head, meta, title, script, body, p, hr, etc.)
+        //P.S.: "tags p", se repetidas, serão consideradas individualmente (porém seus fechamentos não).
+        //P.S.: A contagem começa do 0 (zero).*/
+    
+        //Tags[10].innerHTML = 'Novo Texto.': altera o conteúdo da "tag" selecionada.
+    
+        for (var i = 0; i < Tags_P.length; i++) {
+            
+            //"Tags_P.length" vai definir o ponto de parada para o "loop for";
+            //Assim podemos percorrer todas as "tags p" aplicando uma formatação a cada uma delas.
+            
+            Tags_P[i].style.color = 'blue'    
+        }
+        
+        var Tags = document.getElementsByTagName('*')
+    
+        Tags[8].style.color = 'green'
+
+        Tags_P[3].style.color='#f00'
+        Tags_P[3].innerText = '"innerText" altera tão somente o texto do elemento selecionado.'
+        Tags_P[4].style.color='coral'
+    
+    </script>
 
 </body>
-
-<script>
-
-    var Tags_P = document.getElementsByTagName('p')
-    /*var Tags_P = document.getElementsByTagName('p')[2]*/
-    /*No caso acima, somente o conteúdo da minha terceira "tag p" (índice de controle 2) se tornará a variável "Tags_P".*/
-    /*Caso eu queira reescrever o conteúdo da minha "Tags_P" (considerando a linha de código acima), o resultado será este:*/
-    /*document.write(Tags_P[2].innerHTML='')*/
-
-    document.write(Tags_P[0].innerHTML + '<br>')
-    document.write(Tags_P[2].innerHTML + '<br>')
-
-    /*document.getElementsByTagName('*'): captura todas as "tags" do documento.*/
-
-    /*Fechamentos de "tags" e "<!DOCTYPE html>" não contam.*/
-    /*document.getElementsByTagName('*'): vai contar todas as "tags" da página (html, head, meta, title, script, body, p, hr, etc.)*/
-    /*P.S.: "tags p", se repetidas, serão consideradas individualmente (porém seus fechamentos não).*/
-    /*P.S.: A contagem começa do 0 (zero).*/
-
-    /*Tags[10].innerHTML = 'Novo Texto.': altera o conteúdo da "tag" selecionada.*/
-
-    var Tags = document.getElementsByTagName('*')
-
-    Tags[8].style.color = 'green'
-
-    for (var i = 0; i < Tags_P.length; i++) {
-        /*".length" vai habilitar o tamanho de "Tags_P", assim se pode fazer uma comparação entre "Tags_P" (textos) e "i" (números).*/
-        Tags_P[i].style.color = 'blue'    
-    }
-
-    /*Tags_P[3].style.color='#f00'
-    Tags_P[4].style.color='blue'*/
-
-</script>
 
 </html>
