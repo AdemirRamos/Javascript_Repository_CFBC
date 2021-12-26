@@ -6,40 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 24 - innerHTML e Mais Sobre getElementById</title>
 
-    <script>
-
-        
-
-    </script>
-
 </head>
 
 <body>
 
     <p id='texto'>CFB Cursos</p>
-    <!--"<p></p>" não trabalha com "value".-->
-    <input type='text' id='cxtexto' value='Curso de JavaScript'>
+    <!--A "tag p" não trabalha com "value".-->
+
+    <input type='text' id='cxtexto' value='Curso de Javascript'>
+    <!--Porém a "tag input" sim.-->
+
     <div id='dv'>Texto da DIV</div>
 
     <script>
 
-        /*var cxt = document.getElementById('cxtexto').value
+        var cxt = document.getElementById('cxtexto').value
+        
         alert(cxt)
-        A variável "cxt" recebe a propriedade "value" ("string" CFB Cursos).*/
+        //A variável "cxt" recebe a propriedade "value" ("string" 'Curso de Javascript').
 
-        /*document.getElementById('cxtexto').value = 'Curso de JavaScript'
-        Dessa maneira podemos substituir o valor da propriedade selecionada.
-        Para a linha de código acima, também é possível mantê-la como uma variável.*/
+        document.getElementById('cxtexto').value = 'Curso de JS'
+        //Dessa maneira podemos substituir o valor da propriedade selecionada.
+        //Para a linha de código acima, também é possível mantê-la como uma variável.
 
         /*innerHTML nos dá um valor/conteúdo impresso em uma "tag".*/
 
-        /*var cxt = document.getElementById('texto').innerHTML
+        var cxt = document.getElementById('texto').innerHTML
+        
         alert(cxt)
-        O valor/conteúdo da "tag p" é retido pelo "innerHTML"; e, através do comando "alert()", esse valor/conteúdo é mostrado na tela.*/
+        //O valor/conteúdo da "tag p" é retido pelo "innerHTML"; e, através do comando "alert()", esse valor/conteúdo é mostrado na tela.
 
-        var cxt = document.getElementById('texto').innerHTML='Aula 24 - innetHTML.'
-        /*alert(cxt)*/
-        document.getElementById('dv').innerHTML='Novo texto.'
+        var cxt = document.getElementById('texto').innerHTML = 'Aula 24 - innerHTML.'
+
+        alert(cxt)
+        
+        document.getElementById('dv').innerHTML = 'Novo texto.'
+        document.getElementById('dv').style.marginTop = '15px'
+        
         alert(document.getElementById('dv').innerHTML)
 
     </script>
