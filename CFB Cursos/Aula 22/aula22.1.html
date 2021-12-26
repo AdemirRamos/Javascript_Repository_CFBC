@@ -12,15 +12,15 @@
 
         try {
             num = prompt('Digite algum valor.')
-            if (num > 10){
-            throw new Error ("Valor inválido. O valor máximo é 10.<br>")
-            /*"Throw" gera o erro manualmente.*/
+            if (num > 10) {
+                throw new Error ("Valor inválido. O valor máximo é 10.")
             }
-        } catch (e) {
-            console.log('Erro: ' + e.message)
+        }
+        catch (erro) {
+            console.log('Erro: ' + erro.message)
             num = 10
-            /*"Catch" intercepta o erro.*/
-        } finally {
+        }
+        finally {
             document.write('Valor: ' + num + '.')
         }
 
@@ -29,8 +29,6 @@
 </head>
 
 <body>
-
-    
 
 </body>
 
