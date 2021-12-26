@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 27 - Manipulando Forms Com JavaScript</title>
+    <title>Aula 27 - Manipulando Forms Com Javascript</title>
     
     <style>
 
@@ -29,7 +29,7 @@
     <form name="curso1" id="curso1" action="#" method="post">
 
         <label>Nome</label>
-        <input type="text" name="fNome" id="teste" value="Primeiro - 1"
+        <input type="text" name="fNome" id="teste" value="Primeiro Formulário - 1">
         <label>Senha</label>
         <input type="password" name="fSenha" value="123">
         <input type="submit" name="btEnviar" value="Enviar">
@@ -39,7 +39,7 @@
     <form name="curso2" id="curso2" action="#" method="post">
 
         <label>Nome</label>
-        <input type="text" name="fNome" id="teste" value="Segundo - 2"
+        <input type="text" name="fNome" id="teste" value="Segundo Formulário - 2">
         <label>Senha</label>
         <input type="password" name="fSenha" value="123">
         <input type="submit" name="btEnviar" value="Enviar">
@@ -50,40 +50,74 @@
 
     <script>
 
-        /*var fm = document.forms.length
-        document.write(fm)*/
+        //Manipulando elementos de formulário com o Javascript.
+
+        //"forms" é um elemento da classe "document".
+        //"forms" nos retorna uma coleção do tipo "HTML collection" o que nos permite a dinâmica de vetores.
+        //"forms" é exclusivo para formulários.
+
+        var fm = document.forms.length //Nos é retornado o total de formulários no documento.
+        document.write(`Quantidade de formulários na página: ${fm}. <br><br>`)
         
-        /*var fm = document.forms[0].id
-        document.write(fm)*/
+        //Com "forms", primeiro apontamos para o formulário, depois para os seus elementos:
+        //Capturando o "id" do primeiro formulário ("tag form"):
 
-        /*var fm = document.forms.item(0).id
-        document.write(fm)*/
+        var fm = document.forms[0].id
+        document.write(`"id" do primeiro formulário: "${fm}". <br><br>`)
 
-        /*var fm = document.forms.namedItem("curso1").id
-        document.write(fm)*/
+        var fm = document.forms[1].id
+        document.write(`"id" do segundo formulário: "${fm}". <br><br>`)
 
-        /*var fm = document.forms.namedItem("curso1").innerHTML
-        document.write(fm)*/
+        //Outra maneira de se manipular formulários ("tag form") através do método "item()":
 
-        /*var fm = document.forms["curso1"].innerHTML
-        document.write(fm)*/
+        var fm = document.forms.item(0).id
+        document.write(`"id" do primeiro formulário: "${fm}". <br><br>`)
 
-        /*var fm = document.forms["curso1"].elements[0]
-        document.write(fm)*/
+        var fm = document.forms.item(1).id
+        document.write(`"id" do primeiro formulário: "${fm}". <br><br>`)
 
-        document.write(document.getElementById('curso1').elements[0].value)
+        //Outra maneira de se manipular formulário ("tag form") através do método "namedItem()":
+
+        var fm = document.forms.namedItem("curso1").id
+        document.write(`"id" do primeiro formulário: "${fm}". <br><br>`)
+
+        var fm = document.forms.namedItem("curso2").innerHTML
+        document.write('Conteúdo (HTML) do segundo formulário:' + '<br>' + fm + '<br>')
+
+        //Outra maneira de se manipular formulários através de "form":
+
+        var fm = document.forms[0].innerHTML
+        document.write('<hr>')
+        document.write(`Conteúdo (HTML) do primeiro formulário: ${fm}.`)
+
+        //Outra maneira de se manipular formulário através do "form":
+
+        var fm = document.forms["curso2"].innerHTML
+        document.write('<hr>')
+        document.write(`Conteúdo (HTML) do segundo formulário: ${fm}.`)
+
+        //Manipulando elementos dentro de formulários:
+
+        var fm = document.forms["curso1"].elements[0]
+        document.write('<hr>')
+        document.write(`Primeiro elemento do primeiro formulário: ${fm}. <br><br>`)
+
+        //Usando "GEBI" para capturar e imprimir o "value" de um elemento do formulário:
+
+        document.write('Segundo elemento do primeiro formulário:' + document.getElementById('curso1').elements[1].value + '<br><br>')
+
+        //Manipulando formulários:
 
         var fm = document.forms[0]
         var el = fm.elements
 
-        for (var i = 0; i < el.length - 1; i++) {
-            el[i].style.backgroundColor = '#ddd'
-            /*el[i].value = 'CFB Cursos.'*/
+        for (var i = 0; i < el.length - 1; i++) { //O "-1" aparece aqui justamente pelo fato dos vetores começarem por zero.
+            el[i].style.backgroundColor = 'red'
+            el[i].value = 'CFB Cursos.'
         }
 
-        /*document.write(fm)*/
-
-        /*IMPORTANTE: eu não entendi essa aula; vou precisar revê-la - de preferência, em outro lugar e mais detalhadamente.*/
+        document.write(el[1].value + '<br><br>')
+        document.write(fm)
 
     </script>
 
