@@ -12,7 +12,6 @@
             color: #f00;
             font-size: 20px;
             text-decoration: underline;
-            /*É necessário o ponto (.) antes da "tag título" para que as mudanças sejam aplicadas. */
         }
 
         div {
@@ -29,6 +28,10 @@
             background-color: #ddd;
         }
 
+        .espaço {
+            margin-top: 10px;
+        }
+
     </style>
 
 </head>
@@ -36,10 +39,10 @@
 <body>
 
     <h1 class = 'título'>querySelectorAll</h1>
-    <p>O "querySelectorAll()" é um método que retorna os elementos do documento que correspondem a uma classe de CSS ou a uma "tag" específica.</p>
+    <p>O "querySelectorAll()" é um método que retorna os elementos do documento que correspondem a uma classe CSS ou a uma "tag" específica.</p>
     
     <h2 class = 'título'>Curso de Javascript</h2>
-    <p>https://www.youtube.com/watch?v=W0nOyrETMOw</p>
+    <p>www.youtube.com/cfbcursos</p>
     <p class = 'título'>cfbcursos.com.br</p>
 
     <div class = 'quadro'>
@@ -58,44 +61,54 @@
 
     </div>
 
-    <a href="https://www.youtube.com/watch?v=W0nOyrETMOw" target="_blank">Canal</a>
+    <a href="https://www.youtube.com/watch?v=W0nOyrETMOw" target="_blank" class="espaço">Canal</a>
     <a href="http://cfbcursos.com.br">Site</a>
 
     <hr>
 
     <script>
 
+        //Assim como "getElementsByTagName", "querySelectorAll" retorna diferentes elementos da página (em dinâmica de vetor).
+        //Com "QSA" podemos retornar uma gama maior de elementos.
+        //"QSA" nos permite manipular "tags" dentro de outras "tags"; "tags" de uma classe; várias "tags" pelo documento.
+
         var ps = document.querySelectorAll('p')
-        document.write(ps[0].innerHTML + '<br>')
+        document.write(ps[0].innerHTML + '<br><br>')
         ps[0].style.color = '#00f'
         ps[0].innerHTML = 'Novo Texto.'
 
         var elementos = document.querySelectorAll('.título')
         for (var i = 0; i < elementos.length; i++) {
-            document.write(elementos[i].innerHTML + '<br>')
+            document.write(elementos[i].innerHTML + '<br><br>')
         }
         
         var elementos = document.querySelectorAll('p.título')
+        elementos[0].innerHTML = 'Você foi selecionado!'
 
         var elementos = document.querySelectorAll('div > p')
-        /*Essa sequência "div > p" serve para selecionarmos a "tag" e o elemento, dentro da "tag" selecionada, com o qual vamos trabalhar.*/
+        //Essa sequência "div > p" serve para selecionarmos a "tag" e o elemento, dentro da "tag" selecionada, com o qual vamos trabalhar.
+
+        elementos[1].innerHTML = 'Este foi o texto selecionado.'
 
         var elementos = document.querySelectorAll('div > *')
-        /*Dessa maneira, selecionamos todos os elementos dentro da "tag" especificada.*/
-        elementos[i].style.color = '#0a0'
+        //Dessa maneira, selecionamos todos os elementos dentro da "tag" especificada.
+
+        elementos[0].innerHTML += ' - Query.'
 
         var elementos = document.querySelectorAll('div.quadro > *')
         for (var i = 0; i < elementos.length; i++) {
-            elementos[i].style.color = '#0a0'
+            elementos[i].style.color = '#0a0' //#0a0: cor verde.
         }
-        /*"div.quadro > *" fará com que todos os elementos, somente da "div" especificada, recebam as alterações.*/
-        /*Se trocarmos "*" por "p", somente os elementos com a "tag p" sofreram as mudanças: "div.quadro > p".*/
+        
+        //"div.quadro > *" fará com que todos os elementos, somente da "div" especificada, recebam as alterações.
+        //Se trocarmos "*" por "p", somente os elementos com a "tag p" sofreram as mudanças: "div.quadro > p".
 
         var elementos = document.querySelectorAll('p, h1, h3')
-        /*Dessa maneira é possível selecionar diferentes elementos (pois foram selecionadas diferentes "tags").*/
-        for (var i = 0; i < elementos.length; i++) {
-            elementos[i].style.color = '#0a0'
-        }
+        //Dessa maneira é possível selecionar diferentes elementos (pois foram selecionadas diferentes "tags").
+
+        elementos[7].style.color = 'coral'
+        elementos[5].style.color = 'blue'
+        elementos[8].style.color = 'purple'
 
     </script>
 
