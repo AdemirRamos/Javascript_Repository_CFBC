@@ -14,25 +14,28 @@
         border: 1px solid #000;
         background-color: #f00;
         position: absolute;
-        left: 0px;
-        top: 0px;
+        left: 5px;
+        top: 5px;
     }
 
     </style>
 
     <script>
-        
+
+        //"addEventListener" nos possibilita capturar um ou vários determinado (s) evento (s) e associá-lo (s) a uma ou mais funções.
+        //A vantagem de se utilizar esse método consiste em poder separar as áreas do documento por ferramenta:
+        //Uma área só para JS; outra só para HTML; e outra só para CSS.
+
         function mensagem() {
             alert('CFB Cursos')
         }
 
         function addEventos() {
             document.getElementById('dv1').addEventListener('click', mensagem)
-            /*Os elementos a serem interceptados, não vão receber o "on".*/
+            //Os elementos a serem interceptados (por "addEventListener"), não vão receber o "on".
+            document.getElementById('dv1').addEventListener('mouseover', mudança_de_cor_1)
+            document.getElementById('dv1').addEventListener('mouseout', mudança_de_cor_2)
         }
-
-        window.addEventListener('load', addEventos)
-        /*Essa é uma maneira (visualmente) mais organizada de se fazer o mesmo processo.*/
 
         function mudança_de_cor_1(objeto, dv1) {
             var objeto = document.getElementById('dv1')
@@ -44,7 +47,10 @@
             objeto.style.backgroundColor = '#f00'
         }
 
-        window.addEventListener('load', addEventos)
+        //window.addEventListener('load', addEventos)
+        //Essa é uma maneira (visualmente) mais organizada para chamar os eventos e associonar as funções ligadas a eles.
+        //A outra maneira, involve repetir a captura de elementos dentro do HTML com o script vindo logo após o HTML.
+        //No documento a seguir ("aula33.1.html"), é possível ver o processo descrito acima na prática.
 
     </script>
 
@@ -52,8 +58,8 @@
 
 <body onload="addEventos()">
 
-    <div id="dv1" onclick="mensagem()"></div>
-    
+    <div id="dv1" onclick="mensagem()" onmouseover="mudança_de_cor_1" onmouseout="mudança_de_cor_2"></div>
+
 </body>
 
 </html>
