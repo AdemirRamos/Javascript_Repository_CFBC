@@ -8,12 +8,12 @@
 
     <script>
 
-        function escreve() {
+        function escrever() {
             document.write('Curso de Javascript - CFB Cursos.' + '<br>')
         } 
 
-        escreve()
-        /*Assim criamos uma função (sem parâmetros) e a executamos.*/
+        escrever()
+        //Assim criamos uma função (sem parâmetros) e a executamos.
 
         document.write('<br>')
 
@@ -25,26 +25,24 @@
         soma_1(5, 2)
         soma_1(10, 20)
         soma_1(0, 1)
-        /*Função com parâmetros.*/
+        //Função com parâmetros.
 
         document.write('<br>')
 
         function soma_2(n1, n2) {
             var res_2 = n1 + n2
             return res_2
-            /*Essa linha também poderia ser escrita assim: "return n1 + n2" (sem a necessidade de "res").*/
+            //Essa linha também poderia ser escrita assim: "return n1 + n2" (sem a necessidade de "res").
         }
 
-        document.write(soma_2(3, 7) + '<br>')
-
-        document.write('<br>')
+        document.write(soma_2(3, 7) + '<br><br>')
 
         function soma_3(n1, n2) {
             return n1 + n2
         }    
         var res_3 = soma_3 (4, 7)
         document.write(res_3 + '<br>')
-        /*Outra maneira de se trabalhar com essa função.*/
+        //Outra maneira de se trabalhar com essa função.
 
         document.write('<br>')
 
@@ -54,11 +52,12 @@
             var tamanho = números.length
             var soma_4 = 0
             for (var i = 0; i < tamanho; i++) {
-                soma_4+= números[i]
+                soma_4 += números[i]
             }
             return Math.round(soma_4 / tamanho)
         }
-        document.write(média(números) + '<br>')
+
+        document.write(média(números))
 
     </script>
 
