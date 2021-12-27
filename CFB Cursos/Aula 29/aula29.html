@@ -9,110 +9,90 @@
     <script>
 
         var pi = Math.PI
-        document.write(pi + '<br>')
-        /*Retorna o número pi.*/
-
-        document.write('<br>')
+        document.write(`PI: ${pi}. <br><br>`)
+        //Retorna o número pi.
 
         var eu = Math.E
-        document.write(eu + '<br>')
-        /*Retorna o número Euler.*/
-
-        document.write('<br>')
+        document.write(`Número Euler: ${eu}. <br><br>`)
+        //Retorna o número Euler.
 
         var raiz = Math.SQRT2
-        document.write(raiz + '<br>')
-        /*Retorna a raiz quadrada.*/
-
-        document.write('<br>')
+        document.write(`Raiz quadrada: ${raiz}. <br><br>`)
+        //Retorna a raiz quadrada.
 
         var raiz1_2 = Math.SQRT1_2
-        document.write(raiz1_2 + '<br>')
-        /*Retorna a raiz quadrada de 1 sobre 2.*/     
-
-        document.write('<br>')
+        document.write(`Raiz quadrada de 2¹: ${raiz1_2}. <br><br>`)
+        //Retorna a raiz quadrada de 1 sobre 2 (2¹).
 
         var valor_1 = - 10
         var valor_absoluto = Math.abs(valor_1)
-        document.write(valor_absoluto + '<br>')
-        /*Retorna o valor absoluto.*/
-
-        document.write('<br>')
+        document.write(`Valor absoluto de "-10": ${valor_absoluto}. <br><br>`)
+        //Retorna o valor absoluto.
 
         var valor_2 = 10.3
         var arredondar_para_cima = Math.ceil(valor_2)
-        document.write(arredondar_para_cima + '<br>')
-        /*Arredonda para cima.*/
-
-        document.write('<br>')
+        document.write(`10.3 Arredondado para cima: ${arredondar_para_cima}. <br><br>`)
+        //Arredonda para cima.
 
         var valor_3 = 10.8
         var arredondar_para_baixo = Math.floor(valor_3)
-        document.write(arredondar_para_baixo + '<br>')
-        /*Arredonda para baixo.*/
-
-        document.write('<br>')
+        document.write(`10.8 Arredondado para baixo: ${arredondar_para_baixo}. <br><br>`)
+        //Arredonda para baixo.
 
         var valor_4 = 11.4
         var arredondar = Math.round(valor_4)
-        document.write(arredondar + '<br>')
-        /*Arredondar o valor de maneira padrão: n < 5: para baixo; n >= 5: para cima.*/
+        document.write(`Arredondamento padrão (valor: 11.4): ${arredondar}. <br><br>`)
+        //Arredondar o valor de maneira padrão: n < 5: para baixo; n >= 5: para cima.
 
-        document.write('<br>')
-
-        var valor_5 = 4
-        /*10 é o número que será elevado a uma potência.*/
+        var valor_5 = 10
+        //10 é o número que será elevado a uma potência.
+        
         var potência = Math.pow(valor_5, 2)
-        /*2 é o valor ao qual 10 será elevado.*/
-        document.write(potência + '<br>')
-        /*Eleva um número a uma potência.*/
-
-        document.write('<br>')
+        //2 é o valor ao qual 10 será elevado.
+        
+        document.write(`Elevação a uma potência (10²): ${potência}. <br><br>`)
+        //Eleva um número a uma potência.
 
         var valor_6 = 10
         var raiz_quadrada = Math.sqrt(valor_6)
-        document.write(raiz_quadrada + '<br>')
-        /*Retorna a raiz quadrada de um valor.*/
-
-        document.write('<br>')
+        document.write(`Raiz quadrada (de 10): ${raiz_quadrada}. <br><br>`)
+        //Retorna a raiz quadrada de um valor.
 
         var aleatório = Math.random()
-        document.write(aleatório + '<br>')
-        /*Retorna um valor aleatório entre 0 e 1.*/
+        document.write(`Número aleatório (entre 0 e 1): ${aleatório}. <br><br>`)
+        //Retorna um valor aleatório entre 0 e 1.
 
-        document.write('<br>')
-
-        /*Caso se deseje um valor aleatório entre dois números específicos, use esta estrutura abaixo:*/
+        //Caso se deseje um valor aleatório entre dois números específicos, use esta estrutura abaixo:
 
         var valor_7 = 10
-        var aleatório_entre = Math.random()*valor_7
-        document.write(aleatório_entre + '<br>')
-        /*Embora o valor seja aleatório, ele apresentará um série de casas decimais.*/
-
-        document.write('<br>')
+        var aleatório_entre = Math.random() * valor_7
+        document.write(`Número (decimal) aleatório (entre 0 e 10): ${aleatório_entre}. <br><br>`)
+        //Embora o valor seja aleatório, ele apresentará um série de casas decimais.
 
         var valor_8 = 10
         var aleatório_entre_inteiro = Math.round(Math.random() * valor_8)
-        document.write(aleatório_entre_inteiro + '<br>')
-        /*Retorna um número aleatório inteiro entre 0 e 10.*/
-
-        document.write('<br>')
+        document.write(`Número (inteiro) aleatório (entre 0 e 10): ${aleatório_entre_inteiro}. <br><br>`)
+        //Retorna um número aleatório inteiro entre 0 e 10.
 
         var valor_9 = 60
-        for (var i = 0; i < 6; i++) {
-            document.write(Math.round(Math.random() * valor_9) + '<br>')
+        for (var i = 1; i < 7; i++) {
+            document.write(`${i}ª número: ${Math.round(Math.random() * valor_9)}. <br>`)
         }
-        /*Retorna um conjunto de 6 números (aleatórios) entre 0 e 60.*/
         
-        /*Caso você queira começar a contagem do 1, faça assim:*/
+        //Retorna um conjunto de 6 números (aleatórios) entre 0 e 60.
+        
+        //Caso você queira começar a contagem do 1, faça assim:
 
         document.write('<br>')
 
         var valor_9 = 59
-        for (var i = 0; i < 6; i++) {
-            document.write(Math.round(Math.random() * valor_9 + 1) + '<br>')
+        for (var i = 1; i < 7; i++) {
+            document.write(`${i}ª número: ${Math.round(Math.random() * valor_9 + 1)}. <br>`)
         }
-        /*A lógica é: como o contador começa com zero e todo número apresentado será somada a 1, nunca haverá número menor do que zero; e, como o número máxio do contador é 59, caso esse número apareça, ele será somado a 1 e, assim, o valor máximo será de 60.*/
+        
+        //A lógica é: como o contador começa com zero e todo número apresentado será somado a 1, nunca haverá número menor do que zero;
+        //Além disso, como o número máximo do contador é 59, caso esse número apareça, ele será somado a 1.
+        //Assim, o valor máximo será de 60.
 
         document.write('<br>')
 
@@ -121,7 +101,7 @@
         var s_1 = Math.sin(ângulo_1)
 
         document.write('Ângulo: ' + ângulo_1 + '<br>' + 'Cosseno: ' + c_1 + '<br>' + 'Seno: ' + s_1 + '<br>')
-        /*Cosseno e seno de um ângulo.*/
+        //Cosseno e seno de um ângulo.
 
         document.write('<br>')
 
@@ -130,11 +110,12 @@
         var s_2 = Math.sin(ângulo_2 * Math.PI/180)
 
         document.write('Ângulo: ' + ângulo_2 + '<br>' + 'Cosseno: ' + c_2 + '<br>' + 'Seno: ' + s_2 + '<br>')
-        /*No primeiro exemplo, os ângulos do cosseno e seno estão sendo retornados em graus, não em radianos. Nesse segundo exemplo, esse problema foi solucionado.*/
+        //No primeiro exemplo, os ângulos do cosseno e seno estão sendo retornados em graus, não em radianos.
+        //Nesse segundo exemplo, esse problema foi solucionado.
 
-        /*P. S.: No primeiro exemplo, esse problema não é notado pois o ângulo é zero.*/
+        //P. S.: No primeiro exemplo, esse problema não é notado pois o ângulo é zero.
         
-        /*O número apresentado no cosseno é um número muito próximo a zero; esse número gera um "bug" no JS.*/
+        //O número apresentado no cosseno é um número muito próximo a zero; esse número gera um "bug" no JS.
 
         document.write('<br>')
 
@@ -147,14 +128,12 @@
         document.write('<br>')
 
         var máximo = Math.max(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
-        document.write(máximo)
-        /*Retorna o valor máximo (entre os valores apresentados).*/
-
-        document.write('<br>')
+        document.write(`Maior valor (entre os apresentados): ${máximo}. <br><br>`)
+        //Retorna o valor máximo (entre os valores apresentados).
 
         var mínimo = Math.min(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
-        document.write(mínimo)
-        /*Retorna o valor mínimo (entre os valores apresentados).*/
+        document.write(`Menor valor (entre os apresentados: ${mínimo}.`)
+        //Retorna o valor mínimo (entre os valores apresentados).
 
     </script>
 
