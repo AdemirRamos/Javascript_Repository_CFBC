@@ -10,64 +10,70 @@
 
         var nome_cor_1 = 'Vermelho'
 
-        function cor(){
+        //A variável acima é de escopo global. Ela pode ser acessada a partir de qualquer parte do documento.
+
+        function cor() {
             var nome_cor_1 = 'Azul'
             document.write(nome_cor_1 + '<br>')
-            /*A variável, dentro dessa função, não está disponível fora dela.*/
+            //A variável, dentro dessa função, não está disponível fora dela.
+            //A variável "nome_cor_1" está restrita ao escopo da função.
         }
 
-        cor ()
+        cor()
 
-        document.write(nome_cor_1 + '<br>')
-        /*As duas variáveis (nome_cor) são diferentes pois estão em escopos diferentes.*/
-
-        document.write('<br>')
+        document.write(nome_cor_1 + '<br><br>')
+        //As duas variáveis (nome_cor) são diferentes pois estão em escopos diferentes.
 
         var nome_cor_2 = 'Vermelho'
 
-        function cor(){
-            var nome_cor_2 = 'Azul'
+        function cor_2() {
+            nome_cor_2 = 'Azul'
             document.write(nome_cor_2 + '<br>')
         }
 
-        cor ()
+        cor_2()
 
-        document.write(nome_cor_2 + '<br>')
-        /*Nesse caso, a mensagem 'Azul' foi escrita duas vezes pois, originalmente, ela era 'Vermelho', porém, depois de passar por dentro da função, ela foi alterada para 'Azul' nas duas ocorrências do método "write".*/
+        document.write(nome_cor_2 + '<br><br>')
+        /*Nesse caso, a mensagem 'Azul' foi escrita duas vezes pois, originalmente, ela era 'Vermelho', porém, depois de passar por dentro da função, ela foi alterada para 'Azul' e assim passou a ser entendida nas duas ocorrências do método "write".*/
 
         /*Mesmo que as variáveis estejam em escopos diferentes, não é recomendável usar variáveis com o mesmo nome. Uma razão para isso, se encontra no fato de ser mais difícil selecionar uma destas variáveis com o mesmo nome. (...) Ainda sim, é possível selecionar uma variável que compartilha o seu nome com outra variável.*/
 
         var nome_cor_3 = 'Vermelho'
+        var nome_cor_3
 
-        function cor(){
+        //O Javascript nos permite redeclarar uma variável (sem que isso cause qualquer erro).
+        //Entretanto, caso a variável tenha o seu valor designado novamente, esse último valor passará a ser o valor da variável.
+
+        function cor_3() {
             var nome_cor_3 = 'Azul'
-            var nome_cor_3
-            /*É possível redeclarar a variável. Do modo como está, na linha acima, não será causada nenhuma alteração ou erro.*/
-            document.write(this.nome_cor_3 + nome_cor_3 + '<br>')
-            /*O método ".this" fará referencia a variável global.*/
+            //É possível redeclarar a variável. Do modo como está, na linha acima, não será causada nenhuma alteração ou erro.
+            
+            document.write(this.nome_cor_3 + '<br>' + nome_cor_3 + '<br><br>')
+            //O método ".this" fará referencia a variável global.
         }
 
-        cor ()
+        cor_3()
 
-        //document.write(nome_cor_3 + '<br>')
+        document.write(nome_cor_3 + '<br><br>')
 
         var nome_cor_4 = 'Vermelho'
         var i = 0
-        /*Essa variável "i" é exatamente a mesma variável "i" que aparece posteriormente no programa (dentro de "for").*/
+        //Essa variável "i" é exatamente a mesma variável "i" que aparece posteriormente no programa (dentro de "for").
 
-        function cor(){
+        function cor_4() {
             var nome_cor_4 = 'Azul'
             document.write(this.nome_cor_4 + '<br>' + nome_cor_4 + '<br>')
-            /*O método ".this" fará referencia a variável global.*/
+            //O método "this." fará referencia a variável global.
+            //O "this." indica que a variável a ser manipulada é variável de escopo global.
         }
 
-        cor ()
+        cor_4()
 
-        for (var i = 0; i < 10; i++) {
+        document.write('<br>')
 
-        }
+        for (var i = 0; i < 10; i++) {}
 
-        document.write(i + '<br>')
+        document.write(i + '<br>') //Esse comando está fora do "loop for" meramente por questões explicativas.
 
     </script>
 
@@ -75,7 +81,7 @@
 
 <body>
 
-<!--Escopo de variáveis: basicamente, até onde uma variável é acessível.-->
+    <!--Escopo de variáveis: basicamente, até onde uma variável é acessível.-->
     
 </body>
 
