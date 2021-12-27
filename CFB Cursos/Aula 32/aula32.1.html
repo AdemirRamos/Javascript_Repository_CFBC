@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 32 - Eventos</title>
+    <title>Aula 32.1 - Eventos</title>
 
     <style>
 
@@ -24,7 +24,7 @@
 
         function mudanaça_de_posição(objeto) {
             objeto.style.position = 'absolute'
-            objeto.style.left = Math.random() * 500 + 'px'
+            objeto.style.left = Math.random() * 500 + 'px' //Aqui teremos, como resultado, um número aleatório entre 0 e 500.
             objeto.style.top = Math.random() * 500 + 'px'
             /*O objeto ocupará uma posição aleatória na tela.*/
         }
@@ -36,11 +36,14 @@
 
             if (hora < 12) {
                 txt = 'Bom dia!'
-            } else if (hora < 18) {
+            }
+            else if (hora < 18) {
                 txt = 'Boa tarde!'
-            } else {
+            }
+            else {
                 txt = 'Boa noite!'
             }
+
             alert('Olá, ' + txt)
         }
 
@@ -51,11 +54,16 @@
 <body onload="Olá()">
 
     <div id="dv1" onmouseover="mudança_de_cor(this, '#f00')" onmouseout="mudança_de_cor(this, '#fff')"></div>
-    <!--O "this" vai selecionar o parâmetro "mudança_de_cor"; o segundo parâmetro trata-se da nova cor.-->
-    <br/>
+    <!--O "this" passa como primeiro parâmetro da função, nesse caso, o próprio elemento que o recebe (ou seja, a "div dv1").-->
+    <!--O segundo parâmetro trata-se da nova cor.-->
+    <!--A função referida acima é: "mudança_de_cor()".-->
+
+    <br>
+
     <button onclick="alert('CFB Cursos')" onmouseover="mudanaça_de_posição(this)">Clique Em Mim</button>
 
-<!--Basicamente, um "evento" é um "acontecimento". Sempre que executamos alguma ação, dentro de um programa, é disparado algum determinado evento. Por exemplo, quando clicamos em algum botão, é disparado o evento "onclick". Quando movimentamos o mouse, "mousemove". Antes do clique, possivelmente, "mouseover". Quando uma página é carregada, "onload" e assim por diante.-->
+    <!--Basicamente, um "evento" é um "acontecimento". Sempre que executamos alguma ação, dentro de um programa, é disparado algum determinado evento. Por exemplo, quando clicamos em algum botão, é disparado o evento "onclick". Quando movimentamos o mouse, "mousemover". Antes do clique, possivelmente, "mouseover". Quando uma página é carregada, "onload" e assim por diante. Qualquer evento de interação do usuário com a página vai disparar um evento.
+    É possível capturar estes eventos e associar comandos (através de funções).-->
 
 </body>
 
