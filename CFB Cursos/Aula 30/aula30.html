@@ -17,6 +17,8 @@
 
         document.write('<br>')
 
+        //Parâmetros são valores passados para dentro da função:
+
         function soma_1(n1, n2) {
             var res_1 = n1 + n2
             document.write(res_1 + '<br>')
@@ -28,6 +30,8 @@
         //Função com parâmetros.
 
         document.write('<br>')
+
+        //"return", retorna, para a chamada da função, um resultado.
 
         function soma_2(n1, n2) {
             var res_2 = n1 + n2
@@ -42,17 +46,17 @@
         }    
         var res_3 = soma_3 (4, 7)
         document.write(res_3 + '<br>')
-        //Outra maneira de se trabalhar com essa função.
+        //Assim podemos, de maneira prática, armazenar o retorno da função em uma variável.
 
         document.write('<br>')
 
         var números = new Array(10, 2, 5, 30, 25, 19, 20, 50, 40, 150)
 
-        function média(números) {
-            var tamanho = números.length
+        function média(numbers) {
+            var tamanho = numbers.length
             var soma_4 = 0
             for (var i = 0; i < tamanho; i++) {
-                soma_4 += números[i]
+                soma_4 += numbers[i]
             }
             return Math.round(soma_4 / tamanho)
         }
