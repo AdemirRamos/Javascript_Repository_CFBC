@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 28 - Data() - Manipular Data e Hora</title>
+    <title>Aula 28.1 - Date() - Manipular Data e Hora</title>
 
     <script>
 
         var dt = new Date ()
 
         var nova_data = new Date (1978, 02, 07, 10, 10, 10, 10)
-        /*Ou você adiciona "-1" ou troca o "3" por "2" (para adicionar o mês de março).*/
+        //Dentro de parênteses temos os parâmetros do método.
+        //Dessa forma, podemos definir a data, dia, hora, minutos, et cetera.
+        //Ou você adiciona "-1" ou troca o "3" por "2" (para adicionar o mês de março, por exemplo).
 
-        //nova_data.setFullYear(dt.getFullYear()+1)
-        //nova_data.setDate(dt.getDate()+2)
+        nova_data.setFullYear(dt.getFullYear() + 1)
+        nova_data.setDate(dt.getDate() + 2)
 
         var dia_da_semana = nova_data.getDay()
         var dia = nova_data.getDate()
@@ -29,7 +31,7 @@
 
         var semanas = new Array ('Domingo', 'Segunda-feria', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado')
 
-        document.write(semanas[dia_da_semana] + ', ' + dia + ' de ' + meses[mês] + ' de ' + ano + ' ')
+        document.write(semanas[dia_da_semana] + ', ' + dia + ' de ' + meses[mês] + ' de ' + ano + '<br><br>')
 
         document.write(horas + ':' + minutos + ':' + segundos)
 
