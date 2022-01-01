@@ -44,7 +44,7 @@
         }
 
         function addEventos1() {
-            document.getElementById('dv1').addEventListener('click', mensagem)
+            var objeto = document.getElementById('dv1').addEventListener('click', mensagem)
         }
 
         window.addEventListener('load', addEventos)
@@ -58,20 +58,20 @@
             var tecla = event.keyCode
 
             if (tecla == 37) {
-                px-=10
-                objeto1.style.left=px+'px'
+                px -= 10
+                objeto1.style.left = px + 'px'
             }
             else if (tecla == 38) {
-                py-=10
-                objeto1.style.top=py+'px'
+                py -= 10
+                objeto1.style.top = py + 'px'
             }
             else if (tecla == 39) {
-                px+=10
-                objeto1.style.left=px+'px'
+                px += 10
+                objeto1.style.left = px + 'px'
             }
             else if (tecla == 40) {
-                py+=10
-                objeto1.style.top=py+'px'
+                py += 10
+                objeto1.style.top = py + 'px'
             }
         })
 

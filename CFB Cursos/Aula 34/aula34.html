@@ -23,14 +23,15 @@
     <script>
 
         var px = 0
-        /*Variável responsável pelo deslocamento horizontal.*/
+        //Variável responsável pelo deslocamento horizontal.
+        
         var py = 0
-        /*Variável responsável pelo deslocamento vertical.*/
+        //Variável responsável pelo deslocamento vertical.
 
-        document.addEventListener('keydown', function (event){
+        document.addEventListener('keydown', function (event) {
             var objeto = document.getElementById('dv1')
             var tecla = event.keyCode
-            /*Captura o código da tecla pressionada.*/
+            //Captura o código da tecla pressionada.
 
             /*As teclas direcionais têm códigos:
             
@@ -39,21 +40,21 @@
             - Direita: 39;
             - Baxio: 40.*/
 
-            if (tecla == 37){
-                px-=10
-                objeto.style.left=px+'px'
+            if (tecla == 37) {
+                px -= 10
+                objeto.style.left = px+'px'
             }
             else if (tecla == 38) {
-                py-=10
-                objeto.style.top=py+'px'
+                py -= 10
+                objeto.style.top = py+'px'
             }
             else if (tecla == 39) {
-                px+=10
-                objeto.style.left=px+'px'
+                px += 10
+                objeto.style.left = px+'px'
             }
             else if (tecla == 40) {
-                py+=10
-                objeto.style.top=py+'px' 
+                py += 10
+                objeto.style.top = py+'px' 
             }
         })
 
@@ -65,8 +66,8 @@
     
     <div id="dv1"></div>
 
-<!--Em JS, x para a esquerda é negativo; x para a direita é positivo (conversão normal).-->
-<!--Em JS, y para cima é negativo; y para baixo é negativo (conversão normal).-->
+    <!--Em JS, x para a esquerda é negativo; x para a direita é positivo (conversão normal).-->
+    <!--Em JS, y para cima é negativo; y para baixo é positivo (conversão normal).-->
     
 </body>
 

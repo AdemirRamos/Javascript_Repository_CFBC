@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 34 - addEventListener Parte 2 (Keydown)</title>
+    <title>Aula 34.1 - addEventListener Parte 2 (Keydown)</title>
 
     <style>
 
@@ -23,14 +23,15 @@
     <script>
 
         var px = 0
-        /*Variável responsável pelo deslocamento horizontal.*/
+        //Variável responsável pelo deslocamento horizontal.
+        
         var py = 0
-        /*Variável responsável pelo deslocamento vertical.*/
+        //Variável responsável pelo deslocamento vertical.
 
-        function move() {
+        function mover() {
             var objeto = document.getElementById('dv1')
             var tecla = event.keyCode
-            /*Captura o código da tecla pressionada.*/
+            //Captura o código da tecla pressionada.
 
             /*As teclas direcionais têm códigos:
             
@@ -40,34 +41,36 @@
             - Baxio: 40.*/
 
             if (tecla == 37) {
-                px-=10
-                objeto.style.left=px+'px'
+                px -= 10
+                objeto.style.left = px + 'px'
             }
             else if (tecla == 38) {
-                py-=10
-                objeto.style.top=py+'px'
+                py -= 10
+                objeto.style.top = py + 'px'
             }
             else if (tecla == 39) {
-                px+=10
-                objeto.style.left=px+'px'
+                px += 10
+                objeto.style.left = px + 'px'
             }
             else if (tecla == 40) {
-                py+=10
-                objeto.style.top=py+'px' 
+                py += 10
+                objeto.style.top = py + 'px' 
             }
 
-            /*Para cancelar um evento:*/
-            /*P.S.: código da tecla "enter": 13.*/
+            //Para cancelar um evento:
+            //P. S.: código da tecla "enter": 13.
 
             else if (tecla == 13) {
                 alert("Evento 'keydown' removido.")
-                this.removeEventListener('keydown', move)
-                document.removeEventListener('keydown', move)
-                /*Aqui podem ser usados "this." ou "document.".*/
+                this.removeEventListener('keydown', mover)
+                //Aqui podem ser usados "this." ou "document." pois a função "mover" está ligada ao documento.
+
+                document.removeEventListener('keydown', mover)
+                //"removeEventListener" remove um evento de um objeto.
             }
         }
 
-        document.addEventListener('keydown', move)
+        document.addEventListener('keydown', mover)
 
     </script>
 
@@ -77,8 +80,8 @@
     
     <div id="dv1"></div>
 
-<!--Em JS, x para a esquerda é negativo; x para a direita é positivo (conversão normal).-->
-<!--Em JS, y para cima é negativo; y para baixo é negativo (conversão normal).-->
+    <!--Em JS, x para a esquerda é negativo; x para a direita é positivo (conversão normal).-->
+    <!--Em JS, y para cima é negativo; y para baixo é negativo (conversão normal).-->
     
 </body>
 
