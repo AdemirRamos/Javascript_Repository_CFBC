@@ -8,40 +8,64 @@
     
     <style>
 
-        #dv1 {
+        #dv1, #dv2, #dv3 {
             height: 100px;
             width: 100px;
             border: 1px solid #000;
             background-color: #fff;
         }
 
+        div {
+            display: inline-block;
+        }
+
     </style>
 
     <script>
 
-        var tempo
+        var tempo_1, tempo_2, tempo_3
 
-        function mudança_de_cor() {
+        function mudança_de_cor_1() {
             var objeto = document.getElementById('dv1')
-            var r = Math.floor(Math.random()*255)
-            var g = Math.floor(Math.random()*255)
-            var b = Math.floor(Math.random()*255)
-            objeto.style.backgroundColor = 'rgb('+r+', '+g+', '+b+')'
+            var r = Math.floor(Math.random() * 255)
+            var g = Math.floor(Math.random() * 255)
+            var b = Math.floor(Math.random() * 255)
+            objeto.style.backgroundColor = 'rgb('+ r +', '+ g +', '+ b +')'
         }
 
-        //mudança_de_cor()
+        function mudança_de_cor_2() {
+            var objeto_2 = document.querySelector('div#dv2')
+            var red = Math.ceil(Math.random() * 255)
+            var green = Math.ceil(Math.random() * 255)
+            var blue = Math.ceil(Math.random() * 255)
+            objeto_2.style.backgroundColor = 'rgb('+ red +', '+ green +', '+ blue +')'
+        }
 
-        //var tempo = setTimeout(mudança_de_cor, 3000)
-        /*Só chama a função uma vez (dentro do intervalo especificado).*/
+        function mudança_de_cor_3() {
+            var objeto_3 = document.querySelector('div#dv3')
+            var red = Math.ceil(Math.random() * 255)
+            var green = Math.ceil(Math.random() * 255)
+            var blue = Math.ceil(Math.random() * 255)
+            objeto_3.style.backgroundColor = 'rgb('+ red +', '+ green +', '+ blue +')'
+        }
+
+        tempo_1 = setTimeout(mudança_de_cor_1, 3000)
+        //"setTimeOut" possui dois atributos: 1ª a função a ser chamada; 2ª: o intervalo de chamada (em milisegundos).
+        //"setTimeOut" só chama a função uma vez (dentro do intervalo especificado).
+
+        tempo_2 = setInterval(mudança_de_cor_2, 3000)
+        //"setInterval" se repetirá, indefinidadmente, após o fim de cada ciclo do intervalo definido.
 
         function iniciar() { 
-        tempo = setInterval(mudança_de_cor, 1000)
-        /*Nesse caso, a função será chamada cada vez que for cumprimo o intervalo especificado.*/
+            tempo_3 = setInterval(mudança_de_cor_3, 3000)
+            //Nesse caso, a função será chamada cada vez que for cumprido o intervalo especificado.
         }
 
         function parar() {
-            clearInterval(tempo)
-            /*Zera o intervalo.*/
+            clearInterval(tempo_3)
+            //Zera o intervalo.
+            //Devido a questões ligadas ao "escopo de variável", a variável "tempo_3" não pode ser acessada dessa função ("parar");
+            //Isso caso ela seja declarada na função "iniciar". Para sanar esse problema, basta defini-la como uma variável global.
         }
 
         function addEventos() {
@@ -49,6 +73,8 @@
             document.getElementById('bt2').addEventListener('click', parar)
         }
 
+        window.addEventListener('load', mudança_de_cor_1)
+        window.addEventListener('load', mudança_de_cor_2)
         window.addEventListener('load', addEventos)
 
     </script>
@@ -58,7 +84,9 @@
 <body>
 
     <div id="dv1"></div>
-    <br/>
+    <div id="dv2"></div>
+    <div id="dv3"></div>
+    <hr>
     <button id="bt1">Iniciar</button>
     <button id="bt2">Parar</button>
     
