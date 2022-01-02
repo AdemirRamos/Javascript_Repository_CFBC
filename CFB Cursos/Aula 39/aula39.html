@@ -21,6 +21,10 @@
 
     <script>
 
+        //Com RAF a adiministração do intervalo será feito pelo navegador.
+        //Com RAF não é preciso se esperar por uma tarefa acabar ou o intervalo de chamada terminar para repetir o (s) comando (s).
+        //Com RAF o "frame-rate" (taxa de quadros) é controlado pelo navegador.
+
         var jogador
         var velocidade
         var direção_x
@@ -32,11 +36,13 @@
         function iniciar() {
             velocidade = 5
             direção_x = 1
-            /*Recebendo 1, essa variável vai gerar uma movimentação para a direita.*/
-            /*Caso a movimentação deva ser para a esquerda, basta adicionar um sinal de menos antes do número.*/
+            //Recebendo 1, essa variável vai gerar uma movimentação para a direita.
+            //Caso a movimentação deva ser para a esquerda, basta adicionar um sinal de menos antes do número.
+            
             direção_y = 0
             posição_x = 0
             posição_y = 0
+            
             jogador = document.getElementById('jogador')
             jogador.addEventListener('click', function() {
                 cancelAnimationFrame(animação)
@@ -45,16 +51,23 @@
         }
 
         function game() {
+            //A rotina para o deslocamento na posição Y está desativado porque, por hora, não trabalharemos com ela.
+            
             posição_x += direção_x * velocidade
+            
             //posição_y += direção_y * velocidade
-            jogador.style.left=posição_x+'px'
-            //jogador.style.top=posição_y+'px'
+            
+            jogador.style.left = posição_x + 'px'
+            
+            //jogador.style.top = posição_y + 'px'
+            
             if (posição_x > 800) {
                 direção_x = -1
             }
             else if (posição_x < 0) {
                 direção_x = 1
             }
+            
             animação = requestAnimationFrame(game)
         }
 
