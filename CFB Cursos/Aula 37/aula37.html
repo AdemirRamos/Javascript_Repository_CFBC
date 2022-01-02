@@ -22,13 +22,7 @@
 
     <script>
 
-        var dx
-        var dy
-        var px
-        var py
-        var vel
-        var objeto
-        var tempo
+        var dx, dy, px, py, vel, objeto, tempo
         
         function iniciar() {
             dx = 0
@@ -39,8 +33,10 @@
             objeto = document.getElementById('dv1')
             document.addEventListener('keydown', tecla_down)
             document.addEventListener('keyup', tecla_up)
-            tempo = setInterval(enterFrame, 20)
-            /*"Keydown": quando a tecla é pressionada; "keyup": quando a tecla é despressionada.*/
+            tempo = setInterval(enter_frame, 20)
+
+            //O valor do "setInterval" relacionado à variável "tempo" controla a taxa de quadros da figura se movimentando na tela.
+            //"Keydown": quando a tecla é pressionada; "keyup": quando a tecla é despressionada.
         }
 
         function tecla_down() {
@@ -77,11 +73,11 @@
             }
         }
 
-        function enterFrame() {
-            px+= dx * vel
-            py+= dy * vel
-            objeto.style.left=px+'px'
-            objeto.style.top=py+'px'
+        function enter_frame() {
+            px += dx * vel
+            py += dy * vel
+            objeto.style.left = px + 'px'
+            objeto.style.top = py + 'px'
         }
 
         window.addEventListener('load', iniciar)
