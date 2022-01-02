@@ -124,9 +124,6 @@
             minutos = time.getMinutes()
             segundos = time.getSeconds()
 
-            horas = `${hora}:${minutos}:${segundos}`
-            objeto_3 = document.querySelector('input#relógio').value = horas
-
             if (hora < 10) {
                 hora = '0' + hora
             }
@@ -138,6 +135,9 @@
             else if (segundos < 10) {
                 segundos = '0' + segundos
             }
+
+            horas = `${hora}:${minutos}:${segundos}`
+            objeto_3 = document.querySelector('input#relógio').value = horas
         }
 
         setInterval(relógio, 1000)
