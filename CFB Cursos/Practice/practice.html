@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draft</title>
+
+    <style>
+
+        #d1 {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            outline: 1px solid black;
+        }
+
+        #d2 {
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+            outline: 1px solid black;
+            position: absolute;
+            top: 1px;
+            left: 1px;
+        }
+
+        input#relógio {
+            text-align: center;
+            background-color: black;
+            color: greenyellow;
+            text-shadow: 1px 1px 1px coral;
+            font-size: 18px;
+            width: 100px;
+        }
+
+    </style>
+
+    <script>
+
+        var objeto, r, g, b, tempo
+
+        function cor() {
+            objeto = document.getElementById('d1')
+            r = Math.round(Math.random() * 255)
+            g = Math.round(Math.random() * 255)
+            b = Math.round(Math.random() * 255)
+            objeto.style.backgroundColor = 'rgb('+ r +', '+ g +', '+ b +')'
+        }
+
+        function eventos() {
+            document.getElementById('b1').addEventListener('click', iniciar)
+            document.getElementById('b2').addEventListener('click', parar)
+        }
+
+        function iniciar() {
+            tempo = setInterval(cor, 1000)
+        }
+
+        function parar() {
+            clearInterval(tempo)
+        }
+
+        window.addEventListener('load', eventos)
+
+    </script>
+
+    <script>
+
+        var objeto_2, tecla, py = 0, px = 0
+
+        function mover() {
+            tecla = event.keyCode
+
+            if (tecla == 37) {
+                px -= 10
+                objeto_2.style.left = px + 'px'
+            }
+
+            else if (tecla == 38) {
+                py -= 10
+                objeto_2.style.top = py + 'px'
+            }
+
+            else if (tecla == 39) {
+                px += 10
+                objeto_2.style.left = px + 'px'
+            }
+
+            else if (tecla == 40) {
+                py += 10
+                objeto_2.style.top = py + 'px'
+            }
+
+            else if (tecla == 13) {
+                alert("Evento 'keydown' desativado.")
+                objeto_2.style.backgroundColor = 'white'
+                document.removeEventListener('keydown', mover)
+            }
+        }
+
+        function clique() {
+            document.addEventListener('keydown', mover)
+            alert("Evento 'keydown' ativado.")
+            objeto_2.style.backgroundColor = 'red'
+        }
+
+        function eventos_2() {
+            objeto_2 = document.querySelector('div#d2')
+            objeto_2.addEventListener('click', clique)
+        }
+
+        window.addEventListener('load', eventos_2)
+
+    </script>
+
+    <script>
+
+        var time, hora, minutos, segundos, horas, objeto_3
+
+        function relógio() {
+            time = new Date()
+            hora = time.getHours()
+            minutos = time.getMinutes()
+            segundos = time.getSeconds()
+
+            horas = `${hora}:${minutos}:${segundos}`
+            objeto_3 = document.querySelector('input#relógio').value = horas
+
+            if (hora < 10) {
+                hora = '0' + hora
+            }
+
+            else if (minutos < 10) {
+                minutos = '0' + minutos
+            }
+
+            else if (segundos < 10) {
+                segundos = '0' + segundos
+            }
+        }
+
+        setInterval(relógio, 1000)
+
+        window.addEventListener('load', relógio)
+        
+    </script>
+
+</head>
+
+<body>
+    
+    <div id="d1"></div>
+    <hr>
+    <input type="button" id="b1" value="Iniciar">
+    <input type="button" id="b2" value="Parar">
+    <hr>
+    
+    <div id="d2"></div>
+    <hr>
+
+    <input type="text" id="relógio">
+
+</body>
+
+</html>
