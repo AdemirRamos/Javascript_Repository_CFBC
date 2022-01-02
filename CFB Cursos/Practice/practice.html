@@ -34,6 +34,21 @@
             width: 100px;
         }
 
+        #d3 {
+            position: absolute;
+            top: 220px;
+            left: 5px;
+            background-color: #00f;
+            outline: 1px solid black;
+            width: 50px;
+            height: 50px;
+        }
+
+        #botão_1 {
+            margin-top: 75px;
+            margin-left: -5px;
+        }
+
     </style>
 
     <script>
@@ -146,6 +161,48 @@
         
     </script>
 
+    <script>
+
+        var objeto_4, dy = 1, dx = 0, px = 0, py = 0, velocidade = 1, game, button_1, button_2
+
+        function mover_2 () {
+            objeto_4 = document.getElementById('d3')
+            py += dy * velocidade
+            objeto_4.style.left = py +'px'
+
+            if (py == 800) {
+                dy = -1
+            }
+
+            else if (py < 0) {
+                dy = 1
+            }
+
+            game = requestAnimationFrame(mover_2)
+        }
+
+        function parar_2() {
+            objeto_4 = document.getElementById('d3')
+            objeto_4.addEventListener('click', function() {
+                cancelAnimationFrame(game)
+            })
+        }
+
+        function eventos_3() {
+            objeto_4 = document.querySelector('div#d3')
+            objeto_4.addEventListener('click', mover_2)
+            
+            button_1 = document.querySelector('input#botão_1').addEventListener('click', mover_2)
+            button_2 = document.querySelector('input#botão_2').addEventListener('click', function() {
+                cancelAnimationFrame(game)
+            })
+        }
+
+        window.addEventListener('load', eventos_3)
+        window.addEventListener('load', parar_2)
+
+    </script>
+
 </head>
 
 <body>
@@ -159,6 +216,11 @@
     <div id="d2"></div>
 
     <input type="text" id="relógio">
+
+    <div id="d3"></div>
+    <hr>
+    <input type="button" value="Iniciar" id="botão_1">
+    <input type="button" value="Parar" id="botão_2">
 
 </body>
 
