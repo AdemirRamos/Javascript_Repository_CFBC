@@ -9,6 +9,7 @@
     <style>
 
         #quadrado {
+            margin: auto;
             height: 100px;
             width: 100px;
             background-color: #f00;
@@ -20,27 +21,32 @@
     <script>
 
         function contador(mínimo, máximo) {
-            /*Dentro dos parentêses de uma função, vão as variáveis.*/
+            //Dentro dos parentêses de uma função, vão os parâmetros.
+            
             document.write(mínimo + '<br>')
             if (mínimo < máximo) {
                 contador(++mínimo, máximo)
-                /*O incremento vai antes pois, se não, o valor de mínimo só seria alterado ao término da rotina (pós-incremento).*/
-                /*++ = 1*/
+                //O incremento vai antes pois, se não, o valor de mínimo só seria alterado ao término da rotina (pós-incremento).
+                //Sendo assim, temos um "pré-incremento".
+                //++ = variável recebendo o seu próprio valor + 1
             }
         }
 
         contador(0, 10)
-        /*Os valores dentro do contador serão transferidos para a função; após isso, a função será iniciada.*/
+        //Os valores dentro do contador serão transferidos para a função; após isso, a função será iniciada.
 
         function fatorial(número) {
-            if (número == 1) {
+            if (número == 1) { //Condição de parada.
                 return 1
             }
+
             return número * fatorial(número - 1)
             
         }
 
-        document.write(fatorial(5))
+        document.write('<br>')
+        document.write('Fatorial de 5: ' + fatorial(5) + '<br>')
+        document.write('Fatorial de 1: ' + fatorial(1))
 
     </script>
 
@@ -48,8 +54,10 @@
 
 <body>
 
+    <!--"Recursividade" não é um elemento exclusivo de JS, mas sim da programação em geral.-->
     <!--Recursividade é a ocorrência de uma função que chama a si própria.-->
     <!--A recursividade pode ser usada quando a ideia é substituir rotina de "loop": "do while", "while", "for", et cetera.-->
+
     <div id="quadrado"></div>
 
     <script>
@@ -59,11 +67,13 @@
         var animação
 
         function girar() {
-            objeto.style.transform = 'rotate('+ângulo+'deg)'
-            /*O método "rotate"()* faz com que algo gire./
-            /*deg = degree = grau.*/
+            objeto.style.transform = 'rotate('+ ângulo +'deg)'
+            //A propriedade "rotate"() faz com que quem o receba inicie uma animação de giro.
+            //deg == "degree" == grau.
+            
             ângulo++
-            /*Incremento que faz com que o ângulo gire.*/
+            //Incremento que faz com que o ângulo gire.
+            
             if (ângulo > 360) {
                 ângulo = 0
             }
@@ -72,7 +82,7 @@
         }
 
         girar()
-        /*É preciso chamar a função [girar()] para que a rotina comece.*/
+        //É preciso chamar a função ["girar()"] para que a rotina comece.
 
     </script>
 
