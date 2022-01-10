@@ -27,7 +27,7 @@
 
         function pré_carregamento() {
             var n = 1
-            for(var i = 0 ; i < 5 ; i++) {
+            for(var i = 0 ; i < 5; i++) {
             imagens[i] = new Image()
             imagens[i].src="imagens/paisagem" + n + ".jpg"
             n++
@@ -41,7 +41,7 @@
         function iniciar() {
             pré_carregamento()
             imagem_atual = 0
-            máximo_de_imagens = imagens.length - 1
+            máximo_de_imagens = imagens.length - 1 //O "-1" se dá pelo fato do vetor começar com zero (0).
             slider = document.getElementById('dvslider')
             carregar_imagem(imagem_atual)
             intervalo_de_troca = 1000
@@ -51,7 +51,7 @@
 
         function troca_de_imagem() {
             imagem_atual++
-            if(imagem_atual > máximo_de_imagens){
+            if(imagem_atual > máximo_de_imagens) {
                 imagem_atual = 0
             }
             carregar_imagem(imagem_atual)
