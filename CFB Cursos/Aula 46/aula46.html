@@ -6,12 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 46 - Strings (Parte 1) - Match</title>
 
-    <style>
-
-
-
-    </style>
-
 </head>
 
 <body>
@@ -23,51 +17,72 @@
     <script>
 
         var texto = document.getElementById('texto').innerHTML
-        /*O conteúdo do "id texto" passa para dentro da variável (global) "texto".*/
+        //O conteúdo da "tag" com o "id texto" passa para dentro da variável (global) "texto".
 
         var resultado_1 = texto.match('Aula')
-        document.write(`O resultado obtido foi: "${resultado_1}".` + '<br>')
-
-        document.write('<br>')
+        document.write(`O resultado obtido foi: "${resultado_1}".` + '<br><br>')
 
         var resultado_2 = texto.match('HTML')
-        document.write(`O resultado obtido foi: "${resultado_2}".` + '<br>')
-        /*Resultado: "null".*/
-        
-        document.write('<br>')
+        document.write(`O resultado obtido foi: "${resultado_2}".` + '<br><br>')
+        //Resultado: "null".
 
         var resultado_3 = texto.match('Aula')
-        document.write(`O resultado obtido foi: "${resultado_3.length}".` + '<br>')
-        /*Tamanho da variável selecionada.*/
+        document.write(`O resultado obtido foi: "${resultado_3.length}".` + '<br><br>')
+        //Tamanho da variável selecionada. - Nesse caso, o resultado será "1 (um)" pois só será achada uma palavra.
 
-        /*O resultado da pesquisa feita com "match" retornará o valor exato procurado (considerando maiúsculas e/ou minúsculas).*/
-        
-        document.write('<br>')
+        //O resultado da pesquisa feita com "match" retornará o valor exato procurado (considerando maiúsculas e/ou minúsculas).
+        //Esse é o chamado "case sensitive".
 
         var resultado_4 = texto.match(/de/g)
-        document.write(`O resultado obtido foi: "${resultado_4.length}".` + '<br>')
-        /*"g" irá mostrar o número de vezes em que a ocorrências, entre barras (//), apareceu dentro da "string" selecionada.*/
-        /*"g" é "case-sensitive", ou seja, faz diferenciação entre letras maiúsculas e minúsculas.*/
-
-        document.write('<br>')
+        document.write(`O resultado obtido foi: "${resultado_4.length}".` + '<br><br>')
+        //"g" irá mostrar o número de vezes em que a ocorrência, entre barras (//), apareceu dentro da "string" selecionada.
+        //"g" é "case-sensitive", ou seja, faz diferenciação entre letras maiúsculas e minúsculas.
+        //O modificador "i" anula o "case sensitive"; o modificador "m" salva o resultado da busca como "string" e não como "array".
 
         var resultado_5 = texto.match(/[a-g]/ig)
-        document.write(`O resultado obtido foi: "${resultado_5.length}".` + '<br>')
-        /*"ig" retornará o número de vezes em que a occorência buscada aparece (sem fazer diferenciação entre maiúsculas e minúsculas).*/
-        /*Caso se deseje procurar por letras (ao invés de palavras), basta trocar o texto (entre barras) pela letra procurada.*/
-        /*Caso se queira pesquisar por duas (ou mais letras ou palavras), basta abrir chaves (entre barras) e digitar (sem espaços) o caracteres procurados. Exemplo:*/
-        //var resultado_5 = texto.match(/[oa]/ig)
-        /*Caso se queira marcar quais elementos não devem ser buscados, basta seguir o modelo a seguir:*/
-        /*var resultado_5 = texto.match(/^[oa]/)*/
-        /*Nota: essa matéria é semelhante ao "fatiamento" do Python.*/
-        /*Caso se deseje fazer um busca a partir de um ponto de partide e outro de chegada, basta seguir o modelo a seguir:*/
-        /*var resultado_5 = texto.match(/[a-g]/)*/
-        /*Outra grafia: (/[a|o|e]/) == (/[aoe]/).*/
+        document.write(`O resultado obtido foi: "${resultado_5.length}".` + '<br><br>')
+        //"ig" retornará o número de vezes em que a ocorência buscada aparece (sem fazer diferenciação entre maiúsculas e minúsculas).
+        //Caso se deseje procurar por letras (ao invés de palavras), basta trocar o texto (entre barras) pela letra procurada.
+        
+        var resultado_5 = texto.match(/o/ig)
+        document.write(`O resultado obtido foi: "${resultado_5}". Tamanho do resultado: ${resultado_5.length}` + '<br><br>')
 
-        document.write('<br>')
+        //Caso se queira pesquisar por duas (ou mais letras ou palavras), basta abrir chaves (entre barras) e digitar (sem espaços) o caracteres procurados. Exemplo:
+
+        var resultado_5 = texto.match(/[oa]/ig)
+        document.write(`O resultado obtido foi: "${resultado_5}". Tamanho do resultado: ${resultado_5.length}` + '<br><br>')
+
+        //Outra grafia: (/[a|o|e]/) == (/[aoe]/).
+
+        //Caso se queira marcar quais elementos não devem ser buscados, basta seguir o modelo a seguir:
+
+        var resultado_5 = texto.match(/[^oa]/)
+        document.write(`O resultado obtido foi: "${resultado_5}". Tamanho do resultado: ${resultado_5.length}` + '<br><br>')
+
+        //Nota: essa matéria é semelhante ao "fatiamento" do Python.
+
+        //Caso se deseje fazer um busca a partir de um ponto de partide e outro de chegada, basta seguir o modelo a seguir:
+
+        var resultado_5 = texto.match(/[a-g]/)
+        document.write(`O resultado obtido foi: "${resultado_5}". Tamanho do resultado: ${resultado_5.length}` + '<br><br>')
+
+        var resultado_5 = texto.match(/[^a-g]/)
+        document.write(`O resultado obtido foi: "${resultado_5}". Tamanho do resultado: ${resultado_5.length}` + '<br><br>')
+        //Retorna somente os caracteres que não estão entre "a" e "g".
+
+        var resultado_5 = texto.match(/\d/)
+        document.write(`O resultado obtido foi: "${resultado_5}". Tamanho do resultado: ${resultado_5.length}` + '<br><br>')
+
+        var resultado_5 = texto.match(/\D/)
+        document.write(`O resultado obtido foi: "${resultado_5}". Tamanho do resultado: ${resultado_5.length}` + '<br><br>')
+
+        var resultado_5 = texto.match(/\w/)
+        document.write(`O resultado obtido foi: "${resultado_5}". Tamanho do resultado: ${resultado_5.length}` + '<br><br>')
 
         document.write('O resultado obtido foi: ' + `"${resultado_5[0]}".`)
-        /*O resulado obtido por "ig" é armazenado em um "array". Entre chaves vai o índice do elemento buscado no referido "array".*/
+        //O resulado obtido por "ig" é armazenado em um "array". Entre chaves vai o índice do elemento buscado no referido "array".
+
+        //Para ainda mais conteúdo, ver, na pasta "Prints", "prints" referentes a 18 / 10 / 2021.
 
     </script>
 
