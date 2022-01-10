@@ -14,13 +14,11 @@
 
         table, td, tr, th {
             border: 1px solid #000;
+            padding: 5px;
+            font-weight: bolder;
         }
 
     </style>
-
-    <script>
-
-    </script>
 
 </head>
 
@@ -32,31 +30,46 @@
 
         <tr>
 
-            <th>Alunos</th> <th>Nota 1</th> <th>Nota 2</th> <th>Resultado</th>
+            <th>Alunos</th>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Resultado</th>
 
         </tr>
 
         <tr>
 
-            <td>A11</td> <td>37</td> <td>35</td> <td id="n1"></td>
+            <td>A11</td>
+            <td>37</td>
+            <td>35</td>
+            <td id="n1"></td>
 
         </tr>
 
         <tr>
 
-            <td>A12</td> <td>50</td> <td>50</td> <td id="n2"></td>
+            <td>A12</td>
+            <td>50</td>
+            <td>50</td>
+            <td id="n2"></td>
 
         </tr>
 
         <tr>
 
-            <td>A13</td> <td>50</td> <td>32.7</td> <td id="n3"></td>
+            <td>A13</td>
+            <td>50</td>
+            <td>32.7</td>
+            <td id="n3"></td>
 
         </tr>
 
         <tr>
 
-            <td>A14</td> <td>25</td> <td>45</td> <td id="n4"></td>
+            <td>A14</td>
+            <td>25</td>
+            <td>45</td>
+            <td id="n4"></td>
 
         </tr>
 
@@ -68,9 +81,13 @@
         var nota_soma
 
         for (var i = 1; i < tabela.rows.length; i++) {
-            /*"rows" = linhas das colunas.*/
-            /*tr = "row" / td = "columns / cells".*/
-            nota_soma = parseFloat(tabela.rows[i].cells[1].innerHTML)+parseFloat(tabela.rows[i].cells[2].innerHTML)
+            //"rows" = linhas das colunas.
+            //tr = "table row" / td = "columns / cells".
+            //A variável de controle ("i"), começa do 1 (um) justamente para não tentar calcular o título da 4ª coluna da tabela.
+
+            nota_soma = parseFloat(tabela.rows[i].cells[1].innerHTML) + parseFloat(tabela.rows[i].cells[2].innerHTML)
+            //Somando a primeira e a segunda nota e convertendo ambas em números reais (flutuantes).
+
             tabela.rows[i].cells[3].innerHTML = nota_soma 
         }
 
@@ -79,6 +96,8 @@
         notas[1] = document.getElementById('n2')
         notas[2] = document.getElementById('n3')
         notas[3] = document.getElementById('n4')
+
+        //Elementos que compõem o vetor (porém definidos fora dele).
 
         for (var i = 0; i < 4; i++) {
             if (notas[i].innerHTML < 70) {
