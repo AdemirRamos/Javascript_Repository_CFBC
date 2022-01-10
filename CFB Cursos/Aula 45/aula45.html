@@ -9,8 +9,9 @@
     <style>
 
         #carro {
-            width: 200px;
-            height: 379px;
+            width: 500px;
+            height: 300px;
+            margin-top: 10px;
         }
 
         .carro_1 {
@@ -25,9 +26,18 @@
             background-image: url('imagens/carro3.jpg');
         }
 
+        button {
+            outline: 1px solid black;
+        }
+
     </style>
     
     <script>
+
+        //Controlando parâmetro / atributos HTML através do JS:
+        //setAttribute: nos permite atribuir atributos a uma "tag HTML";
+        //removeAttribute: nos permite remover atributos de uma "tag HTML";
+        //hasAttribute: nos permite checar se uma "tag HTML" tem atributos.
 
         function troca_de_carro(carro) {
             var objeto = document.getElementById('carro')
@@ -44,7 +54,7 @@
         }
 
         //document.getElementById('carro').setAttribute('class', 'carro1')
-        /*"setAttribute": demanda uma classe e um valor correspondente a um atributo (entre parentêses).*/
+        //"setAttribute": demanda um atributo e um valor para o atributo (entre parentêses).
 
         function remover_carro() {
             var objeto = document.getElementById('carro')
