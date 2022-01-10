@@ -20,46 +20,48 @@
 
         var resultado_4 = texto_1.localeCompare(texto_3)
 
-        document.write(`O resultado obtido foi: "${resultado_4}".` + '<br>' + '<br>')
+        document.write(`O resultado obtido foi: "${resultado_4}".` + '<br><br>')
 
         if (resultado_4 == 0) {
-            document.write('As "strings" comparadas, são iguais.' + '<br' + '<br>')
+            document.write('As "strings" comparadas são iguais.' + '<br<br>')
         }
         else {
-            document.write('As "strings" comparadas, são diferentes.' + '<br>' + '<br>')
+            document.write('As "strings" comparadas são diferentes.' + '<br><br>')
         }
 
         var resultado_5 = texto_1.slice(3, 10)
-        /*Esse método faz um recorte da "string" e retorna esse corte.*/
-        /*Resultado: "Cursos".*/
+        //Esse método faz um recorte da "string" e retorna esse corte.
+        //Resultado: "Cursos".
 
-        document.write(`O resultado obtido foi: "${resultado_5}".` + '<br>' + '<br>')
+        document.write(`O resultado obtido foi: "${resultado_5}".` + '<br><br>')
 
         var resultado_6 = texto_1.split(' ')
-        /*"Pica" a "string" a partir do caractere indicado.*/
-        /*Espaço é o caractere divisor (nesse exemplo) que gera "arrays".*/
-        /*Cada elemento da "string" que contenha um espaço (antes ou depois) será posto dentro de um vetor ("array").*/
+        //Separa a "string" a partir do caractere indicado.
+        //Espaço é o caractere divisor (nesse exemplo) que gera "arrays".
+        //Cada elemento da "string" que contenha um espaço (antes ou depois) será posto dentro de um vetor ("array").
 
-        document.write(`O resultado obtido foi: "${resultado_6[5]}".` + '<br>' + '<br>')
+        document.write(`O resultado obtido foi: "${resultado_6[5]}".` + '<br><br>')
 
         var resultado_7 = texto_1.substr(4, 6)
-        /*Esse método é parecido com o "slice", a diferença é que, em "substr", se indica de onde o corte começa e o tamanho do corte.*/
+        //Esse método é parecido com o "slice", a diferença é que, em "substr", se indica de onde o corte começa e o tamanho do corte.
 
-        document.write(`O resultado obtido foi: "${resultado_7}".` + '<br>' + '<br>')
+        document.write(`O resultado obtido foi: "${resultado_7}".` + '<br><br>')
 
         var resultado_8 = texto_1.toLowerCase()
-        /*Esse método converte toda a "string" para minúsculo.*/
+        //Esse método converte toda a "string" para minúsculo.
 
-        document.write(`O resultado obtido foi: "${resultado_8}".` + '<br>' + '<br>')
+        document.write(`O resultado obtido foi: "${resultado_8}".` + '<br><br>')
 
         var resultado_9 = texto_1.toUpperCase()
-        /*Esse método converte toda a "string" para maiúsculo.*/
+        //Esse método converte toda a "string" para maiúsculo.
 
-        document.write(`O resultado obtido foi: "${resultado_9}".` + '<br>' + '<br>')
+        document.write(`O resultado obtido foi: "${resultado_9}".` + '<br><br>')
+
+        //Misturando métodos:
 
         var resultado_10 = texto_1.toUpperCase().substr(22, 10)
 
-        document.write(`O resultado obtido foi: "${resultado_10}".` + '<br>' + '<br>')
+        document.write(`O resultado obtido foi: "${resultado_10}".` + '<br><br>')
 
     </script>
 
