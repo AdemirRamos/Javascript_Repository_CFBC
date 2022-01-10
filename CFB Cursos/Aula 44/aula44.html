@@ -22,7 +22,7 @@
             height: 30%;
             color: #fff;
             cursor: pointer;
-            outline: none;
+            outline: none; /*Elimina aquele contorno do botão.*/
             margin: 10px;
             border: none;
         }
@@ -80,7 +80,7 @@
         function troca_de_imagem(direção) {
             intervalo_de_troca = 0
             imagem_atual += direção
-            if(imagem_atual > máximo_de_imagens){
+            if (imagem_atual > máximo_de_imagens) {
                 imagem_atual = 0
             }
             else if (imagem_atual < 0) {
@@ -109,11 +109,19 @@
 <body>
 
     <div id="dvslider">
-        <button class="botão_slider" onclick="troca_de_imagem(-1)"><</buton>
+
+        <button class="botão_slider" onclick="troca_de_imagem(-1)">&lt;</buton>
+
         <div id="dvload">
+            
+            
             <div id="dvbarra"></div>
+    
+    
         </div>
-        <button class="botão_slider" onclick="troca_de_imagem(1)">></button>
+
+        <button class="botão_slider" onclick="troca_de_imagem(1)">&gt;</button>
+
     </div>
 
 </body>
