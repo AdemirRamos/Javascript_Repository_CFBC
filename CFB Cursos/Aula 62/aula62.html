@@ -8,63 +8,66 @@
 
     <script>
 
-        var minha_janela2
+        var minha_janela_2
 
         window.open()
-        /*Abre uma nova janela no navegador. - Não acontecerá caso os "pop-ups" estejam bloqueados.*/
-        /*É mais fácil manipular a janela se ela estiver associada a uma variável.*/
+        //Abre uma nova janela no navegador. - Não acontecerá caso os "pop-ups" estejam bloqueados.
+        //Também é possível abrir páginas da internet com esse recurso.
+        //É mais fácil manipular a janela se ela estiver associada a uma variável.
 
         var minha_janela = window.open()
 
         minha_janela = window.open('aula62.1.html')
-        /*Entre aspas simples, está o nome do arquivo que se deseja abrir.*/
+        //Entre aspas simples, está o nome do arquivo que se deseja abrir.
 
         function abrir_janela() {
             minha_janela = window.open('aula62.1.html')
-            /*A nova janela será aberta ao se clicar no botão.*/
+            //A nova janela será aberta ao se clicar no botão.
         }
 
-        function abrir_janela1() {
+        function abrir_janela_1() {
             minha_janela = window.open('aula62.1.html', '_blank')
-            /*"Blank" abre o arquivo em outra janela.*/
+            //"_blank" abre o arquivo em outra guia.
         }
 
-        function abrir_janela2() {
-            minha_janela = window.open('aula62.1.html', 'self')
-            /*"Self" abre a janela na mesma guia.*/
+        function abrir_janela_2() {
+            minha_janela = window.open('aula62.1.html', '_self')
+            //"_self" abre a janela na mesma guia.
         }
 
-        function abrir_janela3() {
+        function abrir_janela_3() {
             minha_janela = window.open('aula62.1.html', 'cfb')
-            /*Essa "function" direciona a nova janela aberta para o "iframe" especificado.*/
-            /*Aparecerá uma caixa com a janela dentro.*/
+            //Essa "function" direciona a nova janela aberta para o "iframe" especificado.
+            //Aparecerá uma caixa com a janela dentro.
         }
 
-        function abrir_janela4() {
+        function abrir_janela_4() {
             minha_janela = window.open('aula62.1.html', '_blank', 'width = 300, height = 300')
-            /*A terceira sequência de comandos (entre aspas simples) indica algumas especificações para a nova janela que será aberta.*/
+            //A terceira sequência de comandos (entre aspas simples) indica algumas especificações para a nova janela que será aberta.
         }
 
-        function abrir_janela5() {
+        function abrir_janela_5() {
             minha_janela = window.open('aula62.1.html', '_blank', 'width = 300, height = 300, top = 300, left = 300')
-            /*Os comandos "top" e "left" indicam a posição na qual será aberta a nova janela.*/
+            //Os comandos "top" e "left" indicam a posição na qual será aberta a nova janela.
         }
 
         function fechar_janela() {
             minha_janela.close()
-            /*Esse método não fecha a janela, ele só a minimiza.*/
-            /*Isso acontece porque a variável "minha_janela" pertence só ao escopo de uma função (não é uma variável global).*/
+            //Esse método não fecha a janela, ele só a minimiza.
+            //Isso acontece porque a variável "minha_janela" pertence só ao escopo de uma função (não é uma variável global).
+            //Para que uma janela seja de fato fechada, é preciso que a sua variável seja de escopo global.
         }
 
-        function abrir_janela6() {
-            minha_janela2 = window.open('aula62.1.html', '_blank', 'width = 300, height = 300, top = 300, left = 300')
+        function abrir_janela_6() {
+            minha_janela_2 = window.open('aula62.1.html', '_blank', 'width = 300, height = 300, top = 300, left = 300')
         }
 
-        function fechar_janela2() {
-            minha_janela2.close()
+        function fechar_janela_2() {
+            minha_janela_2.close()
         }
 
-        /*Também é possível abrir várias janelas diferentes - e para fechar cada uma delas, é preciso um código para cada janela especifica (supondo que sejam janelas diferentes e não a mesma.)*/
+        //Também é possível abrir várias janelas diferentes;
+        //E, para fechar cada uma delas, é preciso um código para cada janela específica - caso sejam janelas diferentes e não a mesma.
 
     </script>
 
@@ -72,8 +75,8 @@
 
 <body>
 
-    <button onclick="abrir_janela6()">Abrir outra janela.</button>
-    <button onclick="fechar_janela2()">Fechar a nova janela aberta.</button>
+    <button onclick="abrir_janela_6()">Abrir outra janela.</button>
+    <button onclick="fechar_janela_2()">Fechar a nova janela aberta.</button>
 
     <iframe name="cfb" src="" frameborder="0"></iframe>
     
