@@ -15,46 +15,56 @@
             width: 2000px;
             height: 2000px;
             background-color: #ddd;
+            margin-top: 10px;
         }
 
     </style>
 
     <script>
 
+        //"scrollBy": nos permite fazer uma movimentação / rolagem por cordenadas (x e y) dentro da página.
+        //"length": nos informa a quantidade de "frames" na página.
+        //"frames": em forma de vetor, nos possibilita gerenciar cada uma dos "frames" da nossa página. 
+
         var width, height, posição_x, posição_y, painel
         //var painel = document.getElementById('painel')
 
         //width = window.innerWidth
-        /*Esse comando mostra a largura interna da janela (não conta a barra de guias/favoritos, et cetera.*/
+        //Esse comando mostra a largura interna da janela (não conta a barra de guias/favoritos, et cetera.
         //Para se obter a larguna externa, se usa o comando "outerWidth".
 
         //height = window.innerHeight
-        /*Este comando mostra a altura da janela.*/
+        //Este comando mostra a altura da janela.
+        //Para se obter a altura externa, se usa o comando "outerHeight".
 
         //painel.innerHTML = width
-        /*A largura do painel não aparecerá pois o painel ainda não foi carregado. - O comando abaixo resolve esse problema.*/
+        //A largura do painel não aparecerá pois o painel ainda não foi carregado. - A função abaixo resolve esse problema:
+
+        //Com os valores de largura e altura declarados na função, toda vez que a janela mudar de medidas, os valores serão atualizados.
 
         function botão_informação() {
             width = window.innerWidth
             height = window.innerHeight
             posição_x = window.screenX
             posição_y = window.screenY
-            painel.innerHTML = 'largua: ' + width + '<br>' + 'Altura: ' + height + '<br>' + 'X: ' + posição_x + '<br>' + 'Y: ' + posição_y 
+            painel.innerHTML = `largua: ${width}; <br> Altura: ${height}; <br> X: ${posição_x}; <br> Y: ${posição_y}.`
+            painel.style.fontWeight = 'bolder'
         }
 
         function rolar() {
             window.scrollBy(1000, 1000)
-            /*Esse método precisa de dois parâmetros que serão as cordenadas, respectivamente, de X e de Y.*/
+            //Esse método precisa de dois parâmetros que serão as cordenadas, respectivamente, de X e de Y.
         }
 
         function iniciar() {
             document.getElementById('botão_tamanho').addEventListener('click', botão_informação)
-            /*Agora o botão, ao ser pressionado, mostra o tamanho da janela.*/
+            //O botão, ao ser pressionado, mostra o tamanho da janela.
+            
             document.getElementById('botão_posição').addEventListener('click', rolar)
-            /*Agora o botão, ao ser pressionado, rolará a "div painel".*/
+
             painel = document.getElementById('painel')
             //painel.innerHTML = width
-            /*Dentro de "painel", aparecerá a largura da janela.*/
+            //Dentro de "painel", aparecerá a largura da janela.
         }
 
         window.addEventListener('load', iniciar)

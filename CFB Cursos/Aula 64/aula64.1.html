@@ -12,7 +12,7 @@
             border: 1px solid #000;
             border-radius: 10px;
             padding: 15px;
-            width: 300px;
+            width: 320px;
             height: 300px;
             background-color: #ddd;
         }
@@ -25,11 +25,13 @@
 
         function iniciar() {
             var quantidade = window.length
-            var painel = document.getElementById('painel').innerHTML = quantidade
-            /*Esses comandos contam a quantidade de "iframes" presentes na página.*/
+            var painel = document.getElementById('painel').innerHTML = `Quantidade de "frames" na página: ${quantidade}.`
+            //Esses comandos contam a quantidade de "frames" presentes na página.
+
             for (var i = 0; i < quantidade; i++) {
-                //window.frames[i].location = 'http//:cfbcursos.com.br'
-                /*Carrega a página marcada pela URL dentro do "frame" especificado.*/
+                //window.frames[i].location = 'http://cfbcursos.com.br'
+                //Carrega a página marcada pela URL dentro do "frame" especificado.
+                //"location" nos permite adicionar / direcionar uma URL para um ou mais "frame (s)". 
             }
         }
 

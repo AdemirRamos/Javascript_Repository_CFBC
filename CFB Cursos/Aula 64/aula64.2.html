@@ -27,9 +27,10 @@
 
         function mudar_de_cor(cor) {
             parent.document.body.style.backgroundColor = cor
-            /*"Parent" cria uma conexão com a página-origem ("página pai").*/
-            /*Esse comando atribui aos botões da página principal uma função que possibilita a mudança de cor do corpo da página.*/
-            /*Tanto o Chrome quanto o Opera bloqueiam esse tipo de comando; já o Firefox não.*/
+            //"Parent" cria uma conexão com a página-origem ("página pai").
+            //A função "mudar_de_cor" será aplicada à "página-pai" ("aula64.1.html") e não nos "iframes" com a "aula64.2.html".
+            //Esse comando atribui aos botões da página principal uma função que possibilita a mudança de cor do corpo da página.
+            //Tanto o Chrome quanto o Opera bloqueiam esse tipo de comando; já o Firefox não.
         }
 
     </script>
