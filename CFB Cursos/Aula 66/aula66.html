@@ -10,7 +10,7 @@
 
         #painel {
             width: 400px;
-            height: 500px;
+            height: 240px;
             border: 1px solid #000;
             border-radius: 10px;
             padding: 10px;
@@ -20,23 +20,33 @@
 
     <script>
 
+        //O Objeto "screen" retorna as configurações da tela.
+
         var painel
 
         function iniciar() {
             painel = document.getElementById('painel')
             painel.innerHTML += `Largura: ${screen.width}px<hr>`
-            /*Retorna a largura da tela (monitor).*/
+            //Retorna a largura da tela (monitor).
+
             painel.innerHTML += `Altura: ${screen.height}px<hr>`
+            //Retorna a altura da tela (monitor).
+
             painel.innerHTML += `Resolução: ${screen.width}px X ${screen.height}px<hr>`
+            //Retorna a resolução da tela (monitor).
+
             painel.innerHTML += `Largura Disponível: ${screen.availWidth}px<hr>`
-            /*Retorna a largura disponível para a tela.*/
+            //Retorna a largura disponível para a tela.
+
             painel.innerHTML += `Altura Disponível: ${screen.availHeight}px<hr>`
-            /*Retorna a altura disponível para a tela.*/
-            /*A diferença entre altura e altura disponível se dá em razão da barra de tarefas.*/
+            //Retorna a altura disponível para a tela (desconsiderando a barra de tarefas e similares).
+            //A diferença entre altura e altura disponível se dá em razão da barra de tarefas.
+
             painel.innerHTML += `Profundidade de Cores (Imagens): ${screen.colorDepth} bits<hr>`
-            /*Retorna a profundidade, em "bits", da palheta de cores para exibir imagens.*/
+            //Retorna a profundidade, em "bits", da paleta de cores para exibir imagens.
+
             painel.innerHTML += `Resolução da Cor da Tela: ${screen.pixelDepth} bits/pixels<hr>`
-            /*Retorna a informação de resolução das cores em "bits" por "pixels".*/
+            //Retorna a informação de resolução das cores em "bits" por "pixels".
         }
 
         window.addEventListener('load', iniciar)
