@@ -9,31 +9,34 @@
     <style>
 
         a {
-            color: white;
+            color: black;
         }
 
     </style>
 
     <script>
 
+        //Os métodos vistos a seguir servem para redirecionar o usuário para novas páginas ou arquivos / recarregar página e/ou arquivos.
+
         //location.assign('aula69.1.html')
-        /*"assign()" tem a função de carregar um novo documento.*/
-        /*"assign()" também pode receber um endereço da "web".*/
+        //"assign()" tem a função de carregar um novo documento.
+        //"assign()" também pode receber um endereço da "web".
+        //Do modo como está posto aqui, ao se carregar a página, "assign" carregará automaticamente o endereço recebido.
 
         function página_2() {
             location.replace('aula69.1.html')
-            /*"replace()" faz a mesma coisa que o método "assign()", porém remove o URL do histórico.*/
-            /*É possível, também, usar "assign".*/
+            //"replace()" faz a mesma coisa que o método "assign()", porém remove o URL do histórico.
+            //É possível, também, usar "assign".
         }
 
         function página2_1() {
             location.assign('aula69.1.html')
-            /*Mantem a URL salva no histórico.*/
+            //Mantem a URL salva no histórico.
         }
 
         function recarregar() {
             location.reload('aula69.1.html')
-            /*Esse método carrega a "página-destino" (a página especificada dentro das aspas dentro dos parentêses) automaticamente.*/
+            //Esse método carrega a "página-destino" (a página especificada dentro das aspas dentro dos parentêses) automaticamente.
         }
 
     </script>
