@@ -6,23 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 72 - "SessionStorage (Web Storage)"</title>
 
-    <style>
-
-
-
-    </style>
-
     <script>
 
         function página(page) {
             sessionStorage.nome = document.getElementById('formulário_nome').value;
+
             if (page == 2) {
                 window.location.assign('aula72.1.html')
             }
+
             else if (page == 3) {
                 window.location.assign('aula72.2.html')
             }
-            /*O mesmo procedimento porém sem o "if":*/
+            
+            //O mesmo procedimento porém sem o "if":
+
             //window.location.assign(`aula72.${page}.html`)
         }
 
@@ -47,11 +45,13 @@
 
 <body>
 
-    <!--Diferente de "Web Storage", "Session Storage" não irá gravar as preferências informadas permanentemente.-->
+    <!--Diferente de "Web Storage", "Session Storage" não irá gravar as preferências, informadas, permanentemente.-->
     
     <input type="text" name="formulário_nome" id="formulário_nome" size="20" maxlength="20"><br><br>
+
     <button id="botão_página_2">Página 2</button>
     <button id="botão_página_3">Página 3</button>
+
     <button id="clear_button">Limpar "Session Storage"</button>
 
 </body>
