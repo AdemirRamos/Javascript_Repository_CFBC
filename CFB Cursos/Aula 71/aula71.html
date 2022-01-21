@@ -30,7 +30,7 @@
         //Esses armazenamentos não serão excluídos ao se desligar o computador ou fechar o "browser", por exemplo;
         //Esses armazenamentos também não expiram (como os "cookies"). - Porém há métodos para apagar esses armazenamentos.
 
-        localStorage.setItem('canal', 'cfbcursos')
+        /*localStorage.setItem('canal', 'cfbcursos')
         //Definindo a chave e o valor. | Primeiro temos a chave ("canal") depois o valor ("cfbcursos").
 
         //localStorage.removeItem('canal')
@@ -43,7 +43,7 @@
 
         var variável_canal = localStorage.canal
 
-        document.write(variável_canal + '<br>' + '<hr>')
+        document.write(variável_canal + '<br><hr>')*/
 
         function iniciar() {
             if (localStorage.nome) { //Tradução: "se (localStorage.nome) existir".
@@ -58,7 +58,7 @@
 
         //Criando um contador de acessos:
 
-        if (typeof(Storage) != "undefined") {
+        /*if (typeof(Storage) != "undefined") {
             
             if (localStorage.visitas) { //Criando uma nova chave chamada "visitas" e verificando se ela já existe ou não.
                 localStorage.visitas = Number(localStorage.visitas) + 1 //Contador incrementador de número de visitas.
@@ -76,7 +76,7 @@
 
         else {
             document.write('O seu navegador não possui suporte ao "Web Storage".')
-        }
+        }*/
 
         //Criando um painel (coletando preferências de usuário e as aplicando):
 
@@ -95,6 +95,7 @@
                 document.body.style.backgroundColor = cor
                 variável_cor_de_fundo = cor
             }
+            
             else {
                 document.body.style.color = cor
                 variável_cor_do_texto = cor
