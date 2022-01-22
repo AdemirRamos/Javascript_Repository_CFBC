@@ -13,18 +13,21 @@
     <script>
 
         var p = document.createElement('p')
-        p.textContent = 'CFB Cursos.'
-        /*O comando acima cria um elemento chamado "p" e, então, adiciona, a esse elemento, um conteúdo de texto.*/
+        //p.textContent = 'CFB Cursos.'
+        //O comando acima serve para adicionar um texto ao elemento criado.
+
+        //Os dois comandos acima criam uma "tag p" e, então, adicionam, a essa "tag", o texto "CFB Cursos.".
         
         //document.body.appendChild('p')
-        /*O comando acima adiciona o elemento, nesse caso, ao "body".*/
+        //O comando acima adiciona uma "tag", nesse caso, ao "body". - O conteúdo criado pode ser adicionado em qualquer lugar.
         
-        /*Os comando acima, como estão, vão gerar um erro (eles não serão renderizados assim que a página carregar). Eis a solução:*/
+        //Os comando acima, como estão, vão gerar um erro (eles não serão renderizados assim que a página carregar). Eis a solução:
+        
         //window.addEventListener('load', iniciar)
 
-        /*Outra maneira de se realizar o mesmo procedimento de adicionar um texto:*/
+        //Outra maneira de se realizar o mesmo procedimento de adicionar um texto a um elemento criado pelo JS:
 
-        var t = document.createTextNode(' Curso de Javascript.')
+        var t = document.createTextNode('Curso de Javascript.') //Essa é outra maneira de se adicionar um texto a um elemento criado.
 
         function iniciar() {
             document.body.appendChild(p)
@@ -36,9 +39,10 @@
                 li.textContent = texto.value
                 lista.appendChild(li)
                 texto.value = ''
-                /*Esvazia o "prompt" na tela.*/
-                texto.focus()
-                /*Retorna ao "prompt", após adicionar um texto, para que se possa, se assim for desejado, se adicionar um novo texto.*/
+                //Esvazia o "prompt" na tela.
+
+                texto.focus() //Volta o foco da página para o "prompt" (ou outro elemento que o receba).
+                //Retorna ao "prompt", após adicionar um texto, para que se possa, se assim for desejado, se adicionar um novo texto.
             })
         }
 
@@ -52,7 +56,7 @@
 
     <!--Funcionalidades parecidas com as "tuplas" e "listas" do Python.-->
 
-    <input type="text" id="formulário_novo"><button id="botão_adição">Adicionar</button><br><br>
+    <input type="text" id="formulário_novo"><button id="botão_adição">Adicionar</button>
 
     <ul id="elementos"></ul>
 
