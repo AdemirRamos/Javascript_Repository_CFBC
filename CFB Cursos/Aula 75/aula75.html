@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 75 - "insertBefore" / "childNodes", Inserindo Elementos HTML pelo Javascript</title>
 
-    <style>
-
-    </style>
-
     <script>
+
+        //"insertBefore" nos permite, a exemplo de "appendChild", inserir um elemento a outro elemento, porém, nesse caso, anteriormente.
+
+        //Já "childNodes" nos permite controlar os elementos-filho de um elemento-pai.
 
         var p = document.createElement('p')
         p.textContent = 'CFB Cursos.'
-        /*O comando acima cria um elemento chamado "p" e, então, adiciona, a esse elemento, um conteúdo de texto.*/
+        //O comando acima cria um elemento chamado "p" e, então, adiciona, a esse elemento, um conteúdo de texto.
         
         //document.body.appendChild('p')
-        /*O comando acima adiciona o elemento, nesse caso, ao "body".*/
+        //O comando acima adiciona o elemento, nesse caso, ao "body".
         
-        /*Os comando acima, como estão, vão gerar um erro (eles não serão renderizados assim que a página carregar). Eis a solução:*/
+        //Os comando acima, como estão, vão gerar um erro (eles não serão renderizados assim que a página carregar). Eis a solução:
         //window.addEventListener('load', iniciar)
 
-        /*Outra maneira de se realizar o mesmo procedimento de adicionar um texto:*/
+        //Outra maneira de se realizar o mesmo procedimento de adicionar um texto:
 
-        var t = document.createTextNode(' Curso de Javascript.')
+        var t = document.createTextNode('Curso de Javascript.')
 
         function iniciar() {
             document.body.appendChild(p)
@@ -32,8 +32,9 @@
             document.getElementById('contador').addEventListener('click', function() {
                 var lista = document.getElementById('elementos')
                 var número = lista.childNodes.length //Conta o número de elementos na lista.
-                /*Caso "length" seja removido, os elementos serão atribuidos à número, a transformando em um vetor ("array").*/
-                alert(`O total de elementos na lista é de: ${número}.`)
+                //Caso "length" seja removido, os elementos serão atribuidos à número, a transformando em um vetor ("array").
+
+                alert(`O total de elementos na lista é: ${número}.`)
             })
 
             document.getElementById('botão_adição').addEventListener('click', function() {
@@ -41,14 +42,19 @@
                 var texto = document.getElementById('formulário_novo') //O elemento "value" foi removido daqui.
                 var li = document.createElement('li')
                 li.textContent = texto.value
-                /*lista.appendChild(li)*/
-                /*Trocando "appendChild" por "insertBefore".*/
+                //lista.appendChild(li)
+
+                //Trocando "appendChild" por "insertBefore":
+
                 lista.insertBefore(li, lista.childNodes[0])
-                /*Ao invés de tratar "lista" como um vetor, poderíamos colocar o nome de outro elemento.*/
+                //Ao invés de tratar "lista" como um vetor, poderíamos colocar o nome de outro elemento.
+                //Parâmetro de IB: 1ª: o novo elemento a ser inserido; 2ª: onde o novo elemento será inserido.
+
                 texto.value = ''
-                /*Esvazia o "prompt" na tela.*/
+                //Esvazia o "prompt" na tela.
+
                 texto.focus()
-                /*Retorna ao "prompt", após adicionar um texto, para que se possa, se assim for desejado, se adicionar um novo texto.*/
+                //Retorna ao "prompt", após adicionar um texto, para que se possa, se assim for desejado, se adicionar um novo texto.
             })
         }
 
@@ -62,7 +68,7 @@
 
     <!--Funcionalidades parecidas com as "tuplas" e "listas" do Python.-->
 
-    <input type="text" id="formulário_novo"><button id="botão_adição">Adicionar</button><button id="contador">Contar</button><br><br>
+    <input type="text" id="formulário_novo"><button id="botão_adição">Adicionar</button><button id="contador">Contar</button>
 
     <ul id="elementos"></ul>
 
