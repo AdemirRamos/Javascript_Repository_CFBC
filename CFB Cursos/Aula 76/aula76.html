@@ -14,22 +14,24 @@
 
         function iniciar() {
             var novo_h1 = document.createElement('h1')
-            /*Também é possível fazer essa substituição por um elemento que já exista na página.*/
+            //Também é possível fazer esta substituição por um elemento que já exista na página.
             
             //var texto_h1 = document.createTextNode('Olá, mundo!')
-            /*O texto pode ser criado aqui mesmo, porém, se posto abaixo, ele receberá o texto do próprio elemento que está modificando.*/
+            //O texto pode ser criado aqui mesmo, porém, se posto abaixo, ele receberá o texto do próprio elemento que está modificando.
+
+            var novo = document.getElementById('novo')
 
             var lista_cursos = document.getElementById('cfbcursos')
             
-            var novo = document.getElementById('novo')
-            
             var antigo = lista_cursos.childNodes[5]
-            /*O número entre chaves é estimado levando em consideração a abertura e o fechamento das "tags p".*/
-            var texto_h1 = document.createTextNode(antigo.innerHTML)
+            //O número entre chaves é estimado levando em consideração a abertura e o fechamento das "tags p".
+
+            var texto_h1 = document.createTextNode(antigo.innerHTML) //O novo texto criado é justamente o conteúdo da variável "antigo".
             novo_h1.appendChild(texto_h1)
 
             lista_cursos.replaceChild(novo_h1, antigo)
-            /*Basta trocar "novo_h1" por "novo" para colocar um "h1" no lugar de "p[4]".*/
+            //Primeiro parâmetro: o elemento a ser substituído; segundo elemento: o elemento que irá ser substituído.
+            //Basta trocar "novo_h1" por "novo" para colocar o "h1" (de id "novo") no lugar de "p[4]".*
         }
 
         window.addEventListener('load', iniciar)
