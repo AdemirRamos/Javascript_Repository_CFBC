@@ -6,32 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aula 77 - "parentNode", "remove", "removeChild"</title>
 
-    <style>
-
-    </style>
-
     <script>
 
         function iniciar() {
             var elemento = document.getElementById('p5')
-            alert(elemento.parentNode)
-            /*O comando acima nos diz o "pai" do elemento selecionado.*/
-            alert(elemento.parentNode.nodeName)
-            /*Além do "pai" do elemento selecionado, o comando acima também nos diz o nome do "pai".*/
+            alert(`Elemento pai de "elemento": ${elemento.parentNode}.`)
+            //O comando acima nos diz quem é o "pai" do elemento selecionado.
 
-            /*Para remover um elemtno, basta usar este comando:*/
+            alert(`Nome da categoria do pai de "elemento": ${elemento.parentNode.nodeName}.`)
+            //Além do "pai" do elemento selecionado, o comando acima também nos diz o nome desse "pai".
+
+            //Para remover um elemtno, basta usar este comando:
+
             elemento.remove()
-            /*O "Curso de C++;" será removido.*/
 
-            /*Tudo pode ser resumido em uma linha:*/
+            //O "Curso de C++;" será removido.
+
+            //Tudo pode ser resumido em uma única linha:
+
             document.getElementById('p8').remove()
-            /*O "Curso de Unity / C#" será removido.*/
+            //O "Curso de Unity / C#" será removido.
 
-            /*Remoção feita com "childNodes":*/
+            //Remoção feita com "childNodes":
+
             var elemento = document.getElementById('cfbcursos').childNodes
+
             document.getElementById('cfbcursos').removeChild(elemento[1])
-            /*Aqui, mais uma vez, o número entre chaves é estimado com base nas aberturas e fechamentos das "tags p".*/
-            //document.getElementById('cfbcursos').remove() -> esse comando exclui a "div" (e todo o seu conteúdo).
+            //Aqui, mais uma vez, o número entre chaves é estimado com base nas aberturas e fechamentos das "tags p".
+
+            //document.getElementById('cfbcursos').remove() -> esse comando excluirá a "div" (e todo o seu conteúdo).
         }
 
         window.addEventListener('load', iniciar)
