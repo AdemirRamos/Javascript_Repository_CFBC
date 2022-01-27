@@ -27,12 +27,15 @@
         function iniciar() {
             var elemento = document.getElementById('p1')
             var atributo = elemento.getAttribute('class')
-            /*Obtenção do elemento da variável "elemento".*/
+            //Entre aspas, irá o elemento que se está buscando capturar.
+            //Obtenção do atributo da variável "elemento".
+
             alert(atributo)
             console.log('CFB Cursos')
-            /*O comando acima escreve a "string" dentro do console do próprio navegador.*/
-            console.log(atributo)
-            /*O atributo da variável "atributo" será escrito dentro do console do próprio navegador.*/
+            //O comando acima escreve a "string" dentro do console do próprio navegador.
+
+            console.log(`Atributo de "p1": ${atributo}.`)
+            //O atributo da variável "atributo" será escrito dentro do console do próprio navegador.
         }
 
         window.addEventListener('load', iniciar)
