@@ -12,8 +12,9 @@
 
         function loop() {
             div_caixa.innerHTML = document.activeElement.tagName
-            /*No comando acima, poderíamos solicitar o "id" do elemento, o "value", e assim por diante.*/
-            /*Se o "tagName" for removido, como retorno teremos o elemento ativo.*/
+            //No comando acima, poderíamos solicitar o "id" do elemento, o "value", e assim por diante.
+            //Se o "tagName" for removido, como retorno, teremos o elemento ativo.
+
             frames = requestAnimationFrame(loop)
         }
 
@@ -36,7 +37,7 @@
     <p>CFB Cursos - Curso de Javascript.</p>
     <img src="Imagens/vscode_logo.png" alt="Logo do Visual Studio Code.">
 
-    <!--"activeElement": retorna o elemento ativo (e selecionado / em foco). Esse é um atributo somente de "leitura".-->
+    <!--"activeElement": retorna o elemento ativo (e selecionado/em foco). Esse é um atributo somente de "leitura".-->
 
 </body>
 
