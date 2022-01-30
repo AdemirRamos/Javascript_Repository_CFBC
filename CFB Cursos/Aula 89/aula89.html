@@ -27,10 +27,12 @@
         function foco() {
             var resultado = document.getElementById('não')
             var painel = document.getElementById('painel')
+
             if (document.hasFocus()) {
                 resultado.innerHTML = ''
                 painel.style.display = 'none'
             }
+            
             else {
                 resultado.innerHTML = '<strong>Não</strong>'
                 painel.style.display = 'block'
