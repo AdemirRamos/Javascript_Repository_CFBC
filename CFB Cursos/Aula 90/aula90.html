@@ -29,7 +29,15 @@
 
     <script>
 
+        //"dataset" nos permite adicionar propriedades personalizadas a determinados elementos.
+        //Através do JS, é possível ler e/ou alterar as referidas propriedades.
+        //Para definir um "dataset" em um elemento HTML, usamos a palavra "data-" seguida do nome da propriedade.
+        //Exemplo: data-nome="Ademir". 
+
         function especificações() {
+
+            //A variável "objeto" retorna o elemento clicado.
+
             var objeto = event.target //O "dataset" poderia ser definido aqui. Por exemplo: var objeto = event.target.dataset.cor = 'red'
             var painel = document.getElementById('painel')
             painel.innerHTML = `Modelo: ${objeto.dataset.modelo} <br><br>`
