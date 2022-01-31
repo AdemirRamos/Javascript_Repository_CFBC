@@ -18,7 +18,7 @@
         .menu_item {
             height: 100%;
             cursor: pointer;
-            /*Comando acima: quando o mouse estiver na área aqui delimitada, ele se transformará em um mão.*/
+            /*Comando acima: quando o mouse estiver na área aqui delimitada, ele se transformará em uma mão.*/
         }
 
         #menu {
@@ -44,12 +44,14 @@
 
         function rolar() {
             var objeto = document.getElementById('car_4').scrollIntoView()
-            /*A tel será rolada (muito rapidamente), para o elemento selecionado pela "id".*/
+            //A tela será rolada (muito rapidamente), para o elemento selecionado pela "id" por conta de "scrollIntoView()".
         }
 
         function rolagem() {
             var objeto = event.target.dataset.nome
             document.getElementById(objeto).scrollIntoView()
+
+            /*A variável "objeto" já obtem o "id" do elemento clicado justamente por ter como nome da "dataset" nomes idênticos aos "id's" das imagens.*/
         }
 
         function iniciar() {
