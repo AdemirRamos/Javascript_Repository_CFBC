@@ -38,24 +38,26 @@
     <script>
 
         function mostrar() {
-            for (var i = 1; 1 < 5; i++) {
-                document.getElementById("c"+i).hidden=true
+            for (var i = 1; i < 5; i++) {
+                document.getElementById("car_" + i).hidden = true
             }
-            var obj = event.target.dataset.nome
-            document.getElementById(obj).hidden=false
+            
+            var objeto = event.target.dataset.nome
+            document.getElementById(objeto).hidden = false
         }
 
         function iniciar() {
-            for (var i = 1; 1 < 5; i++) {
-                document.getElementById("c"+i).hidden=true
+            for (var i = 1; i < 5; i++) {
+                document.getElementById("car_" + i).hidden = true
             }
+            
             document.getElementById('botão_1').addEventListener('click', mostrar)
             document.getElementById('botão_2').addEventListener('click', mostrar)
             document.getElementById('botão_3').addEventListener('click', mostrar)
             document.getElementById('botão_4').addEventListener('click', mostrar)
 
             //document.getElementById('car_4').hidden = true
-            /*true = oculto; false = vísivel.*/
+            //true = oculto; false = vísivel.
         }
 
         window.addEventListener('load', iniciar)
@@ -66,23 +68,23 @@
 
 <body>
     
-    <!--Basicamente, esse método ("scrollIntoView") serve para rolar a página, assim podendo posicionar a página em locais diferentes.-->
+    <!--Basicamente, este método ("scrollIntoView") serve para rolar a página, assim podendo posicionar a página em locais diferentes.-->
     <!--Para poder posicionar o conteúdo em determinado local da tela, basta especificar o local onde se deseja posicionar um elemento.-->
     <!--"Hidden" é um atributo nativo de JS e sua função é ocultar elementos.-->
 
     <div id="menu">
 
-        <img id="botão_1" data-nome="c1" src="Imagens/car1.jpg" alt="Carro 1." class="menu_item">
-        <img id="botão_2" data-nome="c2" src="Imagens/car2.jpg" alt="Carro 2." class="menu_item">
-        <img id="botão_3" data-nome="c3" src="Imagens/car3.jpg" alt="Carro 3." class="menu_item">
-        <img id="botão_4" data-nome="c4" src="Imagens/car4.jpg" alt="Carro 4." class="menu_item">
+        <img id="botão_1" data-nome="car_1" src="Imagens/car1.jpg" alt="Carro 1." class="menu_item">
+        <img id="botão_2" data-nome="car_2" src="Imagens/car2.jpg" alt="Carro 2." class="menu_item">
+        <img id="botão_3" data-nome="car_3" src="Imagens/car3.jpg" alt="Carro 3." class="menu_item">
+        <img id="botão_4" data-nome="car_4" src="Imagens/car4.jpg" alt="Carro 4." class="menu_item">
 
     </div>
 
-    <img id="c1" src="Imagens/car1.jpg" alt="Carro 1." class="carro">
-    <img id="c2" src="Imagens/car2.jpg" alt="Carro 2." class="carro">
-    <img id="c3" src="Imagens/car3.jpg" alt="Carro 3." class="carro">
-    <img id="c4" src="Imagens/car4.jpg" alt="Carro 4." class="carro">
+    <img id="car_1" src="Imagens/car1.jpg" alt="Carro 1." class="carro">
+    <img id="car_2" src="Imagens/car2.jpg" alt="Carro 2." class="carro">
+    <img id="car_3" src="Imagens/car3.jpg" alt="Carro 3." class="carro">
+    <img id="car_4" src="Imagens/car4.jpg" alt="Carro 4." class="carro">
 
 </body>
 
