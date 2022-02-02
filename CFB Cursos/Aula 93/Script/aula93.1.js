@@ -1,4 +1,5 @@
 var dv1, dv2, dv3, dv4
+
 window.addEventListener('load', iniciar)
 
 function iniciar() {
