@@ -11,11 +11,13 @@
         var num = 10
         var num = 100
         let a = 1
-        let a = 2
+        //let a = 2
         {let a = 3}
 
-        console.log(num) //O último valor atribuído a uma "var" ou "let" sempre será o seu valor real - caso ela receba mais de um valor.
-        console.log(a)
+        console.log('Valor de "num": ', num)
+        //O último valor atribuído a uma "var" ou "let" sempre será o seu valor real - caso ela receba mais de um valor.
+        
+        console.log('Valor de "a": ', a)
 
         //Caso as variáveis sejam declaradas com "let", dentro do mesmo escopo, não é possível se ter duas variáveis com o mesmo nome.
         //É possível contornar essa questão colocando uma das variáveis dentro de outro escopo utilizando chaves {}.
@@ -27,34 +29,43 @@
             b = 5 //Nesse caso, não temos a declaração da variável b, mas sim uma atribuição à variável b.
         }
 
-        console.log(b)
-    
-        /*No caso acima, não haverá erro pois "b" pertence ao escopo de "let b".*/
+        console.log('Valor de "b": ', b)
+
+        //No caso acima, não haverá erro pois "b" pertence ao escopo de "let b".
+
+        let b_2 = 5
+
+        {
+            let b_2 = 10
+            console.log('Valor de "b_2": ', b_2)
+        }
+
+        console.log('Valor de "b_2": ', b_2)
 
         {
             let c = 6
         }
 
-        console.log(c)
+        //console.log(c)
 
-        /*No caso acima haverá erro pois a "let c" está em um escopo diferente de "console.log(c)" e não há parentesco entre os escopos.*/
+        //No caso acima haverá erro pois a "let c" está em um escopo diferente de "console.log(c)" e não há parentesco entre os escopos.
 
-        /*A grosso modo, uma "const" (constante) é uma variável que não pode ser mudada.*/
-        /*No momento de sua declaração, a const receberá um valor e, a partir daí, esse valor não será mais mutável.*/
-        /*Abaixo temos a declaração de uma const:*/
+        //A grosso modo, uma "const" (constante) é uma variável que não pode ser mudada.
+        //No momento de sua declaração, a const receberá um valor e, a partir daí, esse valor não será mais mutável.
+        //Abaixo temos a declaração de uma const:
 
         const d = 7
-        d = 8 //Essa linha gerará um erro pois, como já foi comentado, uma "const" não pode ter a sua atribuição alterada.
+        //d = 8 -> Essa linha de código gerará um erro pois, como já foi comentado, uma "const" não pode ter a sua atribuição alterada.
         
-        console.log(d)
+        console.log('Valor de "d": ', d)
 
-        /*Arrow Function:*/
+        //Arrow Function:
 
-        const dobro = (n) =>{
+        const dobro = (n) => {
             return n * 2
         }
 
-        console.log(dobro(2))
+        console.log('Resultado da "arrow functon" \'dobro\': ', dobro(2))
 
     </script>
 
