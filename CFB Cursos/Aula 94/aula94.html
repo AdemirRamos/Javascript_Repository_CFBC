@@ -8,16 +8,16 @@
 
     <script>
 
-        function criar_cookies(nome, valor, expiro) {
-            var dtExpira = "expires=" + expiro;
-            document.cookie = `${nome} = ${valor}; ${expiro}.`
+        function criar_cookies(nome, valor, expiração) {
+            var dtExpira = "expires=" + expiração;
+            document.cookie = `${nome} = ${valor}; ${expiração}.`
         }
 
         function ler_cookies(nome) {
             var vnome = nome + "="
             var ca = document.cookie.split(';')
             for (var i = 0; i < ca.length; i++) {
-                var c = ca[1]
+                var c = ca[i]
                 while (c.charAt(0) == ' ') {
                     c = c.substring(1)
                 }
@@ -29,23 +29,23 @@
         function inicialização_cookies() {
             var username = ler_cookies('username')
             if (username != '') {
-                alert(`Bem-vindo (a) novamente, ${username}`)
+                alert(`Bem-vindo (a) novamente, ${username}!`)
             }
             else {
                 username + prompt('Digite o seu nome:', "")
                 if (username != '' && username != null) {
-                    criar_cookies('Username:', username, "= Tue, 01 Jan 2115 12:00:00 UTC")
+                    criar_cookies('Username:', username, " Tue, 01 Jan 2115 12:00:00 UTC ")
                 }
             }
         }
+
+        //Funcionalidade não verificada.
 
     </script>
 
 </head>
 
 <body onclick="inicialização_cookies()">
-
-    
 
 </body>
 
