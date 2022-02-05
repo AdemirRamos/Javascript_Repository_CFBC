@@ -25,13 +25,14 @@
         //Já o "var" é uma variável global, ou seja, uma vez declarada, ela poderá ser integrada a qualquer escopo dentro do programa.
 
         let b = 4
+        
         {
             b = 5 //Nesse caso, não temos a declaração da variável b, mas sim uma atribuição à variável b.
         }
 
         console.log('Valor de "b": ', b)
 
-        //No caso acima, não haverá erro pois "b" pertence ao escopo de "let b".
+        //No caso acima, não haverá erro pois "b" (pai) pertence ao escopo de "let b" (filho).
 
         let b_2 = 5
 
@@ -49,10 +50,11 @@
         //console.log(c)
 
         //No caso acima haverá erro pois a "let c" está em um escopo diferente de "console.log(c)" e não há parentesco entre os escopos.
+        //Caso tivéssemos declarado a variável "c" com var, o erro acima não aconteceria.
 
         //A grosso modo, uma "const" (constante) é uma variável que não pode ser mudada.
-        //No momento de sua declaração, a const receberá um valor e, a partir daí, esse valor não será mais mutável.
-        //Abaixo temos a declaração de uma const:
+        //No momento de sua declaração, a "const" receberá um valor e, a partir daí, esse valor não será mais mutável.
+        //Abaixo temos a declaração de uma "const":
 
         const d = 7
         //d = 8 -> Essa linha de código gerará um erro pois, como já foi comentado, uma "const" não pode ter a sua atribuição alterada.
@@ -61,7 +63,7 @@
 
         //Arrow Function:
 
-        const dobro = (n) => {
+        const dobro = (n) => { //A "const dobro" receberá o valor de "n" após a execução da função.
             return n * 2
         }
 
