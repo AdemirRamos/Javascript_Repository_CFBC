@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 99 - Loops For In e For Of</title>
+    <title>Aula 99 - "Loops" "For In" e "For Of"</title>
 
     <script>
+
+        //"For In" é usado com objetos; "For of" é usado com "arrays".
 
         const aluno = {nome: 'Bruno', sobrenome: 'Campos'}
         const notas = {nota_1: 80, nota_2: 75, nota_3: 92, nota_4: 85}
@@ -14,7 +16,7 @@
 
         for (var dados in aluno) { //Será percorrido e adicionado (à variável "dados") todo o conteúdo do objeto "aluno".
             console.log(dados) //Setão impressas as propriedades "nome" e "sobrenome".
-            console.log(aluno[dados]) //Serão impressos os valores de "aluno" em cada uma de suas propriedades.
+            console.log(aluno[dados]) //Serão impressos os valores de "aluno" em cada uma de suas posições.
         }
 
         for (var dados in info) {
@@ -24,19 +26,20 @@
         let grades = [100, 80, 75, 30, 64, 47, 98, 81, 60]
 
         for (var data of grades) { //For In: imprime as prorpiedades; For Of: imprime os valores das propriedades.
-            console.log(grades)
+            console.log(data)
+            //Essa estrutura tambem poderia ser escrita com "For In": for (var data in grades) / console.log(grades[data])
         }
 
         let grades_2 = [100, 80, 75, 30, 64, 47, 98, 81, 60]
-        let aprovado = 0
-        let reprovado = 0
+        let aprovados = 0
+        let reprovados = 0
 
         for (var data of grades_2) { //For In: imprime as prorpiedades; For Of: imprime os valores das propriedades.
-            data >= 60? aprovado++ : reprovado++
+            data >= 60? aprovados++ : reprovados++
         }
 
-        console.log(`Aprovados: ${aprovado}.`)
-        console.log(`Reprovados: ${reprovado}.`)
+        console.log(`Aprovados: ${aprovados}.`)
+        console.log(`Reprovados: ${reprovados}.`)
 
     </script>
 
