@@ -12,6 +12,8 @@
             return "Alô, mundo!"
         }
 
+        console.log(alô()) //Caso não se use os parênteses após "alô", será retornada toda a função e não somente o seu resultado.
+
         function soma_2(...num) {
             let resultado = 0
             for (n of num) {
@@ -20,7 +22,7 @@
             return resultado
         }
 
-        //Transformando a função acima em uma função anônima.
+        //Transformando a função acima em uma função anônima:
 
         let soma = function(...num) {
             let resultado = 0
