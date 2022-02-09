@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 100 - Parâmetros Rest Em Javascript</title>
+    <title>Aula 100 - Parâmetros "Rest" Em Javascript</title>
 
     <script>
 
@@ -14,6 +14,8 @@
         }
 
         console.log(soma(1, 2, 3))
+
+        //"REST": nos permite passar quantos parâmetros forem necessários para um função ("REST" é marcado pelas reticências):
 
         function soma(...num) {
             let resultado = 0
@@ -25,6 +27,8 @@
         }
 
         console.log(soma(1, 2, 3, 6, 8))
+
+        //"REST" com "For of":
 
         function soma(...num) {
             let resultado = 0
