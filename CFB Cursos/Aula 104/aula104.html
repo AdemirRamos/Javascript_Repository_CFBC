@@ -9,6 +9,7 @@
     <script>
 
         //Funções Geradores, basicamente, são funções que permitem a devolução do controle a quem fez a chamada.
+        //A devolução pode ser feita a qualquer momento da função - ao contrário de funções "normais".
         //Toda função geradora leva um asterisco após a palavra "function".
 
         function* cores() {
@@ -50,6 +51,8 @@
 
         const ct = contador(10)
         console.log(ct.next())
+
+        //Agora retornando o controle da chamada:
 
         function* contador_2(n_2) {
             let c_4 = 0
