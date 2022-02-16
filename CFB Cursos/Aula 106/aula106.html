@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 106 - Novos Métodos Para Strings Em Javascript</title>
+    <title>Aula 106 - Novos Métodos Para "Strings" Em Javascript</title>
 
     <script>
 
@@ -16,21 +16,21 @@
 
         console.log(curso.startsWith("Curso")) //Resultado: "true";
         console.log(curso.startsWith("CFB")) //Resultado: "false";
-        console.log(curso.startsWith("C")) //Resultado: "true";
+        console.log(curso.startsWith("C")) //Resultado: "true".
 
         let curso_2 = "Curso de Javascript Moderno. "
         let p = "Curso"
         console.log(curso_2.startsWith(p))
-        console.log(curso_2.startsWith(p)? "Verdadeiro." : "Falso.")
+        console.log(curso_2.startsWith(p) ? "Verdadeiro." : "Falso.")
         
         //endsWith: retorna "true" caso o valor indicado esteja no final da "string"; caso não esteja, retorna "false".
 
-        console.log(curso_2.endsWith(p)? "Verdadeiro." : "Falso.")
+        console.log(curso_2.endsWith(p) ? "Verdadeiro." : "Falso.")
 
         //includes: nos permite verificar se, em qualquer lugar da "string", a "string" possui o valor indicado.
 
-        console.log(curso_2.includes(p)? "Verdadeiro." : "Falso.")
-        console.log(curso_2.includes("C++")? "Verdadeiro." : "Falso.")
+        console.log(curso_2.includes(p) ? "Verdadeiro." : "Falso.")
+        console.log(curso_2.includes("C++") ? "Verdadeiro." : "Falso.")
 
         //repeat: nos permite repetir uma "string" um determinado número de vezes.
 
