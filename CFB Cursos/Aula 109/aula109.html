@@ -8,6 +8,8 @@
 
     <script>
 
+        //Métodos para a manipulação de "map":
+
         let produtos = new Map([
             ['01', 'Mouse'],
             ['02', 'Teclado'],
@@ -87,8 +89,10 @@
             console.log(`Chave: ${chave}; Valor: ${valor}.`)
         }
 
-        let it_1 = produtos_4.keys() //Retorna um objeto (do tipo iterator) que vai redefinir todas as chaves do mapa.
-        let it_2 = produtos_4.keys()
+        //"keys()": retorna um objeto (do tipo iterator) que vai redefinir todas as chaves do mapa.
+
+        let it_1 = produtos_4.keys() //Retorna a chave.
+        let it_2 = produtos_4.values() //Retorna o valor.
 
         console.log(it_1.next())
         console.log(it_1.next().value)
