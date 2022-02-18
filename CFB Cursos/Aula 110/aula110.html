@@ -14,7 +14,7 @@
         //Em POO, classes são os "esqueletos" / projetos dos objetos.
         //Em POO, o objeto é a instância real da classe; pode-se criar quantas instâncias se desejar para uma classe.
         
-        //A seguir, vemos a maneira clássica / tradicional de criar classes
+        //A seguir, vemos a maneira clássica / tradicional de se criar classes
 
         class Carro { //Atributos: são as propriedade / variáveis aplicáveis a uma classe.
                      //Os atributos podem ser construidos tantos por variáveis quanto pelo "constructor".
@@ -23,12 +23,13 @@
             cor = "Vermelha"
 
             //Em POO, temos uma método especial chamado "método construtor":
-            //Em Java ou C# tem o mesmo nome da classe; em JS, o método construtor receberá o nome "constructor".
+            //Em Java ou C#, o método construtor tem o mesmo nome da classe; em JS, ele recebe o nome "constructor".
             //"constructor" será chamado ao ser instanciado um objeto da classe a qual "constructor" pertence.
-            //"constructor" irá executar um bloco de cógidos (escritos para si) toda vez que o objeto for instanciado.  
+            //"constructor" irá executar um bloco de cógidos (escritos para si) toda vez que o objeto for instanciado.
+            //"constructor" permite a passagem de parâmetros.
 
             constructor(cor) {
-                this.cor_2 = "Azul"
+                this.cor_2 = "Azul" //"this" é uma referência à Carro.
                 this.cor_3 = cor
                 console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_2}.`)
                 console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_3}.`)
@@ -36,7 +37,7 @@
 
         }
 
-        /*Instanciando o objeto:*/
+        //Instanciando o objeto:
 
         let car_1 = new Carro() //Atribuindo cores diferentes para cada carro através dos parâmetros.
         let car_2 = new Carro("Verde")
