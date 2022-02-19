@@ -19,10 +19,10 @@
                 this.marca = marca
                 this.ligado = false
                 this.km = 0
-                this.combustível = 10
+                this.combustível = 10 + '%'
             }
 
-            /*Criando métodos:*/
+            //Criando métodos:
 
             info() {
                 console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_2}.`)
@@ -43,6 +43,10 @@
                 this.ligado = false
             }
 
+            ligar_desligar(on_off) {
+                this.ligado = on_off
+            }
+
         }
 
         let car_1 = new Carro()
@@ -50,9 +54,11 @@
         let car_3 = new Carro("Amarela", "HB20", "Lexus")
         let car_4 = new Carro("Roxa", "HB20", "Lexus")
 
+        //car_1.ligar_desligar(true)
+
         car_1.desligar()
 
-        /*Mudando a cor dos carros:*/
+        //Mudando a cor dos carros:
 
         car_1.cor = 'Preta'
         car_2.cor = 'Branca'
