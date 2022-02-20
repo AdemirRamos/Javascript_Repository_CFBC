@@ -19,17 +19,17 @@
                 this.marca = marca
                 this.ligado = false
                 this.km = 0
-                this.combustível = 10
+                this.combustível = 10 + '%'
             }
 
-            /*Criando métodos:*/
+            //Criando métodos:
 
             info() {
                 console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_2}.`)
                 console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_3}.`)
                 console.log(`Olá! Eu sou um novo carro do modelo: ${this.modelo}.`)
                 console.log(`Olá! Eu sou um novo carro da marca: ${this.marca}.`)
-                console.log(`Olá! Eu sou um novo carro e meu estado é:` + this.ligado ? "Estou Ligado." : "Estou Desligado.")
+                console.log(`Olá! Eu sou um novo carro e meu estado é: ` + (this.ligado ? "estou ligado." : "estou desligado."))
                 console.log(`Olá! Eu sou um novo carro e a minha quilometragem é: ${this.km}.`)
                 console.log(`Olá! Eu sou um novo carro e meu tanque tem ${this.combustível} de combustível.`)
                 console.log('----------------------------------------------------------------------------------------------')
@@ -43,10 +43,12 @@
                 this.ligado = false
             }
 
-            //"Setter": é um método especial que altera valor (es) do (s) atributo (s).
+            //"Setter": é um método especial que altera/define o (s) valor (es) do (s) atributo (s).
             //Para definir um método "setter", basta alocar, antes do método, a palavra "set".
             //O "set" antes do nome do método serve apenas para evidenciar que este é um método "setter".
             //Para definir o método como um método "setter", é preciso alocar "set", antes do nome do método.
+
+            //Método sem "set":
 
             set_combustível(valor) {
                 this.combustível = valor
@@ -64,13 +66,19 @@
 
             //Já o "getter" é um método utilizado para se conseguir o valor de um atributo.
 
+            //Método sem "get":
+
             get_combustível() {
                 return this.combustível
             }
 
+            //Método com "get":
+
             get get_combustível() {
                 return this.combustível
             }
+
+            //No caso do primeiro caso, é preciso usar parênteses; no caso do segundo método, não é preciso parâmetros.
 
         }
 
@@ -79,18 +87,20 @@
         let car_3 = new Carro("Amarela", "HB20", "Lexus")
         let car_4 = new Carro("Roxa", "HB20", "Lexus")
 
-        /*car_1.set_combustível(100)*/
+        //car_1.set_combustível(100)
 
-        car_1.set_combustível = '100%' /*400 -> Resultado: "alert('Valor (do combustível) inválido!').*/
+        //Aplicação do método "set":
+
+        car_1.set_combustível = '100%' //400 -> Resultado: "alert('Valor (do combustível) inválido!').
         car_2.set_combustível = '100%'
 
-        /*console.log(car_1.get_combustível())*/
+        //console.log(car_1.get_combustível())
 
         console.log(car_1.get_combustível)
         
         car_1.desligar()
 
-        /*Mudando a cor dos carros:*/
+        //Mudando a cor dos carros:
 
         car_1.cor = 'Preta'
         car_2.cor = 'Branca'
