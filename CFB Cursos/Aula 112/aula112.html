@@ -54,6 +54,8 @@
                 this.combustível = valor
             }
 
+            //Método com "set":
+
             set set_combustível(valor) {
                 if (valor < 0 || valor > 100) {
                     alert('Valor (do  combustível) inválido!')
@@ -78,7 +80,7 @@
                 return this.combustível
             }
 
-            //No caso do primeiro caso, é preciso usar parênteses; no caso do segundo método, não é preciso parâmetros.
+            //No caso do primeiro caso, é preciso usar parênteses; no caso do segundo método, não é preciso parênteses.
 
         }
 
@@ -91,10 +93,12 @@
 
         //Aplicação do método "set":
 
-        car_1.set_combustível = '100%' //400 -> Resultado: "alert('Valor (do combustível) inválido!').
+        car_1.set_combustível = '100%' //'400%' -> Resultado: "alert('Valor (do combustível) inválido!').
         car_2.set_combustível = '100%'
 
         //console.log(car_1.get_combustível())
+
+        //Aplicação do método "get":
 
         console.log(car_1.get_combustível)
         
