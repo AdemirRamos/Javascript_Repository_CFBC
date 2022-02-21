@@ -11,7 +11,9 @@
         class Carro {
 
             //Basicamente, o modificador "static" (que pode ser método ou propriedade) torna o seu valor fixo.
-            //Onde quer que o "static" seja usado, o seu valor sempre será o mesmo - a menos que seja alterado.
+            //Onde quer que o "static" seja usado, o seu valor sempre será o mesmo para todos os objetos da sua classe.
+            //Para referenciar o "static", não usamos o "this", mas sim o nome da classe. - (Carro.alerta).
+            //A partir do momento em que "static" é definido, todas as intâncias desta classe receberão o mesmo valor de "static".
 
             static alerta = true
 
@@ -27,17 +29,17 @@
                 this.combustível = 10
             }
 
-            /*Criando métodos:*/
+            //Criando métodos:
 
             /*static*/ info() {
                 console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_2}.`)
                 console.log(`Olá! Eu sou um novo carro da cor ${this.cor} e, também, da cor ${this.cor_3}.`)
                 console.log(`Olá! Eu sou um novo carro do modelo: ${this.modelo}.`)
                 console.log(`Olá! Eu sou um novo carro da marca: ${this.marca}.`)
-                console.log(`Olá! Eu sou um novo carro e meu estado é:` + this.ligado ? "Estou Ligado." : "Estou Desligado.")
+                console.log(`Olá! Eu sou um novo carro e meu estado é:` + (this.ligado ? "estou ligado." : "estou desligado."))
                 console.log(`Olá! Eu sou um novo carro e a minha quilometragem é: ${this.km}.`)
                 console.log(`Olá! Eu sou um novo carro e meu tanque tem ${this.combustível} de combustível.`)
-                console.log(`Alerta: ${Carro.alerta? "Sim!" : "Não!"}`)
+                console.log(`Alerta: ${Carro.alerta? "sim!" : "não!"}`)
                 console.log('----------------------------------------------------------------------------------------------')
             }
 
@@ -97,18 +99,18 @@
         let car_3 = new Carro("Amarela", "HB20", "Lexus")
         let car_4 = new Carro("Roxa", "HB20", "Lexus")
 
-        /*car_1.set_combustível(100)*/
+        //car_1.set_combustível(100)
 
-        car_1.set_combustível = '100%' /*400 -> Resultado: "alert('Valor (do combustível) inválido!').*/
+        car_1.set_combustível = '100%' //'400%' -> Resultado: "alert('Valor (do combustível) inválido!').
         car_2.set_combustível = '100%'
 
-        /*console.log(car_1.get_combustível())*/
+        //console.log(car_1.get_combustível())
 
         console.log(car_1.get_combustível)
         
         car_1.desligar()
 
-        /*Mudando a cor dos carros:*/
+        //Mudando a cor dos carros:
 
         car_1.cor = 'Preta'
         car_2.cor = 'Branca'
