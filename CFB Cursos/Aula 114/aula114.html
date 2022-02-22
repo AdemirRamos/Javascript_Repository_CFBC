@@ -14,7 +14,9 @@
             //A Classe que é herdada é chamada de "Pai"; a Classe que herda é chamada de "Filho". 
 
             //Basicamente, o modificador "static" (que pode ser método ou propriedade) torna o seu valor fixo.
-            //Onde quer que o "static" seja usado, o seu valor sempre será o mesmo - a menos que seja alterado.
+            //Onde quer que o "static" seja usado, o seu valor sempre será o mesmo para todos os objetos da sua classe.
+            //Para referenciar o "static", não usamos o "this", mas sim o nome da classe. - (Carro.alerta).
+            //A partir do momento em que "static" é definido, todas as intâncias desta classe receberão o mesmo valor de "static".
 
             cor = "Vermelha" 
 
@@ -25,18 +27,21 @@
                 this.tipo_de_combustível = fuel_type  
             }
 
-            /*Criando métodos:*/
+            //Criando métodos:
 
             /*static*/ info() {
                 console.log(`Quantidade de combustível: ${this.quantidade_de_combustível}.`)
-                console.log(`Ligado: ${this.ligado? "Sim" : "Não"}.`)
+                console.log(`Ligado: ${this.ligado? "sim" : "não"}.`)
                 console.log(`Tipo de combustível: ${this.tipo_de_combustível}.`)
+                
                 if (this.tipo_de_carro == 1) {
-                    console.log(`Tipo de carro: "Paseio".`)
+                    console.log(`Tipo de carro: "Passeio".`)
                 }
+
                 else if (this.tipo_de_carro == 2) {
                     console.log(`Tipo de carro: "Transporte".`)
                 }
+
                 else {
                     console.log(`Tipo de carro: "Combate".`)
                 }
@@ -81,13 +86,13 @@
 
             //Porém, para "super()" funcionar, antes é preciso um construtor.
 
-            constructor (fire_power) {
+            constructor(fire_power) {
                 super(2, 3)
                 this.munição = 1000
                 this.potência_do_tiro = fire_power
                 this.blindagem = 100  
 
-                //"super()" define que eu estou acessando algo Classe Pai.
+                //"super()" nos permite acessar algum elemento da Classe Pai.
 
                 //Tipos de combustível: 1 = Gasolina; 2 = Diesel; 3 = Etanol.
 
@@ -97,9 +102,9 @@
             //Imprimindo, também, as características presentes na Classe Filho
 
             info() {
-                super.info()
+                super.info() //Capturando e aplicando o método "info()" da "classe-pai".
                 console.log(`Quantidade de munição: ${this.munição}.`)
-                console.log(`Potência de tiro: ${this.fire_power}%.`)
+                console.log(`Potência de tiro: ${this.potência_do_tiro}%.`)
                 console.log(`Blindagem do veículo: ${this.blindagem}%.`)
                 console.log('----------------------------------------------------------------------------------------------')
 
@@ -108,14 +113,18 @@
         }
 
         class Carro_de_Transporte extends Carro {
-            constructor () {
-                super(2, 2)
+            constructor() { //Esse "constructor()" faz referência à Carro_de_Transporte.
+                super(2, 2) //Esse "super()" faz referência à Carro.
+
+                //Em outras palavras: para "super()" funcionar, é preciso um "constructor()";
+                //"super()" fará referência ao "constructor()" da "classe-pai";
+                //Já o "constructor()" na classe filho, existirá para passagem de parâmetros e/ou habilitar "super()".
             }
         }
 
         //let car_1 = new Carro(1)
         let car_1 = new Carro_de_Combate(100)
-        let car_2 = new Carro_de_Transporte(50)
+        let car_2 = new Carro_de_Transporte()
 
         /*car_1.set_combustível(100)*/
 
@@ -141,7 +150,7 @@
 
         Carro.alerta = false
 
-        car_1.set_ligado = true
+        car_1.set_ligado = true //Método herdado de Carro.
         car_1.info()
         car_2.info()
 
