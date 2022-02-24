@@ -7,14 +7,14 @@
     <title>Aula 115 - POO Classes (Parte 6 - Prototype)</title>
 
     <script>
- 
+        
+        Object.prototype
+
         class Carro {
 
             //"Prototype" representa um protótipo da Classe.
-
-            //Object.prototype
             
-            //"Object.prototype": representa um protótipo do Objeto.
+            //"Object.prototype": representa um protótipo de uma classe.
             //Todos Objeto instanciado (assim como seus métodos e propriedades) com "new", em JS, vai descender de "Object".
             //Usando "prototype", nós podemos criar ou subscrever métodos de uma Classe.
             //"Prototype" pode ser usado para qualquer Objeto em JS.
@@ -140,7 +140,7 @@
         //Se, ao invés de ".info_2", tivermos "info", vamos subscrever todas as informações anteriores de "info"
 
         Carro.prototype.info_2 = function() {
-            this.info() //Incorpora as informações acima ao "info()".
+            this.info() //Incorpora as informações "info()" a "info_2()".
             console.log(`Potência: ${this.potência}.`)
             console.log(`Velocidade: ${this.velocidade}.`)
             console.log(`Velocidade Máxima: ${this.velocidade_máxima}.`)
