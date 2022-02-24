@@ -21,6 +21,7 @@
         //"Promise" será usado para tornar algo assíncrono em síncrono.
         
         //O "Promise" tem três estados:
+
         //"Pending": atinge-se esse estado ao se criar a "Promise" porém sem executá-la com ou sem sucesso ou rejeição;
         //"Fulfilled": atinge-se esse estado ao se executar a "Promise" com sucesso;
         //O "Promise" executa com sucesso a operação e passa para esse estado ("fulfilled");
@@ -57,6 +58,7 @@
                 for (let i = 0; i < n; i++) {
                     cont++
                 }
+
                 if (cont == n) {
                     resolve(cont)
                 }
@@ -64,7 +66,9 @@
                     rejected('Erro.')
                 }
             })
+            
             //"Promise" necessita dois parâmetros; um para o "resolve" e outro para o "rejected".
+            //Os nomes desses parâmetros são facultativos.
 
             return p
         }
@@ -112,8 +116,8 @@
         //As duas linhas acima só estão corretas em caso de não aplicação do Objeto "Promise".
 
         contar_3(10)
-            .then(sucesso => console.log(`Sucesso: ${sucesso}.`)) //Associação a "resolve".
-            .catch(insucesso => console.log(`${insucesso}.`)) //Associação a "rejected".
+            .then(sucesso => console.log(`Sucesso: ${sucesso}.`)) //Associação ao estado "resolve".
+            .catch(insucesso => console.log(`${insucesso}.`)) //Associação ao estado "rejected".
 
         soma_de_positivos(10, 2)
             .then(sucesso => console.log(`Sucesso: ${sucesso}.`))
