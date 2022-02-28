@@ -25,6 +25,7 @@
         let filtro = num.filter((elemento) => {
             return elemento >= 10
         })
+
         let filtro_2 = num.filter(greater_ten)
 
         console.log(num)
@@ -44,7 +45,7 @@
             {id: 2}
         ]
 
-        let válidos = dados.filter((elementos) => {
+        let válidos = dados.filter((elementos) => { //As funções à parte ("greater_ten" e "maior_10"), vêm aqui em "filter".
             if (typeof(elementos.id) == 'number' && !isNaN(elementos.id) && (elementos.id >= 0)) {
                 return true
             }
