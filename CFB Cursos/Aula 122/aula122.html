@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aula 42 - JSON Em Javascript</title>
+    <title>Aula 122 - JSON Em Javascript</title>
 
     <script>
 
@@ -15,23 +15,23 @@
         '{"nome": "Blendasia", "salário": 13500, "idade": 35},'+
         '{"nome": "Clixiston", "salário": 8200, "idade": 25},'+
         '{"nome": "Flernadis", "salário": 35000, "idade": 38},'+
-        '{"nome": "Nilsetucus", "salário": 5000, "idade": 21},'+
+        '{"nome": "Nilsetucus", "salário": 5000, "idade": 21}'+
         ']}'
 
-        let colabOBJ = {"colaboradores":[
-        {"nome": "Bruno", "salário": 10000, "idade": 40},
-        {"nome": "Blendasia", "salário": 13500, "idade": 35},
-        {"nome": "Clixiston", "salário": 8200, "idade": 25},
-        {"nome": "Flernadis", "salário": 35000, "idade": 38},
-        {"nome": "Nilsetucus", "salário": 5000, "idade": 21}
-        ]}
+        let colabOBJ = [
+            {"nome": "Bruno", "salário": 10000, "idade": 40},
+            {"nome": "Blendasia", "salário": 13500, "idade": 35},
+            {"nome": "Clixiston", "salário": 8200, "idade": 25},
+            {"nome": "Flernadis", "salário": 35000, "idade": 38},
+            {"nome": "Nilsetucus", "salário": 5000, "idade": 21}
+        ]
 
         let colab = {"nome": "Bruno", "salário": 10000, "idade": 40}
 
         let c_objeto = JSON.parse(colabJSON)
         let c_json = JSON.stringify(colabOBJ)
 
-        //"parse" converte um Objeto JSON para JS; "stringify" converte um texto em JSON. 
+        //"parse" converte um Objeto JSON para elemento JS (texto ou objeto); "stringify" converte um texto/"string" em JSON. 
 
         console.log(colabJSON)
         console.log(c_objeto)
@@ -42,9 +42,9 @@
 
         console.log(c_json)
 
-        console.log(colab)
+        console.log(colab) //Objeto Literal.
         console.log('-----------------------------------------------------------------------')
-        console.log(JSON.stringify(colab))
+        console.log(JSON.stringify(colab)) //JSON.
         
     </script>
 
