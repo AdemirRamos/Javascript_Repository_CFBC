@@ -11,11 +11,12 @@
         try {
             document.write('CFB Cursos <br>')
         }
+        
         catch (erro) {
             document.write('Erro! <br>')
             
             /*Posso colocar a mensagem de erro aqui, também, porém, ela ficará visível ao usuário.*/
-            /*Para tanto, eu devo escrever o seguinte código: "document.write('Erro!' + e.message)"*/
+            /*Para tanto, eu devo escrever o seguinte código: "document.write('Erro!' + erro.message)"*/
             /*A "string" é opcional. Pode-se usar comunicar o erro diretamente ao usuário.*/
             
             console.log('Mensagem de erro: ' + erro.message + '<br>')
@@ -31,6 +32,7 @@
             num = 10 / 0
             document.write('Erro: ' + num + '<br>')
         }
+        
         catch (erro) {
             /*A divisão por zero é erro tratado internamente pelo JS.*/
             /*O nome dado a essa exceção (divisão por zero) é "Infinity".*/
@@ -40,6 +42,7 @@
 
         try {
             num = prompt('Digite algum valor.')
+            
             if (num > 10) {
                 throw new Error ("Valor inválido. O valor deve ser menor ou igual a 10. <br>")
             
@@ -49,11 +52,13 @@
             }
             document.write('Valor: ' + num + '. <br><br>')
         }
+        
         catch (erro) {
             document.write('Erro: ' + erro.message + '<br>')
             /*"Catch" intercepta o erro.*/
             /*"erro.message" representa a mensagem de "throw new Error".*/
         }
+        
         finally {
             document.write('Fim do tratamento de erros. <br>')
         }
@@ -62,15 +67,18 @@
 
         try {
             num = prompt('Digite algum valor.')
-            if (num > 10){
+            
+            if (num > 10) {
                 throw new Error ("Valor inválido. O valor máximo é 10.")
             }
         }
+        
         catch (erro) {
             console.log('Erro: ' + erro.message)
             num = 10
             /*Nesse caso, o erro é enviado para o histórico ("log"); a variável recebe o valor 10 e assim o "catch" é dispensado.*/
         }
+        
         finally {
             document.write('Valor: ' + num)
         }
@@ -82,7 +90,7 @@
 <body>
 
     <!--Dentro de "try" inserimos a rotina cuja a qual queremos tratar acerca de um possível erro;-->
-    <!--Ao ocorrer um erro em "try" será gerada uma exceção;-->
+    <!--Ao ocorrer um erro em "try", será gerada uma exceção;-->
     <!--A execução do programa é parada e a exceção encontrada repassada para "catch";-->
     <!--Dentro de "catch", fazemos o tratamento do erro;-->
     <!--"Finally" será executado de qualquer maneira (independente do que aconteça). "Finally" é de uso opcional.-->
