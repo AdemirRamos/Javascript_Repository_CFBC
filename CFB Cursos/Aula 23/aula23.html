@@ -9,7 +9,7 @@
     <script>
 
         //document.getElementById('texto').style.color = '#f00'
-        //Esse comando não vai funcionar pois o texto ao qual ele se refere ainda não foi adicionado.
+        //Esse comando não vai funcionar pois o texto ao qual ele se refere ainda não foi renderizado.
         //Uma das maneiras de se resolver esse problema é adicionar o mesmo comando porém após o texto ao qual ele faz menção.
         //Ver abaixo:
         //P. S.: GEBI é "case sensitive".
@@ -39,7 +39,7 @@
         txt.style.fontSize = '55px'
         txt.style.display = 'block'
 
-        /*Dessa forma acima, transformamos o "GEBI" em uma variável - o que facilita um pouco o nosso trabalho.*/
+        /*Dessa forma acima, transferimos o elemento capturado por "GEBI" para uma variável - o que facilita um pouco o nosso trabalho.*/
 
         var cx = document.getElementById('caixa')
         cx.style.border = '1px solid #000'
