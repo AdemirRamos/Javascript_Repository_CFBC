@@ -16,7 +16,7 @@
             var nome_cor_1 = 'Azul'
             document.write(nome_cor_1 + '<br>')
             //A variável, dentro dessa função, não está disponível fora dela.
-            //A variável "nome_cor_1" está restrita ao escopo da função.
+            //Agora, a variável "nome_cor_1" está restrita ao escopo da função.
         }
 
         cor()
@@ -36,7 +36,7 @@
         document.write(nome_cor_2 + '<br><br>')
         /*Nesse caso, a mensagem 'Azul' foi escrita duas vezes pois, originalmente, ela era 'Vermelho', porém, depois de passar por dentro da função, ela foi alterada para 'Azul' e assim passou a ser entendida nas duas ocorrências do método "write".*/
 
-        /*Mesmo que as variáveis estejam em escopos diferentes, não é recomendável usar variáveis com o mesmo nome. Uma razão para isso, se encontra no fato de ser mais difícil selecionar uma destas variáveis com o mesmo nome. (...) Ainda sim, é possível selecionar uma variável que compartilha o seu nome com outra variável.*/
+        /*Mesmo que as variáveis estejam em escopos diferentes, não é recomendável usar variáveis com o mesmo nome. Uma razão para isso, se encontra no fato de ser mais difícil selecionar uma destas variáveis com o mesmo nome. (...) Ainda sim, é possível selecionar uma determinada variável que compartilha o seu nome com outra variável.*/
 
         var nome_cor_3 = 'Vermelho'
         var nome_cor_3
