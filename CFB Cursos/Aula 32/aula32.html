@@ -29,14 +29,14 @@
 <body>
 
     <div id="dv1" onmouseover="mudança_de_cor(this, '#f00')" onmouseout="mudança_de_cor(this, '#fff')"></div>
-    <!--O "this" passa como primeiro parâmetro da função, nesse caso, o próprio elemento que o recebe (ou seja, a "div dv1").-->
+    <!--O "this" passa como primeiro parâmetro da função, nesse caso, o próprio elemento que o recebe (ou seja, a "div / dv1").-->
     <!--O segundo parâmetro trata-se da nova cor.-->
     <!--A função referida acima é: "mudança_de_cor()".-->
 
     <br>
 
     <button onclick="alert('CFB Cursos')" onmouseover="mudança_de_cor(document.getElementById('dv1'), '#00f')">Clique Em Mim</button>
-    <!--Aqui em "button", em "onmouseover", como 1ª parâmetro da função, temos o apontamento do "id" do elemento a ser manipulado.-->
+    <!--Aqui em "button", em "onmouseover", como 1ª parâmetro da função, temos o apontamento do elemento a ser manipulado.-->
 
     <!--Basicamente, um "evento" é um "acontecimento". Sempre que executamos alguma ação, dentro de um programa, é disparado algum determinado evento. Por exemplo, quando clicamos em algum botão, é disparado o evento "onclick". Quando movimentamos o mouse, "mousemover". Antes do clique, possivelmente, "mouseover". Quando uma página é carregada, "onload" e assim por diante. Qualquer evento de interação do usuário com a página vai disparar um evento.
     É possível capturar estes eventos e associar comandos a eles (através de funções).-->
