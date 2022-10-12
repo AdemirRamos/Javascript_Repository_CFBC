@@ -1,4 +1,4 @@
-//Aula 36 - Praticando "addEventListener" - Eventos Em Javascript (Parte 6)
+//Aula 36 - Praticando "addEventListener" - Eventos Em Javascript (Parte 3)
  
  const caixa_1 = document.querySelector('#caixa1')
  const caixa_2 = document.getElementById('caixa2')
