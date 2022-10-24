@@ -1,4 +1,4 @@
-//Entendendo O Método "filter" Em Javascript (Parte 1)
+//Aula 42 - Entendendo O Método "filter" Em Javascript (Parte 1)
 
 //O método "filter" pode percorrer (tratar) um "array" (vetor) e permite filtragens a partir disso.
 //A filtragem retorna como um novo "array".
