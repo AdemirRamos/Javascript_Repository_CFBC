@@ -23,3 +23,30 @@ cursos.map((e, c) => {
 	novo_elemento.appendChild(comandos)
 	caixa_cursos.appendChild(novo_elemento)
 })
+
+botão_curso_selecionado.addEventListener('click', (event) => {
+	const todos_radios = [...document.querySelectorAll('input[type=radio]')]
+	
+	let radio_selecionado = todos_radios.filter((e, i, a) => {
+		//Parâmetros: 1ª: elemento; 2ª índice; 3ª "array".
+
+		return e.checked
+	})
+
+	radio_selecionado = radio_selecionado[0]
+
+	//1ª Possibilidade:
+	const curso_selecionado = radio_selecionado.parentNode.parentNode.firstChild.textContent
+
+
+	//2ª Possibilidade:
+	const curso_selecionado_2 = radio_selecionado.parentNode.previousSibling.textContent	
+
+	console.log(todos_radios)
+	console.log(radio_selecionado)
+	console.log(curso_selecionado)
+	console.log(curso_selecionado_2)
+
+	alert(`Curso selecionado: ${curso_selecionado}.`)
+
+})
