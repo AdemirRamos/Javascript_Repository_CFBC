@@ -8,7 +8,7 @@ const pessoa = {
 	},
 	set_nome: function(n) {
 		this.nome = n
-	},
+	}
 }
 
 const p1 = pessoa
